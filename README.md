@@ -5,6 +5,12 @@ Contents
 
 This repository contains the force field files for the additive CHARMM36 force field.
 
+Current Version
+---------------
+
+The current version is dated July, 2024. This repository was made publicly available
+on February 7, 2025.
+
 Maintainers and Developers
 --------------------------
 
