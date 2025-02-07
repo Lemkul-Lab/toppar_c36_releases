@@ -1,0 +1,279 @@
+* Generate, ic build and energy of heme, related residues
+* and patches
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+!gen_aa6.inp
+!* Generate, ic build, hbuild and energy of heme
+!* testing residues HEME, O2, and CO and patches FHEM, PHEM, PLO2 and PLIG
+!* adm jr.
+!*
+
+read sequ cards
+*HEME GROUP
+*
+   1
+HEME
+
+generate HEME setup
+
+!patch FHEM heme 1 noangle nodihedral
+
+ic para all
+ic seed 1 FE 1 NA 1 C4A
+ic build
+hbuild
+update cutnb 8.5 ctofnb 7.5 ctonnb 7.0 cdie vswitch shift e14f 1.0
+energy
+
+dele atom sele all end
+
+read sequ cards
+* histidine
+*
+   1
+hsd
+
+generate his first nter last cter setup
+
+read sequ cards
+*HEME GROUP
+*
+   1
+HEME
+
+ic para
+ic seed 1 n 1 ca 1 c
+ic build
+
+generate HEME setu
+patch PHEM his 1  heme 1 noangle nodiheral
+
+ic para all
+ic seed 2 FE 2 NA 2 C4A
+ic build
+hbuild
+
+coor trans xdir 20.0 sele segid his end
+
+update cutnb 8.5 ctofnb 7.5 ctonnb 7.0 cdie vswitch shift e14f 1.0
+energy
+
+dele atom sele all end
+
+read sequ cards
+* histidine
+*
+   1
+hsd
+
+generate his first nter last cter setup
+
+ic para
+ic seed 1 n 1 ca 1 c
+ic build
+
+read sequ cards
+* o2
+*
+   1
+O2
+
+generate o2 first none last none setup
+
+read coor card append free
+* O2 dummy coordinates
+*
+    2
+    1    1 O2   O1    -2.11035  -0.36219  -0.00010 O2   1      0.00000
+    2    1 O2   O2    -1.23010   0.89944  -0.90053 O2   1      0.00000
+
+read sequ cards
+*HEME GROUP
+*
+   1
+HEME
+
+generate HEME setup
+patch PLO2 o2 1 heme 1 his 1 noangle nodiheral
+
+ic para all
+ic seed 3 FE 3 NA 3 C4A
+ic build
+hbuild
+
+coor trans xdir 20.0 sele segid his end
+
+update cutnb 8.5 ctofnb 7.5 ctonnb 7.0 cdie vswitch shift e14f 1.0
+energy
+
+dele atom sele all end
+
+read sequ cards
+* histidine
+*
+   1
+hsd
+
+generate his first nter last cter setup
+
+ic para
+ic seed 1 n 1 ca 1 c
+ic build
+
+read sequ cards
+* carbon monoxide
+*
+   1
+CO
+
+generate CO first none last none setup
+
+read coor card append free
+* CO dummy coordinates
+*
+    2
+    1    1 CO   C     -2.11035  -0.36219  -0.00010 CO   1      0.00000
+    2    1 CO   O     -1.23010   0.89944  -0.90053 CO   1      0.00000
+
+read sequ cards
+*HEME GROUP
+*
+   1
+HEME
+
+generate HEME setup
+patch PLIG co 1 heme 1 his 1 noangle nodiheral
+
+ic para all
+ic seed 3 FE 3 NA 3 C4A
+ic build
+hbuild
+
+coor trans xdir 20.0 sele segid his end
+
+update cutnb 8.5 ctofnb 7.5 ctonnb 7.0 cdie vswitch shift e14f 1.0
+energy
+
+dele atom sele all end
+
+read sequ cards
+* histidine
+*
+   1
+hsd
+
+generate his first nter last cter setup
+
+ic para
+ic seed 1 n 1 ca 1 c
+ic build
+
+read sequ cards
+* carbon monoxide
+*
+   1
+CO
+
+generate CO first none last none setup
+
+read coor card append free
+* CO dummy coordinates
+*
+    2
+    1    1 CO   C     -2.11035  -0.36219  -0.00010 CO   1      0.00000
+    2    1 CO   O     -1.23010   0.89944  -0.90053 CO   1      0.00000
+
+read sequ cards
+*HEME GROUP
+*
+   1
+HEME
+
+generate HEME setup
+patch PHEM his 1 heme 1 noangle nodiheral
+patch PLIG co 1 heme 1 his 1 noangle nodiheral
+
+ic para all
+ic seed 3 FE 3 NA 3 C4A
+ic build
+hbuild
+
+coor trans xdir 20.0 sele segid his end
+
+update cutnb 8.5 ctofnb 7.5 ctonnb 7.0 cdie vswitch shift e14f 1.0
+energy
+
+dele atom sele all end
+
+read sequ cards
+*carbon dioxide
+*
+1
+CO2
+
+generate co2 setup angl
+
+read coor card free
+* co2 dummy coordinates
+*
+    3
+    1    1 CO2  C      0.00000   0.00000   0.00000 CO2  1      0.00000
+    2    1 CO2  OC1   -1.17000   0.00000   0.00000 CO2  1      0.00000
+    3    1 CO2  OC2    1.17000   0.00000   0.00000 CO2  1      0.00000
+
+update cutnb 8.5 ctofnb 7.5 ctonnb 7.0 cdie vswitch shift e14f 1.0
+energy
+
+dele atom sele all end
+
+read sequ cards
+* histidine
+*
+   1
+hsd
+
+generate his first nter last cter setup
+
+ic para
+ic seed 1 n 1 ca 1 c
+ic build
+
+read sequ cards
+* tyrosine
+*
+1
+tyr
+
+generate tyr first nter last cter setup
+
+ic para
+ic seed 2 n 2 ca 2 c
+ic build
+
+read sequ cards
+*HEME GROUP
+*
+   1
+HEME
+
+generate HEME setup
+patch PHEM his 1 heme 1 noangle nodiheral
+patch PLOH tyr 1 heme 1 his 1 noangle nodiheral
+
+ic para all
+ic seed 3 FE 3 NA 3 C4A
+ic build
+hbuild
+
+coor trans xdir 10.0 sele segid his end
+coor trans xdir -10.0 sele segid tyr end
+
+energy
+
+dele atom sele all end
+
+stop
+

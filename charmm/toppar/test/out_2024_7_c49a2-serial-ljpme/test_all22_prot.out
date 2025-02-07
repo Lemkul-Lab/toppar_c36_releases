@@ -1,0 +1,2809 @@
+ Parameter: A <- "/RAID/ALEX/PARAM/TOPPAR_JUL24/TOP_ALL22_PROT.RTF"
+ Parameter: B <- "/RAID/ALEX/PARAM/TOPPAR_JUL24/PAR_ALL22_PROT.PRM"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+           (CHARMM) - Developmental Version 49a2   February 15, 2024            
+                                Revision unknown                                
+       Copyright(c) 1984-2023  President and Fellows of Harvard College
+                              All Rights Reserved
+         Current operating system: Linux-4.9.0-9-amd64(x86_64)@ocracoke         
+                 Created on  7/26/24 at 16:18:53 by user: alex        
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> *  GENERATE, IC BUILD AND ENERGY OF ALL-TRANS PEPTIDE
+ RDTITL> *  ALL AMINO ACIDS
+ RDTITL> *  TESTING ALL AMINO ACIDS RESIDUES AND PATCHERS CTER AND NTER
+ RDTITL> *  ADM JR.
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    ! read the topology
+ CHARMM>    open unit 9 read form name @a
+ Parameter: A -> "/RAID/ALEX/PARAM/TOPPAR_JUL24/TOP_ALL22_PROT.RTF"
+ VOPEN> Attempting to open::/raid/alex/param/toppar_jul24/top_all22_prot.rtf::
+ OPNLGU> Unit  9 opened for READONLY access to /raid/alex/param/toppar_jul24/top_all22_prot.rtf
+  
+ CHARMM>    read rtf card unit 9
+ MAINIO> Residue topology file being read from unit   9.
+ TITLE> *>>>>>>>>CHARMM22 ALL-HYDROGEN TOPOLOGY FILE FOR PROTEINS <<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>> DECEMBER, 2003 <<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO ADM JR. VIA THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *               PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+  
+ CHARMM>     
+  
+ CHARMM>    ! read the parameters
+ CHARMM>    open unit 9 read form name @b
+ Parameter: B -> "/RAID/ALEX/PARAM/TOPPAR_JUL24/PAR_ALL22_PROT.PRM"
+ OPNLGU> Unit already open. The old file will be closed first.
+ VCLOSE: Closing unit    9 with status "KEEP"
+ VOPEN> Attempting to open::/raid/alex/param/toppar_jul24/par_all22_prot.prm::
+ OPNLGU> Unit  9 opened for READONLY access to /raid/alex/param/toppar_jul24/par_all22_prot.prm
+  
+ CHARMM>    read para card flex unit 9
+
+          PARAMETER FILE BEING READ FROM UNIT  9
+ TITLE> *>>>>> CHARMM22 ALL-HYDROGEN PARAMETER FILE FOR PROTEINS <<<<<<<<
+ TITLE> *>>>>> INCLUDES PHI, PSI CROSS TERM MAP (CMAP) CORRECTION <<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>> DECEMBER, 2003 <<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> * ALL COMMENTS TO ADM JR. VIA THE CHARMM WEB SITE: WWW.CHARMM.ORG
+ TITLE> *               PARAMETER SET DISCUSSION FORUM
+ TITLE> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>     
+  
+ CHARMM>    !crambin
+ CHARMM>    read sequence cards
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * CRAMBIN
+ RDTITL> *
+  
+ SEQRDR>    46
+  
+ SEQRDR>    THR THR CYS CYS PRO SER ILE VAL ALA ARG SER ASN PHE
+  
+ SEQRDR>    ASN VAL CYS ARG LEU PRO GLY THR PRO GLU ALA ILE CYS
+  
+ SEQRDR>    ALA THR TYR THR GLY CYS ILE ILE ILE PRO GLY ALA THR
+  
+ SEQRDR>    CYS PRO GLY ASP TYR ALA ASN
+
+          RESIDUE SEQUENCE --    46 RESIDUES
+          THR THR CYS CYS PRO SER ILE VAL ALA ARG SER ASN PHE ASN VAL CYS ARG LEU PRO GLY 
+          THR PRO GLU ALA ILE CYS ALA THR TYR THR GLY CYS ILE ILE ILE PRO GLY ALA THR CYS 
+          PRO GLY ASP TYR ALA ASN 
+ ***** Message from SEQRDR ***** THE SYSTEM CONTAINS  4 TITRATABLE GROUPS
+ THE USER MUST PREDETERMINE THE PROTONATION STATE THROUGH THE SEQUENCE AND RTF
+ HIS -  0  HSD -  0  HSE -  0  HSP -  0  ASP -  1  GLU -  1  LYS -  0  TYR -  2
+  
+ CHARMM>     
+  
+ CHARMM>    generate crm1 first nter last cter setup warn
+ THE PATCH 'NTER' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CTER' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "N     " "HN    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** DONOR NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "HN    " "N     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "C     " "O     " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is CRM1.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      648   Number of groups     =      196
+         Number of bonds         =      655   Number of angles     =     1183
+         Number of dihedrals     =     1744   Number of impropers  =      107
+         Number of cross-terms   =       44   Number of autogens   =        0
+         Number of HB acceptors  =       64   Number of HB donors  =       75
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ! patch in disulfides
+ CHARMM>    patch disu crm1  3 crm1 40
+ ATOM  CRM1 3    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  CRM1 40   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:  1181 angles are removed before regeneration for selected atoms.
+ AUTOGEN:  1738 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      646   Number of groups     =      196
+         Number of bonds         =      654   Number of angles     =     1183
+         Number of dihedrals     =     1745   Number of impropers  =      107
+         Number of cross-terms   =       44   Number of autogens   =        0
+         Number of HB acceptors  =       64   Number of HB donors  =       73
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    patch disu crm1  4 crm1 32
+ ATOM  CRM1 4    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  CRM1 32   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:  1181 angles are removed before regeneration for selected atoms.
+ AUTOGEN:  1739 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      644   Number of groups     =      196
+         Number of bonds         =      653   Number of angles     =     1183
+         Number of dihedrals     =     1746   Number of impropers  =      107
+         Number of cross-terms   =       44   Number of autogens   =        0
+         Number of HB acceptors  =       64   Number of HB donors  =       71
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    patch disu crm1 16 crm1 26
+ ATOM  CRM1 16   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  CRM1 26   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:  1181 angles are removed before regeneration for selected atoms.
+ AUTOGEN:  1740 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      642   Number of groups     =      196
+         Number of bonds         =      652   Number of angles     =     1183
+         Number of dihedrals     =     1747   Number of impropers  =      107
+         Number of cross-terms   =       44   Number of autogens   =        0
+         Number of HB acceptors  =       64   Number of HB donors  =       69
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angle dihedral
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:  1183 angles are removed before regeneration for selected atoms.
+ AUTOGEN:  1747 dihedrals are removed before regeneration for selected atoms.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      642   Number of groups     =      196
+         Number of bonds         =      652   Number of angles     =     1183
+         Number of dihedrals     =     1747   Number of impropers  =      107
+         Number of cross-terms   =       44   Number of autogens   =        0
+         Number of HB acceptors  =       64   Number of HB donors  =       69
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * CRAMBIN, XTAL ASYMMETRIC UNIT WITH WATER, FROM KURIYAN
+ RDTITL> * GENERATED AND IMAGE CENTERED
+ RDTITL> * SEGIDS RENAMED AND IMAGE CENTERED
+ RDTITL> * 200 SD STEPS SOLVENT FOLLOWED BY 200 ABNR STEPS WITH PME
+ RDTITL> * 20 PS NVT, SOLUTE HARMONICALLY CONSTRAINED
+ RDTITL> * ../TOPPAR/TOP_P22B5I_N271F.INP
+ RDTITL> * ../TOPPAR/PAR_P22B5I_N271F.INP
+ RDTITL> *  DATE:     3/21/ 2     12: 9: 1      CREATED BY USER: ALEXMAC
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  FSHIft   VATOm    VFSWIt  
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found   1835 exclusions and   1713 interactions(1-4)
+ <MAKGRP> found    578 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+   120047 ATOM PAIRS WERE FOUND FOR ATOM LIST
+     4253 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0     61.68832      0.00000     17.01394
+ENER INTERN>      116.02443    306.81803     32.07918    233.21956     15.89577
+ENER CROSS>       -50.00919      0.00000      0.00000      0.00000
+ENER EXTERN>     -128.30257   -464.03689      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>    642 atoms have been selected out of    642
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:         46 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:       652 bonds deleted
+ DELTIC:      1183 angles deleted
+ DELTIC:      1747 dihedrals deleted
+ DELTIC:       107 improper dihedrals deleted
+ DELTIC:        44 crossterm maps deleted
+ DELTIC:        69 donors deleted
+ DELTIC:        64 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    !all trans peptide
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALL AMINO ACIDS IN YIPES TOPOLOGY FILE
+ RDTITL> *
+  
+ SEQRDR>    22
+  
+ SEQRDR>    ALA ARG ASN ASP CYS GLN GLU GLY HSD HSE
+  
+ SEQRDR>    HSP ILE LEU LYS MET PHE PRO SER THR TRP TYR VAL
+
+          RESIDUE SEQUENCE --    22 RESIDUES
+          ALA ARG ASN ASP CYS GLN GLU GLY HSD HSE HSP ILE LEU LYS MET PHE PRO SER THR TRP 
+          TYR VAL 
+ ***** Message from SEQRDR ***** THE SYSTEM CONTAINS  7 TITRATABLE GROUPS
+ THE USER MUST PREDETERMINE THE PROTONATION STATE THROUGH THE SEQUENCE AND RTF
+ HIS -  0  HSD -  1  HSE -  1  HSP -  1  ASP -  1  GLU -  1  LYS -  1  TYR -  1
+  
+ CHARMM>     
+  
+ CHARMM>    generate a setup warn
+ THE PATCH 'NTER' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CTER' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "HN    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** DONOR NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "HN    " "N     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  22 VAL   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  22 VAL   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE  22 VAL   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE  22 VAL   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE  22 VAL   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is A.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       22
+         Number of atoms         =      362   Number of groups     =      107
+         Number of bonds         =      369   Number of angles     =      658
+         Number of dihedrals     =      969   Number of impropers  =       70
+         Number of cross-terms   =       20   Number of autogens   =        0
+         Number of HB acceptors  =       34   Number of HB donors  =       44
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found   1027 exclusions and    935 interactions(1-4)
+ <MAKGRP> found    306 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     9264 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      514 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are     9264 atom  pairs and     1962 atom  exclusions.
+ There are        0 group pairs and      306 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     9264 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      514 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0 124234.13176-124172.44344  39273.35300
+ENER INTERN>       21.57495     45.70691      4.42684     95.27119      1.01640
+ENER CROSS>         1.99827      0.00000      0.00000      0.00000
+ENER EXTERN>   124257.64802   -193.51082      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    mini conj nstep 10 nprint 1
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are     9264 atom  pairs and     1962 atom  exclusions.
+ There are        0 group pairs and      306 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     9264 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      514 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+
+
+ CONJUG> An energy minimization has been requested.
+
+ NCGCYC =          100   NSTEP  =           10
+ PCUT   =    0.9999000   PRTMIN =            1
+ STEP   =    0.0200000   TOLFUN =    0.0000000
+ TOLGRD =    0.0000000   TOLITR =          100
+ TOLSTP =    0.0000000
+
+MINI MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+MINI INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+MINI CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+MINI EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        0 124234.13176-124172.44344  39273.35300      0.00000
+MINI INTERN>       21.57495     45.70691      4.42684     95.27119      1.01640
+MINI CROSS>         1.99827      0.00000      0.00000      0.00000
+MINI EXTERN>   124257.64802   -193.51082      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        1   3533.07167 120701.06009    364.49892      0.02000
+MINI INTERN>      781.84773    253.89710     83.98399    148.37885      1.74947
+MINI CROSS>         1.79169      0.00000      0.00000      0.00000
+MINI EXTERN>     2454.88023   -193.45739      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        2   1646.56897   1886.50270     57.20749      2.01532
+MINI INTERN>      729.45421    290.57426     74.04228    147.12267      6.64895
+MINI CROSS>         1.79112      0.00000      0.00000      0.00000
+MINI EXTERN>      594.56482   -197.62935      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        3    659.16518    987.40379     22.33288      0.86640
+MINI INTERN>      152.95979    219.79877     39.11422    141.75837      7.46302
+MINI CROSS>         0.64695      0.00000      0.00000      0.00000
+MINI EXTERN>      302.03818   -204.61413      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        4    493.13748    166.02770     15.74594      1.12557
+MINI INTERN>       79.92573    202.31019     31.94123    132.79527      8.73431
+MINI CROSS>        -1.12502      0.00000      0.00000      0.00000
+MINI EXTERN>      246.52929   -207.97351      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        5    361.75183    131.38564     12.31716      0.49182
+MINI INTERN>       52.57459    187.32467     25.70413    127.32445      9.41443
+MINI CROSS>        -4.60118      0.00000      0.00000      0.00000
+MINI EXTERN>      172.72103   -208.71027      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        6    289.78077     71.97106      8.50582      0.64816
+MINI INTERN>       43.02895    181.27562     23.15068    126.26746     11.92470
+MINI CROSS>        -7.26990      0.00000      0.00000      0.00000
+MINI EXTERN>      127.56350   -216.16024      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        7    245.04591     44.73486      7.75119      0.49964
+MINI INTERN>       41.55923    166.65380     20.15142    123.22390     10.52112
+MINI CROSS>        -9.61361      0.00000      0.00000      0.00000
+MINI EXTERN>      110.27789   -217.72784      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        8    208.86677     36.17914      7.44025      0.44301
+MINI INTERN>       37.61329    155.99975     19.03395    119.60522      9.06788
+MINI CROSS>       -11.59221      0.00000      0.00000      0.00000
+MINI EXTERN>       95.83106   -216.69217      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        9    171.66137     37.20540      7.80123      0.45708
+MINI INTERN>       38.89610    146.04584     17.72335    116.73601      7.59997
+MINI CROSS>       -13.67022      0.00000      0.00000      0.00000
+MINI EXTERN>       75.62466   -217.29434      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       10    131.47965     40.18172      8.16737      0.55610
+MINI INTERN>       41.20683    134.14949     16.60878    114.27171      6.70811
+MINI CROSS>       -16.38764      0.00000      0.00000      0.00000
+MINI EXTERN>       56.67942   -221.75705      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+
+ CONJUG> Minimization exiting with number of steps limit (   10) exceeded.
+
+CONJ MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+CONJ INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+CONJ CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+CONJ EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+CONJ>       10    131.47965     40.18172      8.16737      0.02000
+CONJ INTERN>       41.20683    134.14949     16.60878    114.27171      6.70811
+CONJ CROSS>       -16.38764      0.00000      0.00000      0.00000
+CONJ EXTERN>       56.67942   -221.75705      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>    362 atoms have been selected out of    362
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:         22 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:       369 bonds deleted
+ DELTIC:       658 angles deleted
+ DELTIC:       969 dihedrals deleted
+ DELTIC:        70 improper dihedrals deleted
+ DELTIC:        20 crossterm maps deleted
+ DELTIC:        44 donors deleted
+ DELTIC:        34 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    !gen_aa2.inp
+ CHARMM>    !*  Generate, ic build and energy of GLY ASP GLU HSD peptide
+ CHARMM>    !*  and test of patches ASPP, GLUP and HS2
+ CHARMM>    !*  adm jr.
+ CHARMM>    !*
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * GLY ASP GLU HSD
+ RDTITL> *
+  
+ SEQRDR>    5
+  
+ SEQRDR>    GLY ASP GLU HSD LYS
+
+          RESIDUE SEQUENCE --     5 RESIDUES
+          GLY ASP GLU HSD LYS 
+ ***** Message from SEQRDR ***** THE SYSTEM CONTAINS  4 TITRATABLE GROUPS
+ THE USER MUST PREDETERMINE THE PROTONATION STATE THROUGH THE SEQUENCE AND RTF
+ HIS -  0  HSD -  1  HSE -  0  HSP -  0  ASP -  1  GLU -  1  LYS -  1  TYR -  0
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first glyp last ct1 setup warn
+ THE PATCH 'GLYP' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CT1' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "N     " "HN    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** DONOR NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "HN    " "N     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   5 LYS   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   5 LYS   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   5 LYS   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   5 LYS   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE   5 LYS   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        5
+         Number of atoms         =       80   Number of groups     =       19
+         Number of bonds         =       80   Number of angles     =      143
+         Number of dihedrals     =      199   Number of impropers  =       17
+         Number of cross-terms   =        3   Number of autogens   =        0
+         Number of HB acceptors  =       11   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ! test patches
+ CHARMM>    patch aspp test 2 setup warn
+ ATOM  TEST ASP  2    HD2  ADDED.
+
+ Message from MAPIC: Atom numbers are changed.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:   143 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   199 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        5
+         Number of atoms         =       81   Number of groups     =       19
+         Number of bonds         =       81   Number of angles     =      144
+         Number of dihedrals     =      201   Number of impropers  =       17
+         Number of cross-terms   =        3   Number of autogens   =        0
+         Number of HB acceptors  =       11   Number of HB donors  =       12
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>    patch glup test 3 setup warn
+ ATOM  TEST GLU  3    HE2  ADDED.
+
+ Message from MAPIC: Atom numbers are changed.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:   144 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   201 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        5
+         Number of atoms         =       82   Number of groups     =       19
+         Number of bonds         =       82   Number of angles     =      145
+         Number of dihedrals     =      203   Number of impropers  =       17
+         Number of cross-terms   =        3   Number of autogens   =        0
+         Number of HB acceptors  =       11   Number of HB donors  =       13
+         Number of NB exclusions =        0   Total charge =    2.00000
+  
+ CHARMM>    patch hs2 test 4 setup warn
+ ATOM  TEST HSD  4    HE2  ADDED.
+ ATOM  TEST 4    HSD  HD1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         1 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         4 dihedrals deleted
+ DELTIC:         2 improper dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:   143 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   199 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        5
+         Number of atoms         =       82   Number of groups     =       19
+         Number of bonds         =       82   Number of angles     =      145
+         Number of dihedrals     =      203   Number of impropers  =       17
+         Number of cross-terms   =        3   Number of autogens   =        0
+         Number of HB acceptors  =       11   Number of HB donors  =       13
+         Number of NB exclusions =        0   Total charge =    2.00000
+  
+ CHARMM>    patch lsn test 5 setup warn
+ ATOM  TEST 5    LYS  HZ3  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         1 bonds deleted
+ DELTIC:         3 angles deleted
+ DELTIC:         3 dihedrals deleted
+ DELTIC:         1 donors deleted
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:   142 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   200 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        5
+         Number of atoms         =       81   Number of groups     =       19
+         Number of bonds         =       81   Number of angles     =      142
+         Number of dihedrals     =      200   Number of impropers  =       17
+         Number of cross-terms   =        3   Number of autogens   =        0
+         Number of HB acceptors  =       11   Number of HB donors  =       12
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angles dihedrals
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:   142 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   200 dihedrals are removed before regeneration for selected atoms.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        5
+         Number of atoms         =       81   Number of groups     =       19
+         Number of bonds         =       81   Number of angles     =      142
+         Number of dihedrals     =      200   Number of impropers  =       17
+         Number of cross-terms   =        3   Number of autogens   =        0
+         Number of HB acceptors  =       11   Number of HB donors  =       12
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    223 exclusions and    195 interactions(1-4)
+ <MAKGRP> found     46 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     1553 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       60 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are     1553 atom  pairs and      418 atom  exclusions.
+ There are        0 group pairs and       46 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     1553 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       60 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0     97.98298     33.49667     25.49775
+ENER INTERN>       17.06005     14.70104      1.75269     15.35492      0.93308
+ENER CROSS>         0.38037      0.00000      0.00000      0.00000
+ENER EXTERN>       89.69592    -41.89510      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     81 atoms have been selected out of     81
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          5 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        81 bonds deleted
+ DELTIC:       142 angles deleted
+ DELTIC:       200 dihedrals deleted
+ DELTIC:        17 improper dihedrals deleted
+ DELTIC:         3 crossterm maps deleted
+ DELTIC:        12 donors deleted
+ DELTIC:        11 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * PRO
+ RDTITL> *
+  
+ SEQRDR>    2
+  
+ SEQRDR>    PRO ALA
+
+          RESIDUE SEQUENCE --     2 RESIDUES
+          PRO ALA 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first prop last ct2 setup warn
+ THE PATCH 'PROP' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CT2' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 PRO   .
+ ATOMS "N     " "-C    " "CA    " "CD    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 PRO   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        2
+         Number of atoms         =       29   Number of groups     =        8
+         Number of bonds         =       29   Number of angles     =       54
+         Number of dihedrals     =       80   Number of impropers  =        6
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        2   Number of HB donors  =        5
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found     83 exclusions and     75 interactions(1-4)
+ <MAKGRP> found     17 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      315 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        5 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      315 atom  pairs and      158 atom  exclusions.
+ There are        0 group pairs and       17 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      315 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        5 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0     47.78958     50.19340      9.86704
+ENER INTERN>        1.69794      6.45629      0.70643     11.70434      0.08292
+ENER EXTERN>        1.48185     25.65981      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     29 atoms have been selected out of     29
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          2 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        29 bonds deleted
+ DELTIC:        54 angles deleted
+ DELTIC:        80 dihedrals deleted
+ DELTIC:         6 improper dihedrals deleted
+ DELTIC:         5 donors deleted
+ DELTIC:         2 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALA ALA
+ RDTITL> *
+  
+ SEQRDR>    2
+  
+ SEQRDR>    PRO ALA
+
+          RESIDUE SEQUENCE --     2 RESIDUES
+          PRO ALA 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first ACP last CT3 setup warn
+ THE PATCH 'ACP' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CT3' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 PRO   .
+ ATOMS "N     " "-C    " "CA    " "CD    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 PRO   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        2
+         Number of atoms         =       36   Number of groups     =       10
+         Number of bonds         =       36   Number of angles     =       66
+         Number of dihedrals     =       90   Number of impropers  =        6
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        3   Number of HB donors  =        2
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    102 exclusions and     85 interactions(1-4)
+ <MAKGRP> found     23 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      465 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       12 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      465 atom  pairs and      187 atom  exclusions.
+ There are        0 group pairs and       23 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      465 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       12 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0     54.11833     -6.32875      9.33833
+ENER INTERN>        1.72949     10.78107      0.22889     15.64737      0.08292
+ENER CROSS>        -5.20678      0.00000      0.00000      0.00000
+ENER EXTERN>        9.32800     21.52738      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     36 atoms have been selected out of     36
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          2 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        36 bonds deleted
+ DELTIC:        66 angles deleted
+ DELTIC:        90 dihedrals deleted
+ DELTIC:         6 improper dihedrals deleted
+ DELTIC:         2 crossterm maps deleted
+ DELTIC:         2 donors deleted
+ DELTIC:         3 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALA ALA
+ RDTITL> *
+  
+ SEQRDR>    2
+  
+ SEQRDR>    ALA ALA
+
+          RESIDUE SEQUENCE --     2 RESIDUES
+          ALA ALA 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first ACE last CT3 setup warn
+ THE PATCH 'ACE' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CT3' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        2
+         Number of atoms         =       32   Number of groups     =        9
+         Number of bonds         =       31   Number of angles     =       54
+         Number of dihedrals     =       66   Number of impropers  =        6
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        3   Number of HB donors  =        3
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found     85 exclusions and     66 interactions(1-4)
+ <MAKGRP> found     19 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      364 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        9 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      364 atom  pairs and      151 atom  exclusions.
+ There are        0 group pairs and       19 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      364 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        9 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0     22.52550     31.59282      6.51116
+ENER INTERN>        1.87342      5.00650      0.15436      7.36925      0.00000
+ENER CROSS>        -5.20900      0.00000      0.00000      0.00000
+ENER EXTERN>        3.53564      9.79534      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     32 atoms have been selected out of     32
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          2 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        31 bonds deleted
+ DELTIC:        54 angles deleted
+ DELTIC:        66 dihedrals deleted
+ DELTIC:         6 improper dihedrals deleted
+ DELTIC:         2 crossterm maps deleted
+ DELTIC:         3 donors deleted
+ DELTIC:         3 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    !gen_aa3.inp
+ CHARMM>    !*  Generation and energy of PRO CYS CYS VAL peptide and test of
+ CHARMM>    !*  patches PROP, DISU and CT2
+ CHARMM>    !*  adm jr.
+ CHARMM>    !*
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * PRO CYS CYS VAL
+ RDTITL> *
+  
+ SEQRDR>    4
+  
+ SEQRDR>    PRO CYS CYS VAL
+
+          RESIDUE SEQUENCE --     4 RESIDUES
+          PRO CYS CYS VAL 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first PROP last CT2 setup warn
+ THE PATCH 'PROP' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CT2' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 PRO   .
+ ATOMS "N     " "-C    " "CA    " "CD    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 PRO   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 VAL   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   4 VAL   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   4 VAL   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       57   Number of groups     =       16
+         Number of bonds         =       57   Number of angles     =      104
+         Number of dihedrals     =      154   Number of impropers  =       10
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        4   Number of HB donors  =        9
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    patch DISU test 2 test 3 setup warn
+ ATOM  TEST 2    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  TEST 3    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:   102 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   148 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       55   Number of groups     =       16
+         Number of bonds         =       56   Number of angles     =      104
+         Number of dihedrals     =      155   Number of impropers  =       10
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        4   Number of HB donors  =        7
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angles dihedrals
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:   104 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   155 dihedrals are removed before regeneration for selected atoms.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       55   Number of groups     =       16
+         Number of bonds         =       56   Number of angles     =      104
+         Number of dihedrals     =      155   Number of impropers  =       10
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        4   Number of HB donors  =        7
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic purge
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    160 exclusions and    150 interactions(1-4)
+ <MAKGRP> found     42 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      831 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       31 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      831 atom  pairs and      310 atom  exclusions.
+ There are        0 group pairs and       42 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      831 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       31 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0   4516.68084  -4494.15534    204.23862
+ENER INTERN>     4179.19239    138.31819      0.88253     28.04108      0.08292
+ENER CROSS>         0.25358      0.00000      0.00000      0.00000
+ENER EXTERN>      135.52402     34.38614      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     55 atoms have been selected out of     55
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          4 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        56 bonds deleted
+ DELTIC:       104 angles deleted
+ DELTIC:       155 dihedrals deleted
+ DELTIC:        10 improper dihedrals deleted
+ DELTIC:         2 crossterm maps deleted
+ DELTIC:         7 donors deleted
+ DELTIC:         4 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    !gen_aa4.inp
+ CHARMM>    !*  Generate, ic build and energy of ALA ALA ALA ALA peptide
+ CHARMM>    !*  and patches ACE and CT3
+ CHARMM>    !* adm jr.
+ CHARMM>    !*
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALA ALA ALA ALA
+ RDTITL> *
+  
+ SEQRDR>    4
+  
+ SEQRDR>    ALA ALA ALA ALA
+
+          RESIDUE SEQUENCE --     4 RESIDUES
+          ALA ALA ALA ALA 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first ACE last CT3 setup warn
+ THE PATCH 'ACE' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CT3' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       52   Number of groups     =       15
+         Number of bonds         =       51   Number of angles     =       90
+         Number of dihedrals     =      116   Number of impropers  =       10
+         Number of cross-terms   =        4   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =        5
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic purge
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    141 exclusions and    116 interactions(1-4)
+ <MAKGRP> found     35 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      722 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       26 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      722 atom  pairs and      257 atom  exclusions.
+ There are        0 group pairs and       35 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      722 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       26 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0     56.95702   4459.72382      6.32058
+ENER INTERN>        3.83368     11.08959      0.23513     15.12128      0.00000
+ENER CROSS>        -4.95542      0.00000      0.00000      0.00000
+ENER EXTERN>        6.42674     25.20602      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     52 atoms have been selected out of     52
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          4 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        51 bonds deleted
+ DELTIC:        90 angles deleted
+ DELTIC:       116 dihedrals deleted
+ DELTIC:        10 improper dihedrals deleted
+ DELTIC:         4 crossterm maps deleted
+ DELTIC:         5 donors deleted
+ DELTIC:         5 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALA ALA ALA ALA
+ RDTITL> *
+  
+ SEQRDR>    4
+  
+ SEQRDR>    ALA ALA ALA ALA
+
+          RESIDUE SEQUENCE --     4 RESIDUES
+          ALA ALA ALA ALA 
+  
+ CHARMM>     
+  
+ CHARMM>    !neutral N- and C-terminal patches
+ CHARMM>    generate test first NNEU last CNEU setup warn
+ THE PATCH 'NNEU' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CNEU' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "HN    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** DONOR NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "HN    " "N     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       43   Number of groups     =       12
+         Number of bonds         =       42   Number of angles     =       73
+         Number of dihedrals     =       98   Number of impropers  =        7
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =        5
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic purge
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    115 exclusions and     98 interactions(1-4)
+ <MAKGRP> found     27 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      545 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       19 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      545 atom  pairs and      213 atom  exclusions.
+ There are        0 group pairs and       27 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      545 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       19 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0     90.77837    -33.82135      8.06568
+ENER INTERN>        3.02262     11.57351      1.04176     11.65495      0.00000
+ENER CROSS>         0.25358      0.00000      0.00000      0.00000
+ENER EXTERN>        4.90274     58.32921      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     43 atoms have been selected out of     43
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          4 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        42 bonds deleted
+ DELTIC:        73 angles deleted
+ DELTIC:        98 dihedrals deleted
+ DELTIC:         7 improper dihedrals deleted
+ DELTIC:         2 crossterm maps deleted
+ DELTIC:         5 donors deleted
+ DELTIC:         5 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALL AMINO ACIDS IN YIPES TOPOLOGY FILE
+ RDTITL> *
+  
+ SEQRDR>    4
+  
+ SEQRDR>    GLY ARG ASN GLY
+
+          RESIDUE SEQUENCE --     4 RESIDUES
+          GLY ARG ASN GLY 
+  
+ CHARMM>     
+  
+ CHARMM>    generate a first glyp last cneu setup warn
+ THE PATCH 'GLYP' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CNEU' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "N     " "HN    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** DONOR NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "HN    " "N     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is A.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       56   Number of groups     =       14
+         Number of bonds         =       55   Number of angles     =       94
+         Number of dihedrals     =      129   Number of impropers  =       12
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        6   Number of HB donors  =       13
+         Number of NB exclusions =        0   Total charge =    2.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angles dihedrals
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:    94 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   129 dihedrals are removed before regeneration for selected atoms.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       56   Number of groups     =       14
+         Number of bonds         =       55   Number of angles     =       94
+         Number of dihedrals     =      129   Number of impropers  =       12
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        6   Number of HB donors  =       13
+         Number of NB exclusions =        0   Total charge =    2.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    149 exclusions and    129 interactions(1-4)
+ <MAKGRP> found     33 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      955 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       31 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    mini abnr nstep 100 nprint 10
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      955 atom  pairs and      278 atom  exclusions.
+ There are        0 group pairs and       33 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      955 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       31 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+
+
+ ABNER> An energy minimization has been requested.
+
+ EIGRNG =    0.0005000   MINDIM =            5
+ NPRINT =           10   NSTEP  =          100
+ PSTRCT =    0.0000000   SDSTP  =    0.0200000
+ STPLIM =    1.0000000   STRICT =    0.1000000
+ TOLFUN =    0.0000000   TOLGRD =    0.0000000
+ TOLITR =          100   TOLSTP =    0.0000000
+ FMEM   =    0.0000000
+MINI MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+MINI INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+MINI CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+MINI EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>        0    -60.92182    151.70019     58.31567      0.00000
+MINI INTERN>        3.45626      6.63383      2.53788      8.64092      0.01529
+MINI CROSS>         0.25358      0.00000      0.00000      0.00000
+MINI EXTERN>      113.52887   -195.98845      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       10   -172.73777    111.81595      4.52423      0.04783
+MINI INTERN>        6.28137     16.64022      3.15693      9.27270      1.25286
+MINI CROSS>        -0.55953      0.00000      0.00000      0.00000
+MINI EXTERN>        2.41281   -211.19514      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        20
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      945 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       31 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>       20   -182.73661      9.99884      2.80246      0.02780
+MINI INTERN>        5.39489     12.45144      2.75949      8.52552      0.46718
+MINI CROSS>        -1.31018      0.00000      0.00000      0.00000
+MINI EXTERN>        0.38454   -211.40949      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       30   -188.27111      5.53450      3.43991      0.02692
+MINI INTERN>        5.68541     11.91107      2.92341      8.28728      0.45131
+MINI CROSS>        -2.53510      0.00000      0.00000      0.00000
+MINI EXTERN>       -1.98449   -213.00999      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        40
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      937 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       33 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>       40   -191.24379      2.97268      2.18868      0.01564
+MINI INTERN>        4.85758      9.67505      2.76465      8.06063      0.32654
+MINI CROSS>        -2.86061      0.00000      0.00000      0.00000
+MINI EXTERN>       -2.75667   -211.31096      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       50   -193.63965      2.39585      1.58508      0.01347
+MINI INTERN>        4.45376      7.51122      2.27210      7.99490      0.29616
+MINI CROSS>        -2.80574      0.00000      0.00000      0.00000
+MINI EXTERN>       -3.14966   -210.21238      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        60
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      938 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       35 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>       60   -195.08417      1.44453      1.38077      0.01305
+MINI INTERN>        4.50136      8.12883      2.43649      8.02807      0.36043
+MINI CROSS>        -2.67477      0.00000      0.00000      0.00000
+MINI EXTERN>       -3.37068   -212.49390      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       70   -196.48106      1.39689      1.64757      0.01264
+MINI INTERN>        4.46725      8.84544      2.60141      8.18440      0.39818
+MINI CROSS>        -2.69686      0.00000      0.00000      0.00000
+MINI EXTERN>       -2.99273   -215.28815      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step        80
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      939 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       36 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>       80   -197.23868      0.75762      0.95751      0.00734
+MINI INTERN>        4.32752      7.91552      2.45424      8.19482      0.28585
+MINI CROSS>        -2.89354      0.00000      0.00000      0.00000
+MINI EXTERN>       -2.99309   -214.53000      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+MINI>       90   -197.59514      0.35646      0.48762      0.00427
+MINI INTERN>        4.55841      8.23649      2.59482      8.26541      0.28171
+MINI CROSS>        -2.97389      0.00000      0.00000      0.00000
+MINI EXTERN>       -2.94569   -215.61239      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+ UPDECI: Nonbond update at step       100
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      938 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       35 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+MINI>      100   -198.32110      0.72596      0.39690      0.00413
+MINI INTERN>        4.53235      8.14444      2.50930      8.58623      0.36140
+MINI CROSS>        -3.00817      0.00000      0.00000      0.00000
+MINI EXTERN>       -2.58115   -216.86549      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+
+ ABNER> Minimization exiting with number of steps limit (  100) exceeded.
+
+ABNR MIN: Cycle      ENERgy      Delta-E         GRMS    Step-size
+ABNR INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ABNR CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ABNR EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ABNR>      100   -198.32110      0.72596      0.39690      0.00620
+ABNR INTERN>        4.53235      8.14444      2.50930      8.58623      0.36140
+ABNR CROSS>        -3.00817      0.00000      0.00000      0.00000
+ABNR EXTERN>       -2.58115   -216.86549      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      938 atom  pairs and      278 atom  exclusions.
+ There are        0 group pairs and       33 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      938 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       35 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0   -198.32110      0.72596      0.39690
+ENER INTERN>        4.53235      8.14444      2.50930      8.58623      0.36140
+ENER CROSS>        -3.00817      0.00000      0.00000      0.00000
+ENER EXTERN>       -2.58115   -216.86549      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     56 atoms have been selected out of     56
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          4 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        55 bonds deleted
+ DELTIC:        94 angles deleted
+ DELTIC:       129 dihedrals deleted
+ DELTIC:        12 improper dihedrals deleted
+ DELTIC:         2 crossterm maps deleted
+ DELTIC:        13 donors deleted
+ DELTIC:         6 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    !gen_aa5.inp
+ CHARMM>    !* Generate, ic build and energy of ALA ALA ALA PRO peptide
+ CHARMM>    !* testing patch LINK and cterminal proline
+ CHARMM>    !* adm jr.
+ CHARMM>    !*
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALA ALA
+ RDTITL> *
+  
+ SEQRDR>    2
+  
+ SEQRDR>    ALA ALA
+
+          RESIDUE SEQUENCE --     2 RESIDUES
+          ALA ALA 
+  
+ CHARMM>     
+  
+ CHARMM>    generate a last none setup warn
+ THE PATCH 'NTER' WILL BE USED FOR THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "HN    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** DONOR NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "HN    " "N     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   2 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is A.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        2
+         Number of atoms         =       22   Number of groups     =        6
+         Number of bonds         =       21   Number of angles     =       37
+         Number of dihedrals     =       46   Number of impropers  =        2
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        2   Number of HB donors  =        4
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ! generate second segment to test link patch
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALA PRO
+ RDTITL> *
+  
+ SEQRDR>    2
+  
+ SEQRDR>    ALA PRO
+
+          RESIDUE SEQUENCE --     2 RESIDUES
+          ALA PRO 
+  
+ CHARMM>     
+  
+ CHARMM>    generate b first none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ THE PATCH 'CTER' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   3 ALA   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   3 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 PRO   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 PRO   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   4 PRO   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   4 PRO   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE   4 PRO   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   2 has been generated. Its identifier is B.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =        4
+         Number of atoms         =       47   Number of groups     =       13
+         Number of bonds         =       46   Number of angles     =       83
+         Number of dihedrals     =      113   Number of impropers  =        5
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =        5
+         Number of NB exclusions =        0   Total charge =   -0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    patch link a 2 b 1 setup warn
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:    83 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   113 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =        4
+         Number of atoms         =       47   Number of groups     =       13
+         Number of bonds         =       47   Number of angles     =       87
+         Number of dihedrals     =      123   Number of impropers  =        7
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =        5
+         Number of NB exclusions =        0   Total charge =   -0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angles dihedrals
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:    87 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   123 dihedrals are removed before regeneration for selected atoms.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =        4
+         Number of atoms         =       47   Number of groups     =       13
+         Number of bonds         =       47   Number of angles     =       87
+         Number of dihedrals     =      123   Number of impropers  =        7
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =        5
+         Number of NB exclusions =        0   Total charge =   -0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic purge
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    134 exclusions and    118 interactions(1-4)
+ <MAKGRP> found     31 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      638 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       21 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      638 atom  pairs and      252 atom  exclusions.
+ There are        0 group pairs and       31 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      638 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       21 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0   1429.10550  -1627.42660   1743.60812
+ENER INTERN>        3.45954     11.28351      0.28574     16.82854      0.00000
+ENER EXTERN>     1329.32504     67.92313      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    ic fill
+  
+ CHARMM>    ic print
+
+       INTERNAL COORDINATES
+ TITLE>  *  GENERATE, IC BUILD AND ENERGY OF ALL-TRANS PEPTIDE
+ TITLE>  *  ALL AMINO ACIDS
+ TITLE>  *  TESTING ALL AMINO ACIDS RESIDUES AND PATCHERS CTER AND NTER
+ TITLE>  *  ADM JR.
+ TITLE>  *
+
+     NUMBER OF INTERNAL COORDINATES :         45
+
+   N     I       J       K       L   R(I(J/K)) T(I(JK/KJ)) PHI   T(JKL)   R(KL)
+
+    1   1 HT1   1 N     1 CA    1 C      1.0400  109.50  180.00  114.44   1.5390
+    2   1 HT2   1 CA    1 *N    1 HT1    1.0400  109.50  120.00  109.50   1.0400
+    3   1 HT3   1 CA    1 *N    1 HT2    1.0400  109.50  120.00  109.50   1.0400
+    4   1 N     1 CA    1 C     2 N      1.4592  114.44  180.00  116.84   1.3558
+    5   2 N     1 CA    1 *C    1 O      1.3558  116.84  180.00  122.52   1.2297
+    6   1 CA    1 C     2 N     2 CA     1.5390  116.84  180.00  126.77   1.4613
+    7   1 N     1 C     1 *CA   1 CB     1.4592  114.44  123.23  111.09   1.5461
+    8   1 N     1 C     1 *CA   1 HA     1.4592  114.44 -120.45  106.39   1.0840
+    9   1 C     1 CA    1 CB    1 HB1    1.5390  111.09  177.25  109.60   1.1109
+   10   1 HB1   1 CA    1 *CB   1 HB2    1.1109  109.60  119.13  111.05   1.1119
+   11   1 HB1   1 CA    1 *CB   1 HB3    1.1109  109.60 -119.58  111.61   1.1114
+   12   1 C     2 CA    2 *N    2 HN     1.3558  126.77  180.00  115.42   0.9996
+   13   1 C     2 N     2 CA    2 C      1.3558  126.77  180.00  114.44   1.5390
+   14   2 N     2 C     2 *CA   2 CB     1.4613  114.44  123.23  111.09   1.5461
+   15   2 N     2 C     2 *CA   2 HA     1.4613  114.44 -120.45  106.39   1.0840
+   16   2 C     2 CA    2 CB    2 HB1    1.5390  111.09  177.25  109.60   1.1109
+   17   2 HB1   2 CA    2 *CB   2 HB2    1.1109  109.60  119.13  111.05   1.1119
+   18   2 HB1   2 CA    2 *CB   2 HB3    1.1109  109.60 -119.58  111.61   1.1114
+   19   3 N     3 CA    3 C     4 N      1.4300  107.00  180.00  116.84   1.3558
+   20   4 N     3 CA    3 *C    3 O      1.3558  116.84  180.00  122.52   1.2297
+   21   3 CA    3 C     4 N     4 CA     1.4900  116.84  180.00  126.77   1.4613
+   22   3 N     3 C     3 *CA   3 CB     1.4300  107.00  123.23  111.09   1.5461
+   23   3 N     3 C     3 *CA   3 HA     1.4300  107.00 -120.45  106.39   1.0840
+   24   3 C     3 CA    3 CB    3 HB1    1.4900  111.09  177.25  109.60   1.1109
+   25   3 HB1   3 CA    3 *CB   3 HB2    1.1109  109.60  119.13  111.05   1.1119
+   26   3 HB1   3 CA    3 *CB   3 HB3    1.1109  109.60 -119.58  111.61   1.1114
+   27   3 C     4 CA    4 *N    4 CD     1.3558  126.77  178.51  112.75   1.4624
+   28   3 C     4 N     4 CA    4 C      1.3558  126.77  -76.12  110.86   1.5399
+   29   4 N     4 C     4 *CA   4 CB     1.4613  110.86  113.74  111.74   1.5399
+   30   4 N     4 C     4 *CA   4 HA     1.4613  110.86 -122.40  109.09   1.0837
+   31   4 N     4 CA    4 CB    4 CG     1.4613  102.57   31.61  104.39   1.5322
+   32   4 CA    4 CB    4 CG    4 CD     1.5399  104.39  -34.60  103.27   1.5340
+   33   4 N     4 CA    4 CB    4 HB1    1.4613  102.57  -84.94  109.02   1.1131
+   34   4 N     4 CA    4 CB    4 HB2    1.4613  102.57  153.93  112.74   1.1088
+   35   4 CA    4 CB    4 CG    4 HG1    1.5399  104.39 -156.72  112.95   1.1077
+   36   4 CA    4 CB    4 CG    4 HG2    1.5399  104.39   81.26  109.22   1.1143
+   37   4 CB    4 CG    4 CD    4 HD1    1.5322  103.27  -93.55  110.03   1.1137
+   38   4 CB    4 CG    4 CD    4 HD2    1.5322  103.27  144.52  110.00   1.1144
+   39   4 N     4 CA    4 C     4 OT2    1.4613  110.86  180.00  118.00   1.2600
+   40   4 OT2   4 CA    4 *C    4 OT1    1.2600  118.00  180.00  118.00   1.2600
+   41   2 N     2 CA    2 C     3 N      1.4613  114.44  180.00  116.50   1.3450
+   42   3 N     2 CA    2 *C    2 O      1.3450  116.50  180.00  121.00   1.2300
+   43   2 CA    2 C     3 N     3 CA     1.5390  116.50  180.00  120.00   1.4300
+   44   2 C     3 N     3 CA    3 C      1.3450  120.00  180.00  107.00   1.4900
+   45   2 C     3 CA    3 *N    3 HN     1.3450  120.00  180.00  117.00   0.9970
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     47 atoms have been selected out of     47
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          4 residues deleted.
+
+ Message from MAPIC:          2 segments deleted.
+ DELTIC:        47 bonds deleted
+ DELTIC:        87 angles deleted
+ DELTIC:       123 dihedrals deleted
+ DELTIC:         7 improper dihedrals deleted
+ DELTIC:         5 donors deleted
+ DELTIC:         5 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    !gen_aa7.inp
+ CHARMM>    !*  Generate, ic build and energy of cyclic peptide
+ CHARMM>    !*  testing patches LIG1, LIG2 and LIG3
+ CHARMM>    !*  adm jr.
+ CHARMM>    !*
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALL AMINO ACIDS IN YIPES TOPOLOGY FILE
+ RDTITL> *
+  
+ SEQRDR>    4
+  
+ SEQRDR>    ALA ARG ASN GLY
+
+          RESIDUE SEQUENCE --     4 RESIDUES
+          ALA ARG ASN GLY 
+  
+ CHARMM>     
+  
+ CHARMM>    generate a first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is A.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       55   Number of groups     =       15
+         Number of bonds         =       54   Number of angles     =       92
+         Number of dihedrals     =      127   Number of impropers  =       11
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    patch lig1 a 4 a 1 setup warn
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:    92 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   127 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       55   Number of groups     =       15
+         Number of bonds         =       55   Number of angles     =       96
+         Number of dihedrals     =      137   Number of impropers  =       13
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angles dihedrals
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:    96 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   137 dihedrals are removed before regeneration for selected atoms.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       55   Number of groups     =       15
+         Number of bonds         =       55   Number of angles     =       96
+         Number of dihedrals     =      137   Number of impropers  =       13
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    151 exclusions and    137 interactions(1-4)
+ <MAKGRP> found     40 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      943 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       35 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      943 atom  pairs and      288 atom  exclusions.
+ There are        0 group pairs and       40 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      943 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       35 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0  53053.69142 -51624.58592    978.74813
+ENER INTERN>    52766.98803    324.08296      1.82160     11.32236      0.01529
+ENER CROSS>         0.25358      0.00000      0.00000      0.00000
+ENER EXTERN>      109.58847   -160.38086      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     55 atoms have been selected out of     55
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          4 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        55 bonds deleted
+ DELTIC:        96 angles deleted
+ DELTIC:       137 dihedrals deleted
+ DELTIC:        13 improper dihedrals deleted
+ DELTIC:         2 crossterm maps deleted
+ DELTIC:        11 donors deleted
+ DELTIC:         5 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALL AMINO ACIDS IN YIPES TOPOLOGY FILE
+ RDTITL> *
+  
+ SEQRDR>    4
+  
+ SEQRDR>    GLY ARG ASN ALA
+
+          RESIDUE SEQUENCE --     4 RESIDUES
+          GLY ARG ASN ALA 
+  
+ CHARMM>     
+  
+ CHARMM>    generate a first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   4 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is A.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       55   Number of groups     =       15
+         Number of bonds         =       54   Number of angles     =       92
+         Number of dihedrals     =      127   Number of impropers  =       11
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    patch lig2 a 4 a 1 setup warn
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:    92 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   127 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       55   Number of groups     =       15
+         Number of bonds         =       55   Number of angles     =       96
+         Number of dihedrals     =      137   Number of impropers  =       13
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angles dihedrals
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:    96 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   137 dihedrals are removed before regeneration for selected atoms.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       55   Number of groups     =       15
+         Number of bonds         =       55   Number of angles     =       96
+         Number of dihedrals     =      137   Number of impropers  =       13
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    151 exclusions and    137 interactions(1-4)
+ <MAKGRP> found     40 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      992 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       34 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      992 atom  pairs and      288 atom  exclusions.
+ There are        0 group pairs and       40 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      992 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       34 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0  53831.61050   -777.91909    986.23462
+ENER INTERN>    53538.11238    333.70592      1.82160     14.84616      0.01529
+ENER CROSS>         0.25358      0.00000      0.00000      0.00000
+ENER EXTERN>      114.23882   -171.38325      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    print coor pdb
+  Write CHARMM-pdb format
+
+          COORDINATE FILE MODULE
+ TITLE>  *  GENERATE, IC BUILD AND ENERGY OF ALL-TRANS PEPTIDE
+ TITLE>  *  ALL AMINO ACIDS
+ TITLE>  *  TESTING ALL AMINO ACIDS RESIDUES AND PATCHERS CTER AND NTER
+ TITLE>  *  ADM JR.
+ TITLE>  *
+   55
+    1    1 GLY  N      0.00000   0.00000   0.00000 A    1      0.00000
+    2    1 GLY  HN    -0.45263  -0.88833  -0.00000 A    1      0.00000
+    3    1 GLY  CA     1.43000   0.00000   0.00000 A    1      0.00000
+    4    1 GLY  HA1    1.79168  -0.46058  -0.90911 A    1      0.00000
+    5    1 GLY  HA2    1.79635  -0.46060   0.90758 A    1      0.00000
+    6    1 GLY  C      1.86563   1.42489   0.00000 A    1      0.00000
+    7    1 GLY  O      1.04095   2.33599  -0.00000 A    1      0.00000
+    8    2 ARG  N      3.19053   1.67284   0.00000 A    2      0.00000
+    9    2 ARG  HN     3.82958   0.90719   0.00000 A    2      0.00000
+   10    2 ARG  CA     3.77064   3.00828   0.00000 A    2      0.00000
+   11    2 ARG  HA     3.49222   3.51324  -0.91743 A    2      0.00000
+   12    2 ARG  CB     3.23304   3.84122   1.19827 A    2      0.00000
+   13    2 ARG  HB1    2.12535   3.89696   1.07161 A    2      0.00000
+   14    2 ARG  HB2    3.40523   3.28436   2.14573 A    2      0.00000
+   15    2 ARG  CG     3.77340   5.28662   1.31485 A    2      0.00000
+   16    2 ARG  HG1    4.88472   5.24859   1.33157 A    2      0.00000
+   17    2 ARG  HG2    3.50719   5.84836   0.39006 A    2      0.00000
+   18    2 ARG  CD     3.21292   6.06956   2.51466 A    2      0.00000
+   19    2 ARG  HD1    2.10313   6.12775   2.43308 A    2      0.00000
+   20    2 ARG  HD2    3.47483   5.57942   3.48130 A    2      0.00000
+   21    2 ARG  NE     3.83448   7.43798   2.47853 A    2      0.00000
+   22    2 ARG  HE     4.46842   7.56422   1.70702 A    2      0.00000
+   23    2 ARG  CZ     3.56572   8.38695   3.38578 A    2      0.00000
+   24    2 ARG  NH1    4.17280   9.56470   3.25859 A    2      0.00000
+   25    2 ARG  HH11   4.02138  10.28430   3.92187 A    2      0.00000
+   26    2 ARG  HH12   4.87852   9.62609   2.54951 A    2      0.00000
+   27    2 ARG  NH2    2.70191   8.19301   4.37724 A    2      0.00000
+   28    2 ARG  HH21   2.46260   8.94312   4.97722 A    2      0.00000
+   29    2 ARG  HH22   2.16957   7.35707   4.35085 A    2      0.00000
+   30    2 ARG  C      5.29031   2.91214   0.00000 A    2      0.00000
+   31    2 ARG  O      5.86223   1.82647   0.00000 A    2      0.00000
+   32    3 ASN  N      5.98091   4.07341   0.00000 A    3      0.00000
+   33    3 ASN  HN     5.50536   4.95219  -0.00000 A    3      0.00000
+   34    3 ASN  CA     7.43399   4.17323   0.00000 A    3      0.00000
+   35    3 ASN  HA     7.80638   3.76377   0.93298 A    3      0.00000
+   36    3 ASN  CB     8.04423   3.42760  -1.23031 A    3      0.00000
+   37    3 ASN  HB1    7.75643   2.35607  -1.15590 A    3      0.00000
+   38    3 ASN  HB2    7.61412   3.82311  -2.17301 A    3      0.00000
+   39    3 ASN  CG     9.57320   3.48376  -1.30668 A    3      0.00000
+   40    3 ASN  OD1   10.21209   2.94714  -2.21355 A    3      0.00000
+   41    3 ASN  ND2   10.19587   4.14660  -0.30613 A    3      0.00000
+   42    3 ASN  HD21  11.18980   4.20385  -0.34406 A    3      0.00000
+   43    3 ASN  HD22   9.66149   4.57880   0.41349 A    3      0.00000
+   44    3 ASN  C      7.73271   5.66818   0.00000 A    3      0.00000
+   45    3 ASN  O      6.81455   6.48393  -0.00000 A    3      0.00000
+   46    4 ALA  N      9.02672   6.04119   0.00000 A    4      0.00000
+   47    4 ALA  HN     9.74310   5.34405   0.00000 A    4      0.00000
+   48    4 ALA  CA     9.49491   7.41648  -0.00000 A    4      0.00000
+   49    4 ALA  HA     9.13871   7.91090  -0.89651 A    4      0.00000
+   50    4 ALA  CB     8.86357   8.14849   1.20665 A    4      0.00000
+   51    4 ALA  HB1    7.75695   8.06574   1.15533 A    4      0.00000
+   52    4 ALA  HB2    9.19608   7.69647   2.16656 A    4      0.00000
+   53    4 ALA  HB3    9.12703   9.22819   1.21396 A    4      0.00000
+   54    4 ALA  C     11.02646   7.56773   0.00000 A    4      0.00000
+   55    4 ALA  O     11.55327   8.67920  -0.00000 A    4      0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    dele atom sele all end
+ SELRPN>     55 atoms have been selected out of     55
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          4 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:        55 bonds deleted
+ DELTIC:        96 angles deleted
+ DELTIC:       137 dihedrals deleted
+ DELTIC:        13 improper dihedrals deleted
+ DELTIC:         2 crossterm maps deleted
+ DELTIC:        11 donors deleted
+ DELTIC:         5 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALL AMINO ACIDS IN YIPES TOPOLOGY FILE
+ RDTITL> *
+  
+ SEQRDR>    4
+  
+ SEQRDR>    GLY ARG ASN GLY
+
+          RESIDUE SEQUENCE --     4 RESIDUES
+          GLY ARG ASN GLY 
+  
+ CHARMM>     
+  
+ CHARMM>    generate a first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "N     " "-C    " "CA    " "HN    " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   1 GLY   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** CROSSTERM NOT FOUND FOR RESIDUE   4 GLY   .
+ ATOMS "-C    " "N     " "CA    " "C     "
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is A.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       52   Number of groups     =       14
+         Number of bonds         =       51   Number of angles     =       86
+         Number of dihedrals     =      118   Number of impropers  =       11
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    patch lig3 a 4 a 1 setup warn
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:    86 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   118 dihedrals are removed before regeneration for selected atoms.
+ PATCH: Check angles and dihedrals autogenerated.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       52   Number of groups     =       14
+         Number of bonds         =       52   Number of angles     =       90
+         Number of dihedrals     =      128   Number of impropers  =       13
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angles dihedrals
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:    90 angles are removed before regeneration for selected atoms.
+ AUTOGEN:   128 dihedrals are removed before regeneration for selected atoms.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        4
+         Number of atoms         =       52   Number of groups     =       14
+         Number of bonds         =       52   Number of angles     =       90
+         Number of dihedrals     =      128   Number of impropers  =       13
+         Number of cross-terms   =        2   Number of autogens   =        0
+         Number of HB acceptors  =        5   Number of HB donors  =       11
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    142 exclusions and    128 interactions(1-4)
+ <MAKGRP> found     36 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      872 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       28 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are      872 atom  pairs and      270 atom  exclusions.
+ There are        0 group pairs and       36 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+      872 ATOM PAIRS WERE FOUND FOR ATOM LIST
+       28 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER CROSS:           CMAPs        PMF1D        PMF2D        PRIMO
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0  52822.65452   1008.95599   1004.38712
+ENER INTERN>    52549.35080    319.23269      1.78121      9.83575      0.01529
+ENER CROSS>         0.25358      0.00000      0.00000      0.00000
+ENER EXTERN>      111.26178   -169.07658      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+ VCLOSE: Closing unit    9 with status "KEEP"
+$$$$$$  New timer profile $$$$$
+      NBONDS                          0.00 Other:            0.00
+   List time                       0.01 Other:            0.01
+         Electrostatic & VDW             0.01 Other:            0.00
+      Nonbond force                   0.02 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.00 Other:            0.00
+         Dihedral energy                 0.00 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.01 Other:            0.00
+   Energy time                     0.02 Other:            0.00
+ Total time                      0.17 Other:            0.14
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    NO WARNINGS WERE ISSUED
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.17  SECONDS 
+                         CPU TIME:     0.16  SECONDS 

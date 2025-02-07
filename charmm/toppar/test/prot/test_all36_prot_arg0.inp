@@ -1,0 +1,116 @@
+* test case for neutral arginine residues and patches
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+set 3 999.0 ! cutim
+set 4 999.0 ! cutnb
+set 5 800.0 ! ctonnb
+set 6 900.0 ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+
+read sequ card
+* mgua1
+*
+1
+mgu1
+
+generate test first none last none setup warn
+
+ic para
+ic seed 1 c4 1 n3 1 c
+ic build
+coor print
+
+! create nonbond list
+update inbfrq -1 ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5
+
+energy
+!mini abnr nstep 50 nprint 10
+
+delete atom sele all end
+
+read sequ card
+* mgu1
+*
+1
+mgu2
+
+generate test first none last none setup warn
+
+ic para
+ic seed 1 c4 1 n3 1 c
+ic build
+coor print
+
+! create nonbond list
+update inbfrq -1 ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5
+
+energy
+!mini abnr nstep 50 nprint 10
+
+delete atom sele all end
+
+read sequ card
+* mgu3
+*
+1
+mgu3
+generate test first none last none setup warn
+
+ic para
+ic seed 1 c4 1 n3 1 c
+ic build
+coor print
+
+! create nonbond list
+update inbfrq -1 ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5
+
+energy
+!mini abnr nstep 50 nprint 10
+
+delete atom sele all end
+
+set count 1
+
+label loop
+
+if count eq 1 set patch rn1
+if count eq 2 set patch rn2
+if count eq 1 set patch rn3
+
+read sequ card
+* arginine dipeptide
+*
+1
+arg
+
+generate test first ace last ct3 setup warn
+
+patch @patch test 1 setup warn
+ic para
+ic seed 1 N 1 CA 1 C
+ic build
+coor print
+
+! create nonbond list
+update inbfrq -1 ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5
+
+energy
+!mini abnr nstep 50 nprint 10
+
+delete atom sele all end
+
+calc count = @count + 1
+
+if count le 3 goto loop
+
+stop

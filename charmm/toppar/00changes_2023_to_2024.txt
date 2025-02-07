@@ -1,0 +1,38 @@
+Toppar change log, 2023_7 to 2024_7
+
+All files in the toppar subdirectory that are included in the final
+release (eg. files in toppar_jul20/toppar) will be maintained in the
+Michigan GIT.  The procedure will allow for the files to be maintained
+locally at UMB and then uploaded into the git repository prior to new
+releases of CHARMM. 
+
+http://mackerell.umaryland.edu/pmwiki/pmwiki.php?n=Main.CharmmGitRepositoryAtUMich
+
+see 00git_information.txt for details of exact commands used to upload
+files into the git repository.
+
+1) Protein
+
+1a) New protein cofactore toppar stream file. Alexey Aleksandrov and
+Justin Lemkul. Contains a collection of flavins and folates from the
+Aleksandrov lab along with additional cofactors from the
+Lemkul. Additional cofactors will be added to this toppar file and
+test case.
+
+stream/prot/toppar_all36_prot_cofactors.str
+test/prot/test_all36_prot_cofators.inp
+
+1b) Parameter files associated with NBFIXes for cation-pi and
+salt-bridges from Chipot and coworkers added the charmm_modifications
+subdirectory
+
+2) Drude force field update: 2023 versions of main, carbohydrate,
+lipid and model compound toppar files.
+
+Drude toppar files and test case in drude/drude_toppar_2023.tgz. See
+00readme_2023_release.txt for details of the contents of the release.
+
+3) charmm_modifications: A new subdirectory, charmm_modifications, has
+been added. It contains toppar files and additional information
+associated parameter optimization efforts from different labs. These
+are untested beyond that done by the original authors.

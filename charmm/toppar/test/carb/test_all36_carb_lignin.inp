@@ -1,0 +1,191 @@
+* test of lignin FF parameters
+* requires the carbohydrate FF
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+!read rtf card name top_all36_carb.rtf
+!read para card flex name par_all36_carb.prm
+!stream toppar_all36_carb_lignin.str
+
+
+set nres 8
+
+set residue1 CAT
+set residue2 GUAI
+set residue3 PHP
+set residue4 SYR
+set residue5 FERU
+set residue6 FERUT
+set residue7 PCA
+set residue8 TRCN
+
+set count 1
+label loop_lignin1
+
+set residue @residue@@count
+
+read sequence @residue 1
+generate ligm first none last none setup warn
+autogenerate angle dihedral
+
+!write psf card name output/@residue.psf
+
+ic seed 1 C1 1 C2 1 C3 ! This should be C1, C2, C3 in every monolignol.
+
+ic build
+
+print coor
+energy
+!mini sd nstep 500 nprint 100
+!write coor pdb name output/@residue.pdb
+
+delete atom sele all end
+
+incr count
+
+if @count le @nres goto loop_lignin1
+
+set nres 4
+
+set patch1 dbac
+set patch2 dbal
+set patch3 dbap
+set patch4 dbbl
+
+set count 1
+label loop_lignin2
+
+set patch @patch@@count
+
+read sequence php 1
+generate lig first none last none setup warn
+patch @patch lig 1
+
+!write psf card name output/@patch.psf
+ic seed 1 C1 1 C2 1 C3 ! This should be C1, C2, C3 in every monolignol.
+ic build
+
+print coor
+energy
+!mini sd nstep 500 nprint 100
+!write coor pdb name output/@patch.pdb
+
+delete atom sele all end
+incr count
+if @count le @nres goto loop_lignin2
+
+set nres 14
+
+set patch1 BO4
+set patch2 55
+set patch3 4O5
+set patch4 AO4
+set patch5 B5P
+set patch6 B1
+set patch7 BB
+set patch8 BDO
+set patch9 GOG
+set patch10 AOA
+set patch11 GOA
+!set patch12 AOG
+set patch12 AOG1
+set patch13 DIFERB
+set patch14 DIFERA
+
+set count 1
+label loop_lignin3
+
+set monomer php
+set monomer2 php
+
+set patch @patch@@count
+
+if @patch eq BDO then
+ set monomer cat
+ set monomer2 cat
+endif
+if @patch eq GOG then
+ set monomer pca
+endif
+if @patch eq GOA then
+ set monomer pca
+endif
+if @patch eq DIFERA then
+ set monomer feru
+ set monomer2 feru
+endif
+if @patch eq DIFERB then
+ set monomer feru
+ set monomer2 feru
+endif
+
+read sequ card
+* test patches
+*
+2
+@monomer @monomer2
+
+generate lig first none last none setup warn
+patch @patch lig 1 lig 2 setup
+
+!write psf card name output/@patch.psf
+ic generate
+ic seed 1 C1 1 C2 1 C3 ! This should be C1, C2, C3 in every monolignol.
+ic build
+print ic
+print coor
+energy
+!mini sd nstep 500 nprint 100
+!write coor pdb name output/@patch.pdb
+
+delete atom sele all end
+incr count
+if @count le @nres goto loop_lignin3
+
+set nres 5
+
+set patch1 FARL
+set patch2 BET1
+set patch3 BET2
+set patch4 LIHE
+set patch5 PGYS
+
+set count 1
+label loop_lignin4
+
+set monomer aarb
+set monomer2 php
+
+set patch @patch@@count
+
+if @patch eq FARL then
+ set monomer feru
+ set monomer2 aarb
+endif
+
+read sequ card
+* test patches
+*
+2
+@monomer @monomer2
+
+generate lig first none last none setup warn
+patch @patch lig 1 lig 2 setup
+
+!write psf card name output/@patch.psf
+ic generate
+ic seed 1 C1 1 C2 1 C3 ! This should be C1, C2, C3 in every monolignol.
+ic build
+print ic
+print coor
+energy
+!mini sd nstep 500 nprint 100
+!write coor pdb name output/@patch.pdb
+
+delete atom sele all end
+incr count
+if @count le @nres goto loop_lignin4
+
+stop

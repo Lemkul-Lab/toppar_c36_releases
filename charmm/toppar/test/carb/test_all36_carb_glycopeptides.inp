@@ -1,0 +1,339 @@
+* Creating the O-glycan and N-glycan linkages
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+set pdbdir pdb
+
+ioformat extended
+
+wrnlev 5
+
+!write energies 
+!open write form unit 20 name test_case_glycopeptides.ene
+!write title unit 20
+!* monopeptide section
+!* aa sugar patch energy grms
+!*
+
+!monopeptide section
+
+set count 1
+label loop1
+
+if count eq 1 then
+set amino ser
+set sugar bglc
+set patch sgpb
+endif
+
+if count eq 2 then
+set amino ser
+set sugar aglc
+set patch sgpa
+endif
+
+if count eq 3 then
+set amino thr
+set sugar bglc
+set patch tgpb
+endif
+
+if count eq 4 then
+set amino thr
+set sugar aglc
+set patch tgpa
+endif
+
+if count eq 5 then
+set amino asn 
+set sugar aglcna
+set patch ngla
+endif
+
+if count eq 6 then
+set amino asn
+set sugar bglcna
+set patch nglb
+endif
+
+!generate the residue of interest
+!**********************************************
+
+read sequ card
+* peptide
+*
+2
+@amino
+
+gene pept setup warn first NTER last CTER
+
+read sequ card
+* sugar
+*
+1
+@sugar
+
+gene sug setup first none last none
+
+join pept sug renumber
+
+patch @patch pept 1 pept 2 setup
+autogenerate angles dihedrals
+
+!**********************************************
+
+ic para
+ic seed pept 1 N  pept 1 CA pept 1 C
+ic build
+
+!print coor
+
+set 4 999.0  ! cutnb
+set 5 980.0  ! ctonnb
+set 6 990.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+!Update the lists to calculate the energy
+update inbfrq 1000       ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5
+
+! minimization protocol (for the final we set the steps to 50000)
+!  mini SD   nstep 20 nprint 1000
+
+!  mini SD   nstep 500 nprint 1000
+!  mini abnr nstep 10000 nprint 1000  tolgrd 0.000001
+
+energy
+
+!write title unit 20
+!* @amino @sugar @patch ?ener ?grms
+!*
+
+delete atom sele all end
+
+calc count = @count + 1
+
+if count le 6 goto loop1
+
+!dipeptide section
+!write title unit 20
+!* dipeptide section
+!*
+
+set count 1
+label loop2
+
+if count eq 1 then
+set amino ser
+set sugar bglc
+set patch sgpb
+endif
+
+if count eq 2 then
+set amino ser
+set sugar aglc
+set patch sgpa
+endif
+
+if count eq 3 then
+set amino thr
+set sugar bglc
+set patch tgpb
+endif
+
+if count eq 4 then
+set amino thr
+set sugar aglc
+set patch tgpa
+endif
+
+if count eq 5 then
+set amino asn 
+set sugar aglcna
+set patch ngla
+endif
+
+if count eq 6 then
+set amino asn
+set sugar bglcna
+set patch nglb
+endif
+
+!generate the residue of interest
+!**********************************************
+
+read sequ card
+* peptide
+*
+2
+@amino ala
+
+gene pept setup warn first NTER last CTER
+
+read sequ card
+* sugar
+*
+1
+@sugar
+
+gene sug setup first none last none
+
+join pept sug renumber
+
+patch @patch pept 1 pept 3 setup
+autogenerate angles dihedrals
+
+!**********************************************
+
+ic para
+ic seed pept 1 N  pept 1 CA pept 1 C
+ic build
+
+!print coor
+
+set 4 999.0  ! cutnb
+set 5 980.0  ! ctonnb
+set 6 990.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+!Update the lists to calculate the energy
+update inbfrq 1000       ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5
+
+! minimization protocol (for the final we set the steps to 50000)
+!  mini SD   nstep 20 nprint 1000
+energy
+
+!  mini SD   nstep 500 nprint 1000
+!  mini abnr nstep 10000 nprint 1000  tolgrd 0.000001
+  set grad ?grms
+
+!write title unit 20
+!* @amino @sugar @patch ?ener ?grms
+!*
+
+!open unit 1 write form name @pdbdir/di_pep_@amino_@sugar_@patch.pdb
+!write coor pdb unit 1
+
+delete atom sele all end
+
+calc count = @count + 1
+
+if count le 6 goto loop2
+
+!central peptide section
+!write title unit 20
+!* central peptide section
+!*
+
+set count 1
+label loop3
+
+if count eq 1 then
+set amino ser
+set sugar bglc
+set patch sgpb
+endif
+
+if count eq 2 then
+set amino ser
+set sugar aglc
+set patch sgpa
+endif
+
+if count eq 3 then
+set amino thr
+set sugar bglc
+set patch tgpb
+endif
+
+if count eq 4 then
+set amino thr
+set sugar aglc
+set patch tgpa
+endif
+
+if count eq 5 then
+set amino asn 
+set sugar aglcna
+set patch ngla
+endif
+
+if count eq 6 then
+set amino asn
+set sugar bglcna
+set patch nglb
+endif
+
+!generate the residue of interest
+!**********************************************
+
+read sequ card
+* peptide
+*
+3
+ala @amino ala
+
+gene pept setup warn first NTER last CTER
+
+read sequ card
+* sugar
+*
+1
+@sugar
+
+gene sug setup first none last none
+
+join pept sug renumber
+
+patch @patch pept 2 pept 4 setup
+autogenerate angles dihedrals
+
+!**********************************************
+
+ic para
+ic seed pept 1 N  pept 1 CA pept 1 C
+ic build
+
+!print coor
+
+set 4 999.0  ! cutnb
+set 5 980.0  ! ctonnb
+set 6 990.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+!Update the lists to calculate the energy
+update inbfrq 1000       ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5
+
+! minimization protocol (for the final we set the steps to 50000)
+!  mini SD   nstep 20 nprint 1000
+
+energy
+
+!  mini SD   nstep 500 nprint 1000
+!  mini abnr nstep 10000 nprint 1000  tolgrd 0.000001
+  set grad ?grms
+
+!write title unit 20
+!* @amino @sugar @patch ?ener ?grms
+!*
+
+!open unit 1 write form name @pdbdir/central_pep_@amino_@sugar_@patch.pdb
+!write coor pdb unit 1
+
+delete atom sele all end
+
+calc count = @count + 1
+
+if count le 6 goto loop3
+
+stop

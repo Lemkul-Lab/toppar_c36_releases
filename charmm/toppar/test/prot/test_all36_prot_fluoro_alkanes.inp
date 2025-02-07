@@ -1,0 +1,203 @@
+* generate and minimize flouoralkanes
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+set 3 99.0  ! cutim
+set 4 99.0  ! cutnb
+set 5 97.0  ! ctonnb
+set 6 98.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+
+!loop over all substituted pyridines
+
+set count 1
+
+label loop
+
+if count eq 1 set resn ETHA
+if count eq 2 set resn FETH
+if count eq 3 set resn DFET
+if count eq 4 set resn TFET
+
+read sequence card
+* @resn
+*
+1
+@resn
+
+generate test first none last none setup warn
+
+if count eq 1 goto read_1
+if count eq 2 goto read_2
+if count eq 3 goto read_3
+if count eq 4 goto read_4
+
+label read_1
+read coor card
+* ethane
+*
+    8
+    1    1 ETHA H13   -2.07951   0.02582   0.00000 TEST 1      0.00000
+    2    1 ETHA C1    -1.11223  -0.46702   0.00000 TEST 1      0.00000
+    3    1 ETHA C2     0.00000   0.55753   0.00000 TEST 1      0.00000
+    4    1 ETHA H21    1.21390  -0.08317   0.00000 TEST 1      0.00000
+    5    1 ETHA H22   -0.03944   1.18747   0.87981 TEST 1      0.00000
+    6    1 ETHA H23   -0.03944   1.18747  -0.87981 TEST 1      0.00000
+    7    1 ETHA H11   -1.04666  -1.09763   0.87938 TEST 1      0.00000
+    8    1 ETHA H12   -1.04666  -1.09763  -0.87937 TEST 1      0.00000
+
+goto finish_read
+
+label read_2
+read coor card
+* FLUOROETHANE VACUUM MINIMIZATION, VIBRATIONAL ANALYSIS AND
+* ROTATIONAL SURFACE
+*  DATE:     2/23/94     13: 7:33      CREATED BY USER:
+*
+    8
+    1    1 FETH H13   -2.07951   0.02582   0.00000 TEST 1      0.00000
+    2    1 FETH C1    -1.11223  -0.46702   0.00000 TEST 1      0.00000
+    3    1 FETH C2     0.00000   0.55753   0.00000 TEST 1      0.00000
+    4    1 FETH F21    1.21390  -0.08317   0.00000 TEST 1      0.00000
+    5    1 FETH H22   -0.03944   1.18747   0.87981 TEST 1      0.00000
+    6    1 FETH H23   -0.03944   1.18747  -0.87981 TEST 1      0.00000
+    7    1 FETH H11   -1.04666  -1.09763   0.87938 TEST 1      0.00000
+    8    1 FETH H12   -1.04666  -1.09763  -0.87937 TEST 1      0.00000
+
+goto finish_read
+
+label read_3
+read coor card
+* DIFLUOROETHANE VACUUM MINIMIZATION, VIBRATIONAL ANALYSIS AND
+* ROTATIONAL SURFACE
+*  DATE:     2/28/94     12:16:22      CREATED BY USER:
+*
+    8
+    1    1 DFET H13    1.14157  -1.42851   0.00000 A    1      0.00000
+    2    1 DFET C1     1.31818  -0.35980   0.00000 A    1      0.00000
+    3    1 DFET C2     0.00000   0.36103   0.00000 A    1      0.00000
+    4    1 DFET H21    0.09111   1.43628   0.00000 A    1      0.00000
+    5    1 DFET F22   -0.71756   0.00959   1.08307 A    1      0.00000
+    6    1 DFET F23   -0.71756   0.00959  -1.08307 A    1      0.00000
+    7    1 DFET H11    1.88715  -0.09388   0.88254 A    1      0.00000
+    8    1 DFET H12    1.88715  -0.09388  -0.88254 A    1      0.00000
+
+goto finish_read
+
+label read_4
+read coor card
+* tfeth
+*
+    8
+    1    1 TFET C1    -3.72199   6.28494  -2.88407 TFET    1   0.00000
+    2    1 TFET C2    -5.01527   6.98089  -3.19401 TFET    1   0.00000
+    3    1 TFET H11   -3.06771   6.22483  -3.77810 TFET    1   0.00000
+    4    1 TFET H12   -3.89286   5.24781  -2.52886 TFET    1   0.00000
+    5    1 TFET H13   -3.15338   6.81604  -2.09311 TFET    1   0.00000
+    6    1 TFET F21   -5.81092   7.05765  -2.12003 TFET    1   0.00000
+    7    1 TFET F22   -5.70781   6.34613  -4.14789 TFET    1   0.00000
+    8    1 TFET F23   -4.81785   8.23348  -3.62347 TFET    1   0.00000
+
+label finish_read
+
+mini abnr nstep 20 nprint 10
+mini nraph nstep 20 nprint 10 tolgrd 0.000001
+
+vibran
+diag
+end
+
+!write minimized coordinates if desired
+!open unit 20 write form name pdb/@resn.pdb
+!write coor pdb unit 20
+!* charmm optimized @resn
+!*
+
+delete atom sele all end
+
+calc count = @count + 1
+
+if count le 4 goto loop
+
+! test residues/patch for flouroethane to ethane perturbation
+! skipped in test case as it will only work with PERT
+goto skip_test
+
+read sequence card
+* feth
+*
+1
+feth
+
+generate test first none last none setup warn
+
+read coor card
+* FLUOROETHANE VACUUM MINIMIZATION, VIBRATIONAL ANALYSIS AND
+* ROTATIONAL SURFACE
+*  DATE:     2/23/94     13: 7:33      CREATED BY USER:
+*
+    8
+    1    1 FETH H13   -2.07951   0.02582   0.00000 TEST 1      0.00000
+    2    1 FETH C1    -1.11223  -0.46702   0.00000 TEST 1      0.00000
+    3    1 FETH C2     0.00000   0.55753   0.00000 TEST 1      0.00000
+    4    1 FETH F21    1.21390  -0.08317   0.00000 TEST 1      0.00000
+    5    1 FETH H22   -0.03944   1.18747   0.87981 TEST 1      0.00000
+    6    1 FETH H23   -0.03944   1.18747  -0.87981 TEST 1      0.00000
+    7    1 FETH H11   -1.04666  -1.09763   0.87938 TEST 1      0.00000
+    8    1 FETH H12   -1.04666  -1.09763  -0.87937 TEST 1      0.00000
+
+
+
+!bomb by non integer charge
+bomlev -1
+
+read sequence card
+* patch residue
+*
+1
+fe1a
+
+generate tes2 first none last none setup warn
+
+patch fe1b test 1 tes2 1 setup warn
+
+coor print
+print psf
+
+!need to invoke block etc. to calculate energy
+
+!mini abnr nstep 20 nprint 10
+!mini nraph nstep 20 nprint 10 tolgrd 0.000001
+
+delete atom sele all end
+label skip_test
+
+! test trifluoroethanol
+
+read sequence card
+* tfe
+*
+1
+tfe
+
+generate test first none last none setup warn
+
+ic para
+ic seed 1 HO1 1 O1 1 C1
+ic build
+
+coor print
+!print psf
+
+energy
+
+delete atom sele all end
+
+
+stop
+

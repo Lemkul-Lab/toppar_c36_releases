@@ -1,0 +1,1269 @@
+* carbohydrtate model compound test case 
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+wrnlev 5
+
+!Note: MEOH and other residues in CGenFF and the protein model compound 
+!have differnt IC tables that does not successfully build the coordinates
+!leading to errors when running this test case.
+
+set resi meoh
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+
+ic print
+!ic param
+!ic print
+ic seed @resi 1 HG1 @resi 1 OG @resi 1 CB
+ic build
+!read coor cards
+!* METHANOL
+!*
+!    6
+!    1    1 MEOH CB     1.91071   9.22766   8.19894 A    1      0.00000
+!    2    1 MEOH HB1    1.43322   8.46213   7.54739 A    1      0.00000
+!    3    1 MEOH HB2    2.98571   8.96537   8.31778 A    1      0.00000
+!    4    1 MEOH HB3    1.84515  10.21364   7.68697 A    1      0.00000
+!    5    1 MEOH OG     1.26386   9.27856   9.46922 A    1      0.00000
+!    6    1 MEOH HG1    1.70225   9.94925  10.00376 A    1      0.00000
+nbond cutnb 990.0  ctofnb 980.0  ctonnb 970.0
+energy
+delete atom select all end
+
+set resi etoh
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 O1 @resi 1 C1 @resi 1 C2
+ic build
+energy
+delete atom select all end
+
+set resi pro2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 C1 @resi 1 C2 @resi 1 C3
+ic build
+energy
+delete atom select all end
+
+set resi egly
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 O1 @resi 1 C1 @resi 1 C2
+ic build
+energy
+delete atom select all end
+
+set resi cyhx
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 C6 @resi 1 C1 @resi 1 C2
+ic build
+energy
+delete atom select all end
+
+set resi cyhx2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 C5O @resi 1 C1 @resi 1 C2
+ic build
+energy
+delete atom select all end
+
+set resi aco
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 C2 @resi 1 C1 @resi 1 C3
+ic build
+energy
+delete atom select all end
+
+!set resi dha
+!read sequ card unit 5
+!* @resi
+!*
+!1
+!@resi
+!gene @resi first none last none setup
+!ic seed @resi 1 C2 @resi 1 C1 @resi 1 C3
+!ic build
+!energy
+!delete atom select all end
+
+set resi aald
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 O @resi 1 C @resi 1 CB
+ic build
+energy
+delete atom select all end
+
+set resi thp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 C5 @resi 1 O1 @resi 1 C1
+ic build
+energy
+delete atom select all end
+
+set resi nma
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 O @resi 1 C @resi 1 N
+ic build
+energy
+delete atom select all end
+
+set resi ipaa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 O @resi 1 C @resi 1 N
+ic build
+energy
+delete atom select all end
+
+set resi proa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 H1 @resi 1 C1 @resi 1 C2
+ic build
+energy
+delete atom select all end
+
+set resi amop
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 C2 @resi 1 C1 @resi 1 OM
+ic build
+energy
+delete atom select all end
+
+set resi amol
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 C2 @resi 1 C1 @resi 1 OM
+ic build
+energy
+delete atom select all end
+
+set resi thf
+read sequ card unit 5
+* @resi 
+*
+1
+@resi 
+gene @resi  first none last none setup
+ic seed @resi  1 O1 @resi  1 C1 @resi  1 C2
+ic build
+energy
+delete atom select all end
+
+set resi tf2m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 O1 @resi 1 C1 @resi 1 C2
+ic build
+energy
+delete atom select all end
+
+set resi thp2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 O5 @resi 1 C1 @resi 1 C2
+ic build
+energy
+delete atom select all end
+
+set name omebm
+set resi thp2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @name first none last none setup
+patch @name @name 1 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set name omeam
+set resi thp2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @name first none last none setup
+patch @name @name 1 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 11aamo
+set name @{pres}
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 11abmo
+set name @{pres}
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 11bamo
+set name @{pres}
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 11bbmo
+set name @{pres}
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+!og read param card append
+!og * bar
+!og *
+!og !ANGLES
+!og !  OC301   CC311C  CC321C   45.00   111.50  ! par34 OC30A CC32A  CC32A
+!og !  OC301   CC311C  CC321D   45.00   111.50  ! par34 OC30A CC32A  CC32A
+!og !DIHE
+!og !  OC3C61   CC311D   OC301    CC311C  0.0  3  180. ! phi
+!og !  CC321C   CC311D   OC301    CC311C  0.0  3  180. ! phi
+!og !  CC311D   OC301    CC311C   CC321C  0.0  3  180. ! psi
+!og !  CC311D   OC301    CC311C   CC321C  0.0  3  180. ! psi
+!og !END
+!og BOND
+!og CC311C  OC301    360.00  1.415   ! par34 CC32A  OC30A
+!og 
+!og ANGLE
+!og CC311D  OC301   CC311C   50.00   111.50  ! og QM 2D theta vs phi/psi
+!og 
+!og OC301   CC311C  CC321C   45.00   109.00  ! og 1-OMeTHP qm
+!og OC301   CC311C  CC321D   45.00   109.00  ! og 1-OMeTHP qm
+!og HCA1    CC311C  OC301    60.00   109.50  ! par35 HCA2 CC32A OC30A
+!og 
+!og DIHEDRAL
+!og 
+!og CC311C OC301 CC311D OC3C61    0.00  1    0.0
+!og CC311C OC301 CC311D CC321C    0.00  1    0.0
+!og ! CC311C OC301 CC311D HCA1      0.00  1    0.0
+!og 
+!og CC311D OC301 CC311C CC321C    0.00  1    0.0
+!og CC311D OC301 CC311C CC321D    0.00  1    0.0
+!og ! CC311D OC301 CC311C HCA1      0.00  1    0.0
+!og END
+
+
+set pres 12aam
+set name @{pres}
+read sequ card unit 5
+* thp2 cyhx2
+*
+2
+thp2 cyhx2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12abm
+set name @{pres}
+read sequ card unit 5
+* thp2 cyhx2
+*
+2
+thp2 cyhx2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12bam
+set name @{pres}
+read sequ card unit 5
+* thp2 cyhx2
+*
+2
+thp2 cyhx2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12bbm
+set name @{pres}
+read sequ card unit 5
+* thp2 cyhx2
+*
+2
+thp2 cyhx2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12aam
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12abm
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12bam
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12bbm
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+!stream to_fit_og.str
+set name coca
+set resi thp2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @name first none last none setup
+patch @name @name 1 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set name cocb
+set resi thp2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @name first none last none setup
+patch @name @name 1 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+!goto sulfates
+goto oet-thp
+
+!stop
+set pres 13aam
+set name @{pres}
+read sequ card unit 5
+* thp2 cyhx2
+*
+2
+thp2 cyhx2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 14aam
+set name @{pres}
+read sequ card unit 5
+* thp2 cyhx2
+*
+2
+thp2 cyhx2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 14abm
+set name @{pres}
+read sequ card unit 5
+* thp2 cyhx2
+*
+2
+thp2 cyhx2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+read param card append
+* bar
+*
+DIHE
+  CC311D   OC301    CC311C   CC321D  0.0  3  180. ! psi
+END
+
+set pres 12aam
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12abm
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12bam
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 12bbm
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 13aam
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 14aam
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+set pres 14abm
+set name @{pres}o
+read sequ card unit 5
+* thp2 thp2
+*
+2
+thp2 thp2
+gene  @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+energy
+delete atom select all end
+
+
+label sulfates
+!*******************
+!    Sulfates
+!*******************
+
+set name chsha
+read sequ card unit 5
+* cyhx2
+*
+1
+cyhx2
+gene cyhx2 first none last none setup
+patch chsha cyhx2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed cyhx2 1 c5o cyhx2 1 c1 cyhx2 1 c2
+ic build
+delete atom select all end
+
+set name chshb
+read sequ card unit 5
+* cyhx2
+*
+1
+cyhx2
+gene cyhx2 first none last none setup
+patch chshb cyhx2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed cyhx2 1 c5o cyhx2 1 c1 cyhx2 1 c2
+ic build
+delete atom select all end
+
+set name sh_a
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch sh_a thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name sh_b
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch sh_b thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name shom
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch shom thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+!*******************
+!    Phosphates
+!*******************
+
+set name dph_a
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch dph_a thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name dph_b
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch dph_b thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name ph_a
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch ph_a thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name ph_b
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch ph_b thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name chpha
+read sequ card unit 5
+* cyhx2
+*
+1
+cyhx2
+gene cyhx2 first none last none setup
+patch chpha cyhx2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed cyhx2 1 c5o cyhx2 1 c1 cyhx2 1 c2
+ic build
+delete atom select all end
+
+set name chphb
+read sequ card unit 5
+* cyhx2
+*
+1
+cyhx2
+gene cyhx2 first none last none setup
+patch chphb cyhx2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed cyhx2 1 c5o cyhx2 1 c1 cyhx2 1 c2
+ic build
+delete atom select all end
+
+set name chdpa
+read sequ card unit 5
+* cyhx2
+*
+1
+cyhx2
+gene cyhx2 first none last none setup
+patch chdpa cyhx2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed cyhx2 1 c5o cyhx2 1 c1 cyhx2 1 c2
+ic build
+delete atom select all end
+
+set name chdpb
+read sequ card unit 5
+* cyhx2
+*
+1
+cyhx2
+gene cyhx2 first none last none setup
+patch chdpb cyhx2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed cyhx2 1 c5o cyhx2 1 c1 cyhx2 1 c2
+ic build
+delete atom select all end
+
+set name p2haa
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch p2haa thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name p2hab
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch p2hab thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name p2hbb
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch p2hbb thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name ph2a
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch ph2a thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+set name ph2b
+read sequ card unit 5
+* thp2
+*
+1
+thp2
+gene thp2 first none last none setup
+patch ph2b thp2 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed thp2 1 o5 thp2 1 c1 thp2 1 c2
+ic build
+delete atom select all end
+
+
+label oet-thp
+
+set name poea
+read sequ card
+* name
+*
+1
+thp2
+gene @name first none last none setup
+patch @name @name 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+delete atom select all end
+
+
+set name poeb
+read sequ card
+* name 
+*
+1
+thp2
+gene @name first none last none setup
+patch @name @name 1 setup warn
+autogenerate angle dihe
+ic para
+ic seed @name 1 o5 @name 1 c1 @name 1 c2
+ic build
+delete atom select all end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!pyranose-furanose disac models; pram!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+set name thf2
+read sequ card
+* @name
+*
+1
+thf2
+gene @name first none last none setup
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c2 @name 1 c3
+ic build
+energy
+delete atom select all end
+
+set pres pfaa
+set name mc1aa
+read sequ card
+* @name
+*
+2
+thp2 thf2
+gene @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 2 o5 @name 2 c2 @name 2 c3
+ic build
+energy
+delete atom select all end
+
+set pres pfab
+set name mc1ab
+read sequ card
+* @name
+*
+2
+thp2 thf2
+gene @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 2 o5 @name 2 c2 @name 2 c3
+ic build
+energy
+delete atom select all end
+
+set pres pfba
+set name mc1ba
+read sequ card
+* @name
+*
+2
+thp2 thf2
+gene @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 2 o5 @name 2 c2 @name 2 c3
+ic build
+energy
+delete atom select all end
+
+set pres pfbb
+set name mc1bb
+read sequ card
+* @name
+*
+2
+thp2 thf2
+gene @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 2 o5 @name 2 c2 @name 2 c3
+ic build
+energy
+delete atom select all end
+
+set pres cocfa
+set name mc2a
+read sequ card
+* @name
+*
+1
+thf2
+gene @name first none last none setup
+patch @pres @name 1 setup warn
+autogenerate angle dihe
+ic seed @name 1 c2 @name 1 c3 @name 1 c4
+ic build
+energy
+delete atom select all end
+
+set pres cocfb
+set name mc2b
+read sequ card
+* @name
+*
+1
+THF2
+gene @name first none last none setup
+patch @pres @name 1 setup warn
+autogenerate angle dihe
+ic seed @name 1 c2 @name 1 c3 @name 1 c4
+ic build
+energy
+delete atom select all end
+
+set pres pf3aa
+set name mc3aa
+read sequ card
+* @name
+*
+2
+thp2 thf2
+gene @name first none last none setup
+patch @pres @name 1 @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 2 c2 @name 2 c3 @name 2 c4
+ic build
+energy
+delete atom select all end
+
+set pres pf3ab
+set name mc3ab
+read sequ card
+* @name
+*
+2
+thp2 thf2
+gene @name first none last none setup
+patch @pres @name 1 @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 2 c2 @name 2 c3 @name 2 c4
+ic build
+energy
+delete atom select all end
+
+set pres pf3ba
+set name mc3ba
+read sequ card
+* @name
+*
+2
+thp2 thf2
+gene @name first none last none setup
+patch @pres @name 1 @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 2 c2 @name 2 c3 @name 2 c4
+ic build
+energy
+delete atom select all end
+
+set pres pf3bb
+set name mc3bb
+read sequ card
+* @name
+*
+2
+thp2 thf2
+gene @name first none last none setup
+patch @pres @name 1 @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 2 c2 @name 2 c3 @name 2 c4
+ic build
+energy
+delete atom select all end
+
+set pres chfaa
+set name mc4aa
+read sequ card
+* @name
+*
+2
+cyhx2 thf2
+gene @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 c1 @name 1 c2 @name 1 c3
+ic build
+energy
+delete atom select all end
+
+set pres chfab
+set name mc4ab
+read sequ card
+* @name
+*
+2
+cyhx2 thf2
+gene @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 c1 @name 1 c2 @name 1 c3
+ic build
+energy
+delete atom select all end
+
+set pres chfba
+set name mc4ba
+read sequ card
+* @name
+*
+2
+cyhx2 thf2
+gene @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 c1 @name 1 c2 @name 1 c3
+ic build
+energy
+delete atom select all end
+
+set pres chfbb
+set name mc4bb
+read sequ card
+* @name
+*
+2
+cyhx2 thf2
+gene @name first none last none setup
+patch @pres @name 1  @name 2 setup warn
+autogenerate angle dihe
+ic seed @name 1 c1 @name 1 c2 @name 1 c3
+ic build
+energy
+delete atom select all end
+
+set pres omefa
+set name omea
+read sequ card
+* @name
+*
+1
+thf2
+gene @name first none last none setup
+patch @pres @name 1 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c2 @name 1 c3
+ic build
+energy
+delete atom select all end
+
+set pres omefb
+set name omeb
+read sequ card
+* @name
+*
+1
+thf2
+gene @name first none last none setup
+patch @pres @name 1 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c2 @name 1 c3
+ic build
+energy
+delete atom select all end
+
+set pres om3fa
+set name om3fa
+read sequ card
+* @name
+*
+1
+thf2
+gene @name first none last none setup
+patch @pres @name 1 setup warn
+autogenerate angle dihe
+ic seed @name 1 o5 @name 1 c2 @name 1 c3
+ic build
+energy
+delete atom select all end
+
+
+stop
+
+!og example for getting thermalized ic coordinates for topology file
+!og set name g16lb
+!og read sequ card unit 5
+!og * MONO MONO
+!og *
+!og 2
+!og MONO MONO
+!og gene MONO first none last none setup
+!og patch @name MONO 1 setup warn
+!og autogenerate angle dihe
+!og ic para
+!og ic seed MONO 1 o5 MONO 1 c1 MONO 1 c2
+!og ic build
+!og mini sd nstep 1000 nprint 100
+!og dyna leap nstep 1000 ihtfrq 10 iasors 1 iasfrq 10 ieqfrq 10 nprint 100
+!og ic fill
+!og ic print
+!og delete atom select all end
+
+

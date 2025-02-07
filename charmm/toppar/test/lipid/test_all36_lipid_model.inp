@@ -1,0 +1,1113 @@
+*  Generate, IC build and energy of molecules in the
+*  lipid model compounds
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+read sequence card
+* residue methylacetate
+*
+1
+MAS
+
+generate a setup warn
+
+ic para
+ic seed 1 c1 1 c 1 om
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue ethylacetate
+*
+1
+ETAC
+
+generate a setup warn
+
+ic para
+ic seed 1 c1 1 c 1 om
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue methylpropionate
+*
+1
+MPRO
+
+generate a setup warn
+
+ic para
+ic seed 1 c1 1 c 1 om
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue acetic acid
+*
+1
+ACEH
+
+generate a setup warn
+
+ic para
+ic seed 1 o1 1 c1 1 c2
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue dimethylphosphate
+*
+1
+DMP
+
+generate a setup warn
+
+ic para
+ic seed 1 o3 1 p1 1 o1
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+!mini abnr nstep 20
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue methylphosphate, anionic
+*
+1
+MP_1
+
+generate a setup warn
+
+read coor cards
+*  methyl phosphate, anionic, 6-31G* opt geometry
+*
+   10
+    1    1 MP_1 C1     0.00000   0.00000   0.00000 A       1   0.00000
+    2    1 MP_1 O1     0.00000   0.00000   1.39201 A       1   0.00000
+    3    1 MP_1 P1     1.47167   0.00000   2.12939 A       1   0.00000
+    4    1 MP_1 O2     0.93716   0.14645   3.66197 A       1   0.00000
+    5    1 MP_1 O3     2.18753   1.22189   1.73140 A       1   0.00000
+    6    1 MP_1 O4     2.05496  -1.35264   1.99735 A       1   0.00000
+    7    1 MP_1 H11   -1.03284  -0.01560  -0.33668 A       1   0.00000
+    8    1 MP_1 H12    0.50600  -0.87715  -0.39499 A       1   0.00000
+    9    1 MP_1 H13    0.48538   0.88750  -0.39299 A       1   0.00000
+   10    1 MP_1 H2     0.89665  -0.72946   4.02012 A       1   0.00000
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue methylphosphate, dianionic
+*
+1
+MP_2
+
+generate a setup warn
+
+read coor cards
+* methylphosphate, dianonic, 6-31+G* opt. geometry
+*
+    9
+    1    1 MP_2 C1     0.00000   0.00000   0.00000 A       1   0.00000
+    2    1 MP_2 O1     1.37252   0.00000   0.00000 A       1   0.00000
+    3    1 MP_2 P1     2.15445   1.54327   0.00000 A       1   0.00000
+    4    1 MP_2 O2     3.61040   1.14734   0.00018 A       1   0.00000
+    5    1 MP_2 O3     1.63875   2.18851  -1.27257 A       1   0.00000
+    6    1 MP_2 O4     1.63860   2.18859   1.27247 A       1   0.00000
+    7    1 MP_2 H11   -0.35587  -1.03964   0.00002 A       1   0.00000
+    8    1 MP_2 H12   -0.40996   0.49626   0.88162 A       1   0.00000
+    9    1 MP_2 H13   -0.40997   0.49623  -0.88164 A       1   0.00000
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+!write coor pdb unit 6
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue tetramethylammonium
+*
+1
+NC4
+
+generate a setup warn
+
+ic para
+ic seed 1 c2 1 n 1 c1
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue tetramethylammonium ethyl analog
+*
+1
+NC5
+
+generate a setup warn
+
+ic para
+ic seed 1 c4 1 n 1 c1
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue choline
+*
+1
+CHOL
+
+generate a setup warn
+
+ic para
+ic seed 1 c4 1 n 1 c1
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue acetylcholine
+*
+1
+ACHO
+
+generate a setup warn
+
+ic para
+ic seed 1 c4 1 n 1 c1
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue phosphatidylcholine
+*
+1
+PC
+
+generate a setup warn
+
+ic para
+ic seed 1 c4 1 n 1 c1
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue ethanolamine
+*
+1
+ETAM
+
+generate a setup warn
+
+ic para
+ic seed 1 n 1 c1 1 c5
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue acetic acid
+*
+1
+ACEH
+
+generate b setup warn
+
+read coor cards
+* BUILT PROTON ON O1 OF ACETIC ACID ACEH
+*
+    8
+    1    1 ACEH C2     0.55616   1.12398  -2.50660 A    1      0.00000
+    2    1 ACEH C1    -0.19950   1.46132  -1.38062 A    1      0.00000
+    3    1 ACEH H21    1.44615   1.78615  -2.56795 A    1      0.00000
+    4    1 ACEH H22   -0.05643   1.25794  -3.42366 A    1      0.00000
+    5    1 ACEH H23    0.89652   0.06937  -2.42801 A    1      0.00000
+    6    1 ACEH O2    -0.00050   2.33579  -0.52718 A    1      0.00000
+    7    1 ACEH O1    -1.30231   0.63039  -1.10310 A    1      0.00000
+    8    1 ACEH HO1   -1.71941   0.78067  -0.25161 A    1      0.00000
+ 
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* methylsulfate
+*
+1
+mso4
+
+generate a first none last none setup warn
+
+read coor card
+* methylsulfate, 6-31g* structure
+*
+    9
+    1    1 MSO4 S      0.00000   0.00000   0.00000 TEST 1      0.00000
+    2    1 MSO4 OS1    1.38133   0.00000   0.86921 TEST 1      0.00000
+    3    1 MSO4 OS2   -0.99866   0.00000   1.03425 TEST 1      0.00000
+    4    1 MSO4 OS3    0.07236  -1.21051  -0.78770 TEST 1      0.00000
+    5    1 MSO4 OS4    0.07236   1.21051  -0.78770 TEST 1      0.00000
+    6    1 MSO4 C1     2.57125   0.00000   0.13358 TEST 1      0.00000
+    7    1 MSO4 H11    3.38300   0.00000   0.85245 TEST 1      0.00000
+    8    1 MSO4 H12    2.64252  -0.88381  -0.48916 TEST 1      0.00000
+    9    1 MSO4 H13    2.64252   0.88381  -0.48916 TEST 1      0.00000
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+!write coor pdb unit 6
+
+delete atom sele all end
+
+read sequence card
+* residue glycerolphosphorylcholine
+*
+1
+GPC
+
+generate a setup warn
+
+read coor card
+*  GENERATE, IC BUILD AND ENERGY OF MOLECULES IN THE
+*  LIPID ALL-HYDROGEN TOPOLOGY AND PARAMETER FILES
+*  DATE:     1/19/96     10:54:49      CREATED BY USER: alex
+*
+   36
+    1    1 GPC  N      1.04275   0.28265  -0.05051 A    1      0.00000
+    2    1 GPC  C1     3.10430   1.82467  -0.30270 A    1      0.00000
+    3    1 GPC  C2     0.31118  -0.11856  -0.03760 A    1      0.00000
+    4    1 GPC  C3     0.69833  -0.14423  -0.45345 A    1      0.00000
+    5    1 GPC  C4     0.73502  -0.15815   0.42075 A    1      0.00000
+    6    1 GPC  H11    2.69810   1.69398  -1.04946 A    1      0.00000
+    7    1 GPC  H12    2.84425   1.62837   0.84414 A    1      0.00000
+    8    1 GPC  H21   -0.56995   0.22918  -1.14354 A    1      0.00000
+    9    1 GPC  H22   -0.61568   0.10341   1.21634 A    1      0.00000
+   10    1 GPC  H23   -0.17689  -1.33459  -0.00207 A    1      0.00000
+   11    1 GPC  H31    0.15415  -0.25491  -1.56248 A    1      0.00000
+   12    1 GPC  H32   -0.21329   0.80248   0.87871 A    1      0.00000
+   13    1 GPC  H33   -0.18545  -1.16852   0.83661 A    1      0.00000
+   14    1 GPC  H41    0.01055   1.07340  -0.74814 A    1      0.00000
+   15    1 GPC  H42    0.20456  -0.27734   1.55054 A    1      0.00000
+   16    1 GPC  H43   -0.19514  -1.17927  -0.84259 A    1      0.00000
+   17    1 GPC  C5     0.17002   4.71966  -0.26746 A    1      0.00000
+   18    1 GPC  H51    0.50612   4.43945  -1.21867 A    1      0.00000
+   19    1 GPC  H52    0.40479   4.62885   1.18892 A    1      0.00000
+   20    1 GPC  P     -2.23122  -0.37565  -0.01232 A    1      0.00000
+   21    1 GPC  O3    -1.91886  -0.61537  -1.45321 A    1      0.00000
+   22    1 GPC  O4    -1.92986  -0.63101   1.44491 A    1      0.00000
+   23    1 GPC  O1    -1.94217   3.60534  -0.08032 A    1      0.00000
+   24    1 GPC  O2     1.07818  -2.34227   0.02482 A    1      0.00000
+   25    1 GPC  CG1    2.92847  -0.80029   0.09359 A    1      0.00000
+   26    1 GPC  HG11   3.02035  -0.37849  -1.11157 A    1      0.00000
+   27    1 GPC  HG12   3.04955  -0.24983   1.09767 A    1      0.00000
+   28    1 GPC  CG2    1.17524   2.56930   0.37459 A    1      0.00000
+   29    1 GPC  HG21   1.96060   2.85186   1.23598 A    1      0.00000
+   30    1 GPC  OG2    1.07878   2.40811  -0.63861 A    1      0.00000
+   31    1 GPC  HO2    0.29588   2.02612  -0.82621 A    1      0.00000
+   32    1 GPC  CG3   -0.09870   2.47034   0.52225 A    1      0.00000
+   33    1 GPC  HG31  -0.47239   2.71347  -1.17516 A    1      0.00000
+   34    1 GPC  HG32  -0.20203   2.50521   1.20507 A    1      0.00000
+   35    1 GPC  OG3   -1.11831   1.76549   0.03154 A    1      0.00000
+   36    1 GPC  HO3   -1.18846   0.89067   0.00960 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+! expected energy
+!ABNR>       50  12779.60105    745.78588    193.45266      0.50689
+!ABNR INTERN>     8060.58885    852.75321   1632.65455     19.34275  0.00000
+!ABNR EXTERN>     2189.19217     25.06951      0.00000      0.00000  0.00000
+
+energy
+
+delete atom sele all end
+
+read sequence cards
+* cmpd butane
+*
+1
+buta
+
+generate a setup 
+
+read coor cards
+*BUTANE
+*
+   14
+    1    1 BUTA H11   -2.73795  -0.64117  -0.00446 A    1      0.00000
+    2    1 BUTA H12   -2.07297   0.76295  -0.89997 A    1      0.00000
+    3    1 BUTA H13   -2.07586   0.76284   0.89338 A    1      0.00000
+    4    1 BUTA C1    -1.95708   0.13485  -0.00315 A    1      0.00000
+    5    1 BUTA H21   -0.46495  -1.16286   0.89333 A    1      0.00000
+    6    1 BUTA H22   -0.46207  -1.16274  -0.89498 A    1      0.00000
+    7    1 BUTA C2    -0.56396  -0.52339  -0.00094 A    1      0.00000
+    8    1 BUTA H31    0.46207   1.16274   0.89498 A    1      0.00000
+    9    1 BUTA H32    0.46495   1.16286  -0.89333 A    1      0.00000
+   10    1 BUTA C3     0.56396   0.52339   0.00094 A    1      0.00000
+   11    1 BUTA H41    2.73795   0.64117   0.00446 A    1      0.00000
+   12    1 BUTA H42    2.07586  -0.76284  -0.89338 A    1      0.00000
+   13    1 BUTA H43    2.07297  -0.76295   0.89997 A    1      0.00000
+   14    1 BUTA C4     1.95708  -0.13485   0.00315 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 99.0
+
+!mini abnr nstep 50 nprint 10
+!mini nrap nstep 20 tolgrd 0.00001
+energy
+
+delete atom sele all end
+
+! ethene
+read sequence card
+* ethane
+*
+1
+ethe
+
+generate A first none last none setup warn
+
+bomlev -2
+ic para
+ic seed 1 h11 1 c1 1 c2
+ic build
+bomlev 0
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+!mini abnr nstep 20
+!mini nraph nstep 20 tolgrd 0.00001
+energy
+! expected values
+! ----------       ---------    ---------    ---------    ---------    ---------
+!ENER>        0     21.22388      0.00000      0.00000
+!ENER INTERN>        0.04374      0.08646      0.00000      0.00000      0.00000
+!ENER EXTERN>       -0.07651     21.17019      0.00000                   0.00000
+! ----------       ---------    ---------    ---------    ---------    ---------
+
+ic fill
+ic print
+! expected values
+!    1   1 H11   1 C1    1 C2    1 H21    1.1036  121.37  180.00  121.37   1.1036
+!    2   1 H12   1 C2    1 *C1   1 H11    1.1036  121.37  180.00  121.37   1.1036
+!    3   1 H22   1 C1    1 *C2   1 H21    1.1036  121.37 -180.00  121.37   1.1036
+!    4   1 C1    1 C2    1 H21   1 H22    1.3370  121.37 -180.00   31.37   1.8845
+
+vibran
+diag
+! expected values
+!   1   -0.000036   2   -0.000023   3   -0.000014   4    0.000014   5    0.000028
+!   6    0.000035   7  871.857695   8  987.719216   9 1010.815192  10 1085.454464
+!  11 1165.402124  12 1349.381769  13 1424.275755  14 1611.466931  15 2986.738818
+!  16 3013.946079  17 3099.722069  18 3115.455205
+end
+
+delete atom sele segid A end
+
+! propene
+
+read sequence card
+* propene
+*
+1
+prpe
+
+generate A first none last none setup warn
+
+ic para
+ic seed 1 h11 1 c1 1 c2
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+!mini abnr nstep 20
+!mini nraph nstep 20 tolgrd 0.00001
+energy
+! expected values
+! ----------       ---------    ---------    ---------    ---------    ---------
+!ENER>        0     -1.09328      0.00000      0.00000
+!ENER INTERN>        0.00722      0.06716      0.00123      0.00004      0.00000
+!ENER EXTERN>        0.11595     -1.28487      0.00000                   0.00000
+! ----------       ---------    ---------    ---------    ---------    ---------
+
+
+ic fill
+ic print
+! expected values
+!    1   1 H11   1 C1    1 C2    1 H21    1.1006  120.43  180.00  118.67   1.1042
+!    2   1 H12   1 C2    1 *C1   1 H11    1.1007  121.17  180.00  120.43   1.1006
+!    3   1 C3    1 C1    1 *C2   1 H21    1.5038  124.25  180.00  118.67   1.1042
+!    4   1 H31   1 C3    1 C2    1 C1     1.1122  112.21    0.00  124.25   1.3422
+!    5   1 H32   1 C3    1 C2    1 C1     1.1114  110.92  120.19  124.25   1.3422
+!    6   1 H33   1 C3    1 C2    1 C1     1.1114  110.92 -120.19  124.25   1.3422
+
+
+vibran
+diag
+! expected values
+!   1   -0.000032   2   -0.000020   3    0.000009   4    0.000017   5    0.000029
+!   6    0.000041   7  192.038572   8  424.120105   9  569.209786  10  863.726212
+!  11  892.635160  12  960.679205  13  991.202773  14 1024.522870  15 1073.728620
+!  16 1183.477645  17 1328.947354  18 1410.834521  19 1414.717002  20 1473.232367
+!  21 1650.205824  22 2854.387581  23 2909.492688  24 2910.632340  25 2995.604958
+!  26 3036.852779  27 3106.186925
+end
+
+delete atom sele segid A end
+
+read sequence card
+* butene
+*
+1
+BTE2
+
+generate A first none last none setup warn
+
+ic para
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+!mini abnr nstep 20
+!mini nraph nstep 20 tolgrd 0.00001
+energy
+! expected values
+! ----------       ---------    ---------    ---------    ---------    ---------
+!VIBR>        1      3.17749      0.00000      0.00000
+!VIBR INTERN>        0.01666      0.11284      0.00267      0.36012      0.00000
+!VIBR EXTERN>        0.28826      2.39694      0.00000                   0.00000
+! ----------       ---------    ---------    ---------    ---------    ---------
+
+
+ic fill
+ic print
+! expected values
+!    1   1 C1    1 C2    1 C3    1 C4     1.5077  123.93 -180.00  123.93   1.5077
+!    2   1 H11   1 C1    1 C2    1 C3     1.1126  112.45    0.00  123.93   1.3413
+!    3   1 H12   1 C1    1 C2    1 C3     1.1117  110.91  120.26  123.93   1.3413
+!    4   1 H13   1 C1    1 C2    1 C3     1.1117  110.91 -120.26  123.93   1.3413
+!    5   1 H21   1 C1    1 *C2   1 C3     1.1021  117.05  180.00  123.93   1.3413
+!    6   1 H31   1 C2    1 *C3   1 C4     1.1021  119.02 -180.00  123.93   1.5077
+!    7   1 H41   1 C4    1 C3    1 C2     1.1126  112.45    0.00  123.93   1.3413
+!    8   1 H42   1 C4    1 C3    1 C2     1.1117  110.91  120.26  123.93   1.3413
+!    9   1 H43   1 C4    1 C3    1 C2     1.1117  110.91 -120.26  123.93   1.3413
+
+vibran
+diag
+! expected values
+!   1   -0.000024   2   -0.000021   3   -0.000019   4    0.000011   5    0.000023
+!   6    0.000036   7  134.305533   8  180.187956   9  238.320687  10  296.432356
+!  11  463.603294  12  771.319511  13  876.882281  14  948.415490  15  975.710343
+!  16  990.061601  17  992.434058  18 1024.671245  19 1070.273240  20 1217.370823
+!  21 1304.560462  22 1407.194591  23 1407.703721  24 1411.294805  25 1412.232254
+!  26 1445.436028  27 1528.858260  28 1715.377306  29 2854.502545  30 2854.990817
+!  31 2909.152685  32 2909.676396  33 2910.533588  34 2910.731989  35 3028.130911
+!  36 3042.944719
+
+end
+
+delete atom sele segid A end
+
+read sequence card
+* butene
+*
+1
+BTE2
+
+generate A first none last none setup warn
+
+ic edit 
+dihe 1 c1  1 c2  1 c3  1 c4    0.0
+dihe 1 h11 1 c1  1 c2  1 c3    0.0
+dihe 1 h12 1 c1  1 c2  1 c3  120.0
+dihe 1 h13 1 c1  1 c2  1 c3 -120.0
+dihe 1 h41 1 c4  1 c3  1 c2    0.0
+dihe 1 h42 1 c4  1 c3  1 c2  120.0
+dihe 1 h43 1 c4  1 c3  1 c2 -120.0
+dihe 1 h31 1 c2  1 *c3 1 c4  180.0
+dihe 1 h21 1 c3  1 *c2 1 c1  180.0
+end
+
+ic para
+
+ic seed 1 c1 1 c2 1 c3
+
+ic build
+ic print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+!mini abnr nstep 20
+!mini nraph nstep 20 tolgrd 0.00001
+
+energy
+! expected values
+! ----------       ---------    ---------    ---------    ---------    ---------
+!ENER>        0      5.14332      0.00000      0.00000
+!ENER INTERN>        0.04382      0.69352      0.00531      0.36030      0.00000
+!ENER EXTERN>        0.49322      3.54714      0.00000                   0.00000
+! ----------       ---------    ---------    ---------    ---------    ---------
+
+ic fill
+ic print
+! expected values
+!    1   1 C1    1 C2    1 C3    1 C4     1.5097  127.06    0.00  127.06   1.5097
+!    2   1 H11   1 C1    1 C2    1 C3     1.1106  113.34    0.00  127.06   1.3459
+!    3   1 H12   1 C1    1 C2    1 C3     1.1116  110.75  120.42  127.06   1.3459
+!    4   1 H13   1 C1    1 C2    1 C3     1.1116  110.75 -120.42  127.06   1.3459
+!    5   1 H21   1 C1    1 *C2   1 C3     1.1021  114.57 -180.00  127.06   1.3459
+!    6   1 H31   1 C4    1 *C3   1 C2     1.1021  114.57  180.00  127.06   1.3459
+!    7   1 H41   1 C4    1 C3    1 C2     1.1106  113.34    0.00  127.06   1.3459
+!    8   1 H42   1 C4    1 C3    1 C2     1.1116  110.75  120.42  127.06   1.3459
+!    9   1 H43   1 C4    1 C3    1 C2     1.1116  110.75 -120.42  127.06   1.3459
+!   10   1 H31   1 C2    1 *C3   1 C4     1.1021  118.37 -180.00  127.06   1.5097
+!   11   1 H21   1 C3    1 *C2   1 C1     1.1021  118.37  180.00  127.06   1.5097
+
+vibran
+diag
+! expected values
+!   1   -0.000031   2   -0.000021   3   -0.000001   4    0.000022   5    0.000032
+!   6    0.000049   7   81.072579   8  104.026766   9  336.057036  10  399.148143
+!  11  587.868967  12  694.672961  13  825.573201  14  937.914278  15  955.835094
+!  16  958.306561  17 1039.449798  18 1040.728481  19 1068.246041  20 1143.893356
+!  21 1392.196139  22 1401.283070  23 1405.764698  24 1414.160499  25 1417.627272
+!  26 1472.548473  27 1592.857123  28 1666.391063  29 2853.824621  30 2859.093631
+!  31 2908.530828  32 2908.647725  33 2909.042525  34 2919.875817  35 3033.773083
+!  36 3034.898134
+
+end
+
+delete atom sele segid A end
+
+read sequence card
+* butene
+*
+1
+BTE1
+
+generate A first none last none setup warn
+
+ic para
+
+ic seed 1 c1 1 c2 1 c3
+
+ic build
+ic print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+!mini abnr nstep 20
+!mini nraph nstep 20 tolgrd 0.00001
+
+energy
+! expected values
+! ----------       ---------    ---------    ---------    ---------    ---------
+!VIBR>        1      6.31586      0.00000      0.00000
+!VIBR INTERN>        0.04751      0.49792      0.02768      1.49585      0.00000
+!VIBR EXTERN>        0.47451      3.77239      0.00000                   0.00000
+! ----------       ---------    ---------    ---------    ---------    ---------
+
+
+ic fill
+ic print
+! expected values
+!    1   1 C1    1 C2    1 C3    1 C4     1.3451  127.70    0.00  115.49   1.5384
+!    2   1 H11   1 C1    1 C2    1 C3     1.1006  121.03  180.00  127.70   1.5074
+!    3   1 H12   1 C1    1 C2    1 C3     1.1003  121.06    0.00  127.70   1.5074
+!    4   1 H21   1 C1    1 *C2   1 C3     1.1033  117.60  180.00  127.70   1.5074
+!    5   1 H31   1 C2    1 *C3   1 C4     1.1135  109.15  121.91  115.49   1.5384
+!    6   1 H32   1 C2    1 *C3   1 C4     1.1135  109.15 -121.91  115.49   1.5384
+!    7   1 H41   1 C4    1 C3    1 C2     1.1110  110.24  180.00  115.49   1.5074
+!    8   1 H42   1 C4    1 C3    1 C2     1.1112  110.69   60.32  115.49   1.5074
+!    9   1 H43   1 C4    1 C3    1 C2     1.1112  110.69  -60.32  115.49   1.5074
+
+vibran
+diag
+! expected values
+!   1   -0.002234   2   -0.001862   3   -0.000040   4   -0.000023   5    0.000039
+!   6    0.003067   7   19.601321   8  272.464942   9  292.184913  10  512.308313
+!  11  555.131075  12  830.643335  13  830.847232  14  881.740656  15 1003.069434
+!  16 1025.729088  17 1032.900760  18 1077.505620  19 1139.632420  20 1195.426782
+!  21 1215.291170  22 1377.547609  23 1416.129458  24 1423.307277  25 1435.071893
+!  26 1437.317677  27 1479.571246  28 1674.344280  29 2852.701084  30 2882.272367
+!  31 2902.807375  32 2958.063907  33 2960.405854  34 2996.167634  35 3035.842085
+!  36 3105.593939
+
+
+end
+
+delete atom sele segid A end
+
+read sequence card
+* butene
+*
+1
+BTE1
+
+generate A first none last none setup warn
+
+ic edit
+dihe 1 c1  1 c2  1 c3  1 c4  120.00
+end
+
+ic para
+
+ic seed 1 c1 1 c2 1 c3
+
+ic build
+ic print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+!mini abnr nstep 20
+!mini nraph nstep 20 tolgrd 0.00001
+
+energy
+! expected values
+! ----------       ---------    ---------    ---------    ---------    ---------
+!ENER>        0      4.92341      0.00000      0.00000
+!ENER INTERN>        0.02073      0.16051      0.01456      1.49638      0.00000
+!ENER EXTERN>        0.22722      3.00401      0.00000                   0.00000
+! ----------       ---------    ---------    ---------    ---------    ------
+
+ic fill
+ic print
+! expected values
+!    1   1 C1    1 C2    1 C3    1 C4     1.3438  125.71  125.79  111.04   1.5348
+!    2   1 H11   1 C1    1 C2    1 C3     1.1007  121.15  179.10  125.71   1.5035
+!    3   1 H12   1 C1    1 C2    1 C3     1.1007  120.46   -1.14  125.71   1.5035
+!    4   1 H21   1 C1    1 *C2   1 C3     1.1032  118.69  178.01  125.71   1.5035
+!    5   1 H31   1 C2    1 *C3   1 C4     1.1137  111.09  121.49  111.04   1.5348
+!    6   1 H32   1 C2    1 *C3   1 C4     1.1132  109.82 -120.37  111.04   1.5348
+!    7   1 H41   1 C4    1 C3    1 C2     1.1112  110.25  179.97  111.04   1.5035
+!    8   1 H42   1 C4    1 C3    1 C2     1.1114  110.98   60.16  111.04   1.5035
+!    9   1 H43   1 C4    1 C3    1 C2     1.1118  110.73  -60.39  111.04   1.5035
+
+vibran
+diag
+! expected values
+!   1    0.000015   2    0.000023   3    0.000028   4    0.000176   5    0.000253
+!   6    0.000544   7   60.387351   8  245.739491   9  300.699979  10  429.236184
+!  11  615.139749  12  818.872641  13  875.156597  14  890.117232  15 1002.825283
+!  16 1034.433514  17 1038.822153  18 1052.702996  19 1147.329265  20 1164.926364
+!  21 1231.607312  22 1356.807785  23 1416.424046  24 1421.424761  25 1421.880335
+!  26 1432.635658  27 1471.945703  28 1687.571871  29 2853.474323  30 2885.446868
+!  31 2903.939700  32 2958.185796  33 2961.142640  34 2995.567755  35 3036.875772
+!  36 3106.183366
+
+
+end
+
+delete atom sele all end
+
+read sequence card
+* tetraethylammonium
+*
+1
+TEA
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+ic param
+ic seed 1 C4 1 N 1 C1
+ic build
+
+coor print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+!mini abnr nstep 20 tolgrd 0.00001
+
+energy
+
+!ic generate
+!ic print
+
+delete atom sele all end
+
+read sequence card
+* 1,4-dipentene
+*
+1
+dipe
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+read coor card
+* dipentene
+*
+   13
+    1    1 DIPE C1     1.08706   0.32344  -0.13299 A    1      0.00000
+    2    1 DIPE H11   -0.00625   0.38932  -0.02402 A    1      0.00000
+    3    1 DIPE H12    1.50817  -0.53100  -0.68435 A    1      0.00000
+    4    1 DIPE C2     1.89544   1.26214   0.39016 A    1      0.00000
+    5    1 DIPE H21    1.43848   2.10621   0.93537 A    1      0.00000
+    6    1 DIPE C3     3.39885   1.28269   0.30651 A    1      0.00000
+    7    1 DIPE H31    3.77412   0.38211  -0.22875 A    1      0.00000
+    8    1 DIPE H32    3.81978   1.21848   1.33465 A    1      0.00000
+    9    1 DIPE C4     3.90159   2.51580  -0.39660 A    1      0.00000
+   10    1 DIPE H41    3.55741   2.64252  -1.43775 A    1      0.00000
+   11    1 DIPE C5     4.71365   3.45006   0.12882 A    1      0.00000
+   12    1 DIPE H51    5.03145   4.32389  -0.46021 A    1      0.00000
+   13    1 DIPE H52    5.07467   3.35673   1.16437 A    1      0.00000
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+!expected values
+! ----------       ---------    ---------    ---------    ---------    ---------
+!ENER>        0      7.73110    108.25611      0.00304
+!ENER INTERN>        0.03198      0.38577      0.00434      5.75437      0.00000
+!ENER EXTERN>        0.55202      1.00262      0.00000      0.00000      0.00000
+! ----------       ---------    ---------    ---------    ---------    ---------
+
+delete atom sele all end
+
+read sequence card
+* 2,5-diheptene
+*
+1
+dihe
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+read coor card
+* diheptene
+*
+   19
+    1    1 DIHE C1     0.96627   0.72884  -0.57960 A    1      0.00000
+    2    1 DIHE H11   -0.02210   1.23643  -0.60647 A    1      0.00000
+    3    1 DIHE H12    1.43245   0.85012  -1.58197 A    1      0.00000
+    4    1 DIHE H13    0.78126  -0.35628  -0.42149 A    1      0.00000
+    5    1 DIHE C2     1.84329   1.29873   0.50616 A    1      0.00000
+    6    1 DIHE H21    1.39376   2.09037   1.12738 A    1      0.00000
+    7    1 DIHE C3     3.10944   0.91591   0.75628 A    1      0.00000
+    8    1 DIHE H31    3.66239   1.41142   1.57028 A    1      0.00000
+    9    1 DIHE C4     3.89065  -0.14433   0.01658 A    1      0.00000
+   10    1 DIHE H41    4.26727  -0.89085   0.75041 A    1      0.00000
+   11    1 DIHE H42    3.23757  -0.72426  -0.67248 A    1      0.00000
+   12    1 DIHE C5     5.02003   0.46584  -0.77952 A    1      0.00000
+   13    1 DIHE H51    4.69985   1.08711  -1.63122 A    1      0.00000
+   14    1 DIHE C6     6.33700   0.32687  -0.53763 A    1      0.00000
+   15    1 DIHE H61    7.05670   0.83140  -1.20260 A    1      0.00000
+   16    1 DIHE C7     6.92828  -0.47418   0.59441 A    1      0.00000
+   17    1 DIHE H71    8.03737  -0.40261   0.60173 A    1      0.00000
+   18    1 DIHE H72    6.56278  -0.11243   1.58048 A    1      0.00000
+   19    1 DIHE H73    6.66274  -1.55073   0.50927 A    1      0.00000
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+!expected values
+! ----------       ---------    ---------    ---------    ---------    ---------
+!ENER>        0      9.51078     -1.77968      0.00314
+!ENER INTERN>        0.10472      0.90304      0.00964      4.10484      0.00000
+!ENER EXTERN>        0.72337      3.66518      0.00000      0.00000      0.00000
+! ----------       ---------    ---------    ---------    ---------    ---------
+
+delete atom sele all end
+
+read sequence card
+* Isopropylacetate; glycerol C2 analog
+*
+1
+IPAC
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+ic param
+ic seed 1 c1 1 c 1 om
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* TPG
+*
+1
+TPG
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* 1,2,3-TRIACETYL-GLYCEROL
+*
+1
+TAG
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+ic param
+ic seed 1 c12 1 c11 1 o11
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* -PHOSPHO-2,3-DIACETYL-GLYCEROL
+*
+1
+PDAG
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+ic param
+ic seed 1 o12 1 p 1 o11
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* 1-methylethyl Ester
+*
+1
+meef
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+ic param
+ic seed 1 c1 1 c2 1 o21
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* Acetate Section of DPPC
+*
+1
+actf
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* Phosphate-Glycerol section of DPPC
+*
+1
+pghg
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+ic param
+ic seed 1 c11 1 o12 1 p
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+delete atom sele all end
+
+read sequence card
+*  Glycerol section of DPPC
+*
+1
+gh2f
+
+GENERATE A FIRST none LAST none SETUP WARN
+
+ic param
+ic seed 1 c1 1 c2 1 o21
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+
+delete atom sele all end
+
+set resi NDEC
+read sequ card unit 5
+* @resi
+*
+1 
+@resi
+gene @resi first none last none setup
+ic para
+ic seed @resi 1 C1 @resi 1 C2 @resi 1 C3
+ic build
+
+energy
+ 
+delete atom select all end
+
+set resi NHEX
+read sequ card unit 5
+* @resi
+*
+1 
+@resi
+gene @resi first none last none setup
+ic para
+ic seed @resi 1 C1 @resi 1 C2 @resi 1 C3
+ic build
+
+energy
+ 
+delete atom select all end
+
+set resi EPEN
+read sequ card unit 5
+* @resi
+*
+1 
+@resi
+gene @resi first none last none setup
+
+ic para
+ic seed @resi 1 C1 @resi 1 C2 @resi 1 C3
+ic build
+
+energy 
+
+delete atom select all end
+
+set resi TETD
+read sequ card unit 5
+* @resi
+*
+1 
+@resi
+gene @resi first none last none setup
+
+ic para
+ic seed @resi 1 C1 @resi 1 C2 @resi 1 C3
+ic build
+
+energy
+ 
+delete atom select all end
+
+stop

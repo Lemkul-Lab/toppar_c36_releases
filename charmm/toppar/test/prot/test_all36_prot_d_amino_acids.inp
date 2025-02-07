@@ -1,0 +1,195 @@
+* Test case for D-amino acid stream file
+* toppar_all36_prot_d_amino_acids.str
+* 
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+read sequence card
+* peptide
+*
+19
+DALA DASP DARG DGLU DGLN DGLY DHSD DLYS DPRO DHSE DPHE DMET DVAL DHSP DTYR DSER DCYS DLYS DTRP 
+
+generate PEPT first ACE last CT3 setup warn
+
+ic param
+ic seed 1 cy 1 n  1 ca
+ic build
+
+coor print
+
+update cdie inbfrq -1 ihbfrq 0 -
+vfswitch cutnb 99.0 ctofnb 90.0 ctonnb 80.0
+energy
+
+delete atom sele all end
+
+read sequence card
+* peptide
+*
+19
+DALA DASP DARG DGLU DGLN DGLY DHSD DLYS DPRO DHSE DPHE DMET DVAL DHSP DTYR DSER DCYS DLYS DTRP 
+
+generate PEPT first NTER last CTER setup warn
+
+ic param
+ic seed 1 n  1 ca 1 c
+ic build
+
+!coor print
+energy
+
+delete atom sele all end
+
+set ter1 ACP
+set ter2 CT3
+
+read sequence card
+* peptide
+*
+3
+DPRO DPRO DSER
+
+generate PEPT first @ter1 last @ter2 setup warn
+
+ic param
+ic seed 1 cy  1 n  1 ca
+ic build
+
+coor print
+energy
+
+delete atom sele all end
+
+set ter1 ACP
+set ter2 CTER
+
+read sequence card
+* peptide
+*
+3
+DPRO DPRO DSER
+
+generate PEPT first @ter1 last @ter2 setup warn
+
+ic param
+ic seed 1 cy  1 n  1 ca
+ic build
+
+coor print
+energy
+
+dele atom sele all end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+set ter1 ACP
+set ter2 PCTE
+
+read sequence card
+* peptide
+*
+3
+DPRO DPRO DSER
+
+generate PEPT first @ter1 last @ter2 setup warn
+
+ic param
+ic seed 1 cy  1 n  1 ca
+ic build
+
+coor print
+energy
+
+dele atom sele all end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+set ter1 PROP
+set ter2 CT3
+
+read sequence card
+* peptide
+*
+3
+DPRO DPRO DSER
+
+generate PEPT first @ter1 last @ter2 setup warn
+
+ic param
+ic seed 1 n   1 ca 1 c 
+ic build
+
+coor print
+energy
+
+dele atom sele all end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+set ter1 PROP
+set ter2 CTER
+
+read sequence card
+* peptide
+*
+3
+DPRO DPRO DSER
+
+generate PEPT first @ter1 last @ter2 setup warn
+
+ic param
+ic seed 1 n   1 ca 1 c
+ic build
+
+coor print
+energy
+
+dele atom sele all end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+set ter1 PROP
+set ter2 PCTE
+
+read sequence card
+* peptide
+*
+3
+DPRO DPRO DSER
+
+generate PEPT first @ter1 last @ter2 setup warn
+
+ic param
+ic seed 1 n   1 ca 1 c
+ic build
+
+coor print
+energy
+
+dele atom sele all end
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+set ter1 ACPD
+set ter2 CT3
+
+read sequence card
+* peptide
+*
+1
+DPRO
+
+generate PEPT first @ter1 last @ter2 setup warn
+
+ic param
+ic seed 1 n   1 ca 1 c
+ic build
+
+coor print
+energy
+
+dele atom sele all end
+
+stop

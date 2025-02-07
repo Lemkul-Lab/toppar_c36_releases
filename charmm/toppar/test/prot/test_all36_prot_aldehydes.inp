@@ -1,0 +1,76 @@
+* generate and minimize aldehydes
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+read sequ card
+* Acetaldehyde
+*
+1
+aald
+
+generate aald first none last none setup warn
+
+ic para
+ic seed 1 o 1 c 1 cb
+ic build
+coor print
+
+energy
+
+delete atom sele all end
+
+read sequ card
+* Benzaldehyde
+*
+1
+bald
+
+generate bald first none last none setup warn
+
+ic para
+ic seed 1 c 1 cg 1 cd1
+ic build
+coor print
+
+energy
+
+delete atom sele all end
+
+read sequ card
+* Chloroacetaldehyde
+*
+1
+cald
+
+generate cald first none last none setup warn
+
+ic para
+ic seed 1 c 1 cb 1 cl
+ic build
+coor print
+
+energy
+
+delete atom sele all end
+
+read sequ card
+* Propionaldehyde
+*
+1
+pald
+
+generate pald first none last none setup warn
+
+ic para
+ic seed 1 c 1 cb 1 cg
+ic build
+coor print
+
+mini abnr nstep 50 nprint 10
+mini nraph nstep 20 nprint 5
+
+delete atom sele all end
+
+stop

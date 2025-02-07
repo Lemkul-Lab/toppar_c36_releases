@@ -1,0 +1,1215 @@
+ Parameter: DIR <- "/RAID/ALEX/PARAM/TOPPAR_JUL24"
+ Parameter: COUNT <- "6"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+           (CHARMM) - Developmental Version 49a2   February 15, 2024            
+                                Revision unknown                                
+       Copyright(c) 1984-2023  President and Fellows of Harvard College
+                              All Rights Reserved
+         Current operating system: Linux-4.9.0-9-amd64(x86_64)@ocracoke         
+                 Created on  7/26/24 at 16:25:54 by user: alex        
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> * GENERATE AND ENERGY OF WATER AND IONS
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    !set a top_all22_prot.inp
+ CHARMM>    !set b par_all22_prot.inp
+ CHARMM>    set 3 99.0  ! cutim
+ Parameter: 3 <- "99.0"
+  
+ CHARMM>    set 4 99.0  ! cutnb
+ Parameter: 4 <- "99.0"
+  
+ CHARMM>    set 5 97.0  ! ctonnb
+ Parameter: 5 <- "97.0"
+  
+ CHARMM>    set 6 98.0  ! ctofnb
+ Parameter: 6 <- "98.0"
+  
+ CHARMM>    set 7 switch
+ Parameter: 7 <- "SWITCH"
+  
+ CHARMM>    set 8 atom
+ Parameter: 8 <- "ATOM"
+  
+ CHARMM>    set 9 vatom
+ Parameter: 9 <- "VATOM"
+  
+ CHARMM>     
+  
+ CHARMM>    !open unit 10 read form name @a
+ CHARMM>    !read rtf card unit 10
+ CHARMM>     
+  
+ CHARMM>    !open unit 10 read form name @b
+ CHARMM>    !read param card flex unit 10
+ CHARMM>     
+  
+ CHARMM>    !set count 1
+ CHARMM>    !label loop
+ CHARMM>     
+  
+ CHARMM>    if count eq 1 then
+ Comparing "6" and "1".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if count eq 2 then
+ Comparing "6" and "2".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if count eq 3 then
+ Comparing "6" and "3".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if count eq 4 then
+ Comparing "6" and "4".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if count eq 5 then
+ Comparing "6" and "5".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if count eq 6 then
+ Comparing "6" and "6".
+ IF test evaluated as true.  Performing command
+  
+ CHARMM>    set residue TIP5  ! tip5p water model
+ Parameter: RESIDUE <- "TIP5"
+  
+ CHARMM>    set fname tip5p
+ Parameter: FNAME <- "TIP5P"
+  
+ CHARMM>    endif
+  
+ CHARMM>     
+  
+ CHARMM>    if count eq 7 then
+ Comparing "6" and "7".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if count eq 8 then
+ Comparing "6" and "8".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if count eq 9 then
+ Comparing "6" and "9".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    set stream @dir/non_charmm/toppar_water_ions_@fname.str
+ Parameter: DIR -> "/RAID/ALEX/PARAM/TOPPAR_JUL24"
+ Parameter: FNAME -> "TIP5P"
+ Parameter: STREAM <- "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/TOPPAR_WATER_IONS_TIP5P.STR"
+  
+ CHARMM>    stream @stream
+ Parameter: STREAM -> "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/TOPPAR_WATER_IONS_TIP5P.STR"
+ VOPEN> Attempting to open::/raid/alex/param/toppar_jul24/non_charmm/toppar_water_ions_tip5p.str::
+ OPNLGU> Unit 99 opened for READONLY access to /raid/alex/param/toppar_jul24/non_charmm/toppar_water_ions_tip5p.str
+
+                    INPUT STREAM SWITCHING TO UNIT    99
+ RDTITL> * TOPLOGY AND PARAMETER INFORMATION FOR WATER AND IONS.
+ RDTITL> *
+ Parameter: IN1 <- "" <empty>
+  
+ CHARMM>     
+  
+ CHARMM>    !Testcase
+ CHARMM>    !test_water_ions_non_charmm.inp
+ CHARMM>     
+  
+ CHARMM>    ! IMPORTANT NOTE: this file contains NBFixes between carboxylates and sodium,
+ CHARMM>    ! which will only apply if the main files containing carboxylate atom types
+ CHARMM>    ! have been read in first!
+ CHARMM>     
+  
+ CHARMM>    ! Toppar stream file for the TIP5P water model and ions.
+ CHARMM>    ! Note that the ions have not been optimized for the non-TIP3P water model.
+ CHARMM>     
+  
+ CHARMM>    !references
+ CHARMM>    !
+ CHARMM>    !TIP5P
+ CHARMM>    !M.W. Mahoney; W.L. Jorgensen, J. Chem Phys., 112: 8910-8922, (2000)
+ CHARMM>    !
+ CHARMM>    !IONS
+ CHARMM>    !
+ CHARMM>    !Ions from Roux and coworkers
+ CHARMM>    !
+ CHARMM>    !Beglov, D. and Roux, B., Finite Representation of an Infinite
+ CHARMM>    !Bulk System: Solvent Boundary Potential for Computer Simulations,
+ CHARMM>    !Journal of Chemical Physics, 1994, 100: 9050-9063
+ CHARMM>    !
+ CHARMM>    !ZINC
+ CHARMM>    !
+ CHARMM>    !Stote, R.H. and Karplus, M. Zinc Binding in Proteins and
+ CHARMM>    !Solution: A Simple but Accurate Nonbonded Representation, PROTEINS:
+ CHARMM>    !Structure, Function, and Genetics 23:12-31 (1995)
+ CHARMM>     
+  
+ CHARMM>    !test "append" to determine if previous toppar files have been read and
+ CHARMM>    !add append to "read rtf card" if true
+ CHARMM>    set nat ?NATC
+ RDCMND: can not substitute energy "?NATC"
+ Parameter: NAT <- "?NATC"
+  
+ CHARMM>    set app
+ Parameter: APP <- "" <empty>
+  
+ CHARMM>    !We're exploiting what is arguably a bug in the parser. On the left hand side,
+ CHARMM>    !the quotes have priority, so NAT is correctly substituted. On the right hand
+ CHARMM>    !side, the ? has priority and NATC" (sic) is not a valid substitution...
+ CHARMM>    if "@NAT" ne "?NATC" if @nat ne 0 set app append
+ Parameter: NAT -> "?NATC"
+ Parameter: NAT -> "?NATC"
+ RDCMND: can not substitute energy "?NATC""
+ Comparing ""?NATC"" and ""?NATC"".
+ IF test evaluated as false.  Skipping command
+  
+ CHARMM>     
+  
+ CHARMM>    read rtf card @app
+ Parameter: APP -> "" <empty>
+ MAINIO> Residue topology file being read from unit  99.
+ RDTITL> * TOPOLOGY FOR WATER AND IONS
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    read para card flex @app
+ Parameter: APP -> "" <empty>
+
+          PARAMETER FILE BEING READ FROM UNIT 99
+ RDTITL> * PARAMETERS FOR WATER AND IONS
+ RDTITL> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>     
+  
+ CHARMM>    ! The following section contains NBFixes for sodium interacting with
+ CHARMM>    ! carboxylate oxygens of various CHARMM force fields. It will generate
+ CHARMM>    ! level -1 warnings whenever any of these force fields have not been
+ CHARMM>    ! read prior to the current stream file. Since we don't want to force
+ CHARMM>    ! the user to always read all the force fields, we're suppressing the
+ CHARMM>    ! warnings. The only side effect is that you will have "most severe
+ CHARMM>    ! warning was at level 0" at the end of your output. Also note that
+ CHARMM>    ! the user is responsible for reading the current file last if they
+ CHARMM>    ! want the NBFixes to apply. A more elegant solution would require new
+ CHARMM>    ! features to be added to CHARMM.
+ CHARMM>    ! parallel fix, to avoid duplicated messages in the log
+ CHARMM>    set para
+ Parameter: PARA <- "" <empty>
+  
+ CHARMM>    if ?NUMNODE gt 1 set para node 0
+ RDCMND substituted energy or value "?NUMNODE" to "1"
+ Comparing "1" and "1".
+ IF test evaluated as false.  Skipping command
+  
+ CHARMM>     
+  
+ CHARMM>    set wrn ?WRNLEV
+ RDCMND substituted energy or value "?WRNLEV" to "5"
+ Parameter: WRN <- "5"
+  
+ CHARMM>    ! Some versions of CHARMM don't seem to initialize wrnlev...
+ CHARMM>    if "@WRN" eq "?WRNLEV" set wrn 5
+ Parameter: WRN -> "5"
+ RDCMND: can not substitute energy "?WRNLEV""
+ Comparing ""5"" and ""?WRNLEV"".
+ IF test evaluated as false.  Skipping command
+  
+ CHARMM>    set bom ?bomlev
+ RDCMND substituted energy or value "?BOMLEV" to "0"
+ Parameter: BOM <- "0"
+  
+ CHARMM>    WRNLEV -1 @PARA
+ Parameter: PARA -> "" <empty>
+  
+ CHARMM>    BOMLEV -1 @PARA
+ Parameter: PARA -> "" <empty>
+  
+ CHARMM>    read para card flex append
+
+          PARAMETER FILE BEING READ FROM UNIT 99
+ RDTITL> * NBFIX BETWEEN CARBOXYLATE AND SODIUM
+ RDTITL> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>    BOMLEV @bom @PARA
+ Parameter: BOM -> "0"
+ Parameter: PARA -> "" <empty>
+  
+ CHARMM>    WRNLEV @wrn @PARA
+ Parameter: WRN -> "5"
+ Parameter: PARA -> "" <empty>
+  
+ CHARMM>     
+  
+ CHARMM>    return
+ VCLOSE: Closing unit   99 with status "KEEP"
+
+                    RETURNING TO INPUT STREAM     5
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * RESI TIP3
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    @residue
+ Parameter: RESIDUE -> "TIP5"
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          TIP5
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first none last none noangle nodihedral
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        5   Number of groups     =        1
+         Number of bonds         =        5   Number of angles     =        1
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        1   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    !generate test first none last none setup warn noangle nodihedral
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    if residue .eq. TP3B then
+ Comparing "TIP5" and "TP3B".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if residue .eq. TP3F then
+ Comparing "TIP5" and "TP3F".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if residue .eq. TIP4 then
+ Comparing "TIP5" and "TIP4".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>    if residue .eq. TP4E then
+ Comparing "TIP5" and "TP4E".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if residue .eq. TP45 then
+ Comparing "TIP5" and "TP45".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if residue .eq. TIP5 then
+ Comparing "TIP5" and "TIP5".
+ IF test evaluated as true.  Performing command
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * TEST
+ RDTITL> *
+ ** WARNING ** After reading, there are no coordinates for selected atom:     4     1 TIP5 LP1 
+ ** WARNING ** After reading, there are no coordinates for selected atom:     5     1 TIP5 LP2 
+
+ ** A total of     2 selected atoms have no coordinates
+ *** LEVEL  2 WARNING *** BOMLEV IS    0
+  
+ CHARMM>     
+  
+ CHARMM>    !generate LPs
+ CHARMM>    coor shake
+ SELECTED COORDINATES CONSTRAINED IN THE MAIN SET.
+
+  
+ CHARMM>    endif
+  
+ CHARMM>     
+  
+ CHARMM>    if residue .eq. TP5E then
+ Comparing "TIP5" and "TP5E".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if residue .eq. SPC then
+ Comparing "TIP5" and "SPC".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    if residue .eq. SPCE then
+ Comparing "TIP5" and "SPCE".
+ IF test evaluated as false.  Skip to ELSE or ENDIF
+  
+ CHARMM>     
+  
+ CHARMM>    coor print
+
+          COORDINATE FILE MODULE
+ TITLE>  * GENERATE AND ENERGY OF WATER AND IONS
+ TITLE>  *
+    5
+    1    1 TIP5 OH2   -5.76008   3.27789  -3.46973 TEST 1      0.00000
+    2    1 TIP5 H1    -5.57742   3.20183  -2.53321 TEST 1      0.00000
+    3    1 TIP5 H2    -5.78382   4.22062  -3.63382 TEST 1      0.00000
+    4    1 TIP5 LP1   -5.25402   2.97398  -3.84595 TEST 1      0.00000
+    5    1 TIP5 LP2   -6.37577   2.98395  -3.62635 TEST 1      0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    energy inbfrq 1000 -
+ CHARMM>    @7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+ Parameter: 7 -> "SWITCH"
+ Parameter: 8 -> "ATOM"
+ Parameter: 9 -> "VATOM"
+ Parameter: 4 -> "99.0"
+ Parameter: 5 -> "97.0"
+ Parameter: 6 -> "98.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 99.000 CTEXNB =999.000 CTONNB = 97.000 CTOFNB = 98.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found     10 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      0.00000      0.00000      0.00273
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>      5 atoms have been selected out of      5
+
+ Message from MAPIC: Atom numbers are changed.
+ LONEPRD:    2 lonepair atoms deleted
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:         5 bonds deleted
+ DELTIC:         1 angles deleted
+ DELTIC:         1 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * HYDROXIDE ION
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    oh
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          OH  
+  
+ CHARMM>     
+  
+ CHARMM>    generate A first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is A.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        2   Number of groups     =        1
+         Number of bonds         =        1   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        1   Number of HB donors  =        1
+         Number of NB exclusions =        0   Total charge =   -1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * HYDROXIDE COORDINATES
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy inbfrq 1000 -
+ CHARMM>    @7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+ Parameter: 7 -> "SWITCH"
+ Parameter: 8 -> "ATOM"
+ Parameter: 9 -> "VATOM"
+ Parameter: 4 -> "99.0"
+ Parameter: 5 -> "97.0"
+ Parameter: 6 -> "98.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 99.000 CTEXNB =999.000 CTONNB = 97.000 CTOFNB = 98.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found      1 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      0.05450     -0.05450      6.29312
+ENER INTERN>        0.05450      0.00000      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>      2 atoms have been selected out of      2
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ DELTIC:         1 bonds deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * RESIDUE SODIUM
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    sod
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          SOD 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        1   Number of groups     =        1
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * TEST
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy inbfrq 1000 -
+ CHARMM>    @7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+ Parameter: 7 -> "SWITCH"
+ Parameter: 8 -> "ATOM"
+ Parameter: 9 -> "VATOM"
+ Parameter: 4 -> "99.0"
+ Parameter: 5 -> "97.0"
+ Parameter: 6 -> "98.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 99.000 CTEXNB =999.000 CTONNB = 97.000 CTOFNB = 98.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found      0 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      0.00000      0.05450      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>      1 atoms have been selected out of      1
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * RESIDUE MG
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    mg
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          MG  
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        1   Number of groups     =        1
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    2.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * TEST
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy inbfrq 1000 -
+ CHARMM>    @7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+ Parameter: 7 -> "SWITCH"
+ Parameter: 8 -> "ATOM"
+ Parameter: 9 -> "VATOM"
+ Parameter: 4 -> "99.0"
+ Parameter: 5 -> "97.0"
+ Parameter: 6 -> "98.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 99.000 CTEXNB =999.000 CTONNB = 97.000 CTOFNB = 98.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found      0 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>      1 atoms have been selected out of      1
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * RESIDUE POTASSIUM
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    pot
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          POT 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        1   Number of groups     =        1
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * TEST
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy inbfrq 1000 -
+ CHARMM>    @7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+ Parameter: 7 -> "SWITCH"
+ Parameter: 8 -> "ATOM"
+ Parameter: 9 -> "VATOM"
+ Parameter: 4 -> "99.0"
+ Parameter: 5 -> "97.0"
+ Parameter: 6 -> "98.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 99.000 CTEXNB =999.000 CTONNB = 97.000 CTOFNB = 98.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found      0 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>      1 atoms have been selected out of      1
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * RESIDUE CESIUM
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    ces
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          CES 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        1   Number of groups     =        1
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * TEST
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy inbfrq 1000 -
+ CHARMM>    @7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+ Parameter: 7 -> "SWITCH"
+ Parameter: 8 -> "ATOM"
+ Parameter: 9 -> "VATOM"
+ Parameter: 4 -> "99.0"
+ Parameter: 5 -> "97.0"
+ Parameter: 6 -> "98.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 99.000 CTEXNB =999.000 CTONNB = 97.000 CTOFNB = 98.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found      0 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>      1 atoms have been selected out of      1
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * RESIDUE CALCIUM
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    cal
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          CAL 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        1   Number of groups     =        1
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    2.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * TEST
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy inbfrq 1000 -
+ CHARMM>    @7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+ Parameter: 7 -> "SWITCH"
+ Parameter: 8 -> "ATOM"
+ Parameter: 9 -> "VATOM"
+ Parameter: 4 -> "99.0"
+ Parameter: 5 -> "97.0"
+ Parameter: 6 -> "98.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 99.000 CTEXNB =999.000 CTONNB = 97.000 CTOFNB = 98.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found      0 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>      1 atoms have been selected out of      1
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * RESIDUE CLA (CHLORIDE ION)
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    cla
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          CLA 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        1   Number of groups     =        1
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =   -1.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * TEST
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy inbfrq 1000 -
+ CHARMM>    @7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+ Parameter: 7 -> "SWITCH"
+ Parameter: 8 -> "ATOM"
+ Parameter: 9 -> "VATOM"
+ Parameter: 4 -> "99.0"
+ Parameter: 5 -> "97.0"
+ Parameter: 6 -> "98.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 99.000 CTEXNB =999.000 CTONNB = 97.000 CTOFNB = 98.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found      0 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>      1 atoms have been selected out of      1
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * RESIDUE ZN2 (ZINC ION)
+ RDTITL> *
+  
+ SEQRDR>    1
+  
+ SEQRDR>    zn2
+
+          RESIDUE SEQUENCE --     1 RESIDUES
+          ZN2 
+  
+ CHARMM>     
+  
+ CHARMM>    generate test first none last none setup warn
+ NO PATCHING WILL BE DONE ON THE FIRST RESIDUE
+ NO PATCHING WILL BE DONE ON THE LAST  RESIDUE
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is TEST.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =        1
+         Number of atoms         =        1   Number of groups     =        1
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    2.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * TEST
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy inbfrq 1000 -
+ CHARMM>    @7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+ Parameter: 7 -> "SWITCH"
+ Parameter: 8 -> "ATOM"
+ Parameter: 9 -> "VATOM"
+ Parameter: 4 -> "99.0"
+ Parameter: 5 -> "97.0"
+ Parameter: 6 -> "98.0"
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 99.000 CTEXNB =999.000 CTONNB = 97.000 CTOFNB = 98.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  1.000 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found      0 exclusions and      0 interactions(1-4)
+ <MAKGRP> found      0 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR       11 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+        0 ATOM PAIRS WERE FOUND FOR ATOM LIST
+        0 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    delete atom sele all end
+ SELRPN>      1 atoms have been selected out of      1
+
+ Message from MAPIC: Atom numbers are changed.
+
+ Message from MAPIC:          1 residues deleted.
+
+ Message from MAPIC:          1 segments deleted.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        0   Number of residues   =        0
+         Number of atoms         =        0   Number of groups     =        0
+         Number of bonds         =        0   Number of angles     =        0
+         Number of dihedrals     =        0   Number of impropers  =        0
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =        0   Number of HB donors  =        0
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    !calc count = @count + 1
+ CHARMM>    !if count le 9 goto loop
+ CHARMM>     
+  
+ CHARMM>    stop
+$$$$$$  New timer profile $$$$$
+   Shake time                      0.00 Other:            0.00
+   List time                       0.00 Other:            0.00
+         Electrostatic & VDW             0.00 Other:            0.00
+      Nonbond force                   0.00 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.00 Other:            0.00
+         Dihedral energy                 0.00 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.00 Other:            0.00
+   Energy time                     0.00 Other:            0.00
+ Total time                      0.03 Other:            0.03
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    MOST SEVERE WARNING WAS AT LEVEL  0
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.03  SECONDS 
+                         CPU TIME:     0.03  SECONDS 

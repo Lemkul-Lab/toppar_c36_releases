@@ -1,0 +1,44 @@
+*  Generate, IC build and energy of molecules in the
+*  Lipid All-hydrogen topology and parameter files
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar_ljpme.str
+
+set count 1
+set countfinal 8
+
+label loop1
+
+set seed 1 c1 1 c2 1 c3
+
+if count eq 1 set resi DHPCE
+if count eq 2 set resi POPCE
+if count eq 3 set resi DOPCE
+if count eq 4 set resi DMPCE
+if count eq 5 set resi POPEE
+if count eq 6 set resi DOPEE
+if count eq 7 set resi DPPEE
+if count eq 8 set resi DMPEE
+
+read sequence card
+* @resi
+*
+1
+@resi
+
+generate a first none last none setup warn
+
+ic para
+ic seed @seed
+ic build
+!coor print
+
+energy
+
+delete atom sele all end
+
+calc count = @count + 1
+if count le @countfinal goto loop1
+
+stop

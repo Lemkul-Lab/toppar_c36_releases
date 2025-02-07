@@ -1,0 +1,109 @@
+* Stream file for all topology and parameter files
+* Only used with one test case as it slows the jobs
+* 
+
+set dir ..
+
+! proteins topology and parameter
+open read card unit 10 name @dir/top_all36_prot.rtf
+read  rtf card unit 10
+
+open read card unit 20 name @dir/par_all36m_prot.prm
+read para card unit 20 flex
+
+! nucleic acids
+open read card unit 10 name @dir/top_all36_na.rtf
+read  rtf card unit 10 append
+
+open read card unit 20 name @dir/par_all36_na.prm
+read para card unit 20 append flex
+
+! carbohydrates
+open read card unit 10 name @dir/top_all36_carb.rtf
+read  rtf card unit 10 append
+
+open read card unit 20 name @dir/par_all36_carb.prm
+read para card unit 20 append flex
+
+! lipids
+open read card unit 10 name @dir/top_all36_lipid.rtf
+read  rtf card unit 10 append
+
+open read card unit 20 name @dir/par_all36_lipid.prm
+read para card unit 20 append flex
+
+! CGenFF
+! Note: multiple warnings "Residue already exists" upon
+! reading top_all36_cgenff.rtf due to those same residues
+! being present in various C36 topology files.
+open read card unit 10 name @dir/top_all36_cgenff.rtf
+read  rtf card unit 10 append
+
+open read card unit 20 name @dir/par_all36_cgenff.prm
+read para card unit 20 append flex
+
+! Water and ions
+stream @dir/toppar_water_ions.str
+
+! toppar stream files
+! Note: order of files is based on atom type issues
+!
+! Note: multiple warnings "Residue already exists" upon
+! reading various toppar files due to those same residues
+! being present in CGenFF and C36 topology files.
+
+! stream/lipid toppar stream files
+stream @dir/stream/lipid/toppar_all36_lipid_model.str
+stream @dir/stream/lipid/toppar_all36_lipid_sphingo.str
+stream @dir/stream/lipid/toppar_all36_lipid_bacterial.str
+stream @dir/stream/lipid/toppar_all36_lipid_cardiolipin.str
+stream @dir/stream/lipid/toppar_all36_lipid_cationpi_wyf.str
+stream @dir/stream/lipid/toppar_all36_lipid_cholesterol.str
+stream @dir/stream/lipid/toppar_all36_lipid_detergent.str
+stream @dir/stream/lipid/toppar_all36_lipid_ether.str
+stream @dir/stream/lipid/toppar_all36_lipid_inositol.str
+stream @dir/stream/lipid/toppar_all36_lipid_lps.str
+stream @dir/stream/lipid/toppar_all36_lipid_miscellaneous.str
+stream @dir/stream/lipid/toppar_all36_lipid_prot.str
+stream @dir/stream/lipid/toppar_all36_lipid_yeast.str
+
+! stream/na toppar stream files
+stream @dir/stream/na/toppar_all36_na_model.str
+stream @dir/stream/na/toppar_all36_na_modifications.str
+stream @dir/stream/na/toppar_all36_na_nad_ppi.str
+stream @dir/stream/na/toppar_all36_na_reactive_rna.str
+stream @dir/stream/na/toppar_all36_na_rna_modified.str
+
+! stream/misc toppar stream files
+stream @dir/stream/misc/toppar_amines.str
+stream @dir/stream/misc/toppar_dum_noble_gases.str
+stream @dir/stream/misc/toppar_hbond.str
+stream @dir/stream/misc/toppar_ions_won.str
+
+! stream/prot toppar stream files
+stream @dir/stream/prot/toppar_all36_prot_model.str
+stream @dir/stream/prot/toppar_all36_prot_retinol.str
+stream @dir/stream/prot/toppar_all36_prot_aldehydes.str !test separately to avoid residue conflict
+stream @dir/stream/prot/toppar_all36_prot_arg0.str
+stream @dir/stream/prot/toppar_all36_prot_fluoro_alkanes.str
+stream @dir/stream/prot/toppar_all36_prot_heme.str
+!stream @dir/stream/prot/toppar_all36_prot_c36_d_aminoacids.str !not tested
+stream @dir/stream/prot/toppar_all36_prot_c36m_d_aminoacids.str
+stream @dir/stream/prot/toppar_all36_prot_modify_res.str
+stream @dir/stream/prot/toppar_all36_prot_na_combined.str
+stream @dir/stream/prot/toppar_all36_prot_pyridines.str
+stream @dir/stream/prot/toppar_all36_prot_cofactors.str
+
+! stream/carb toppar stream files
+stream @dir/stream/carb/toppar_all36_carb_glycolipid.str
+stream @dir/stream/carb/toppar_all36_carb_glycopeptide.str
+stream @dir/stream/carb/toppar_all36_carb_imlab.str
+! Note: multiple "does not equal the expected charge" errors
+! due to patching method in toppar_all36_carb_lignin.str
+stream @dir/stream/carb/toppar_all36_carb_lignin.str
+stream @dir/stream/carb/toppar_all36_carb_model.str
+
+return
+
+
+

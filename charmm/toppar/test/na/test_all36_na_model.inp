@@ -1,0 +1,1627 @@
+* Generate and energies of molecules in stream file
+* toppar_all27_na_model.str
+* This includes the majority of model compounds used
+* in the NA force field optimization
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+!gen_na4.inp
+!* Test of IC BUILD, PATCHES, PURA, PURG, PYRC, PYRU
+!* and INO1
+!*
+
+read sequence cards
+* adenine
+*   
+1
+ade
+generate a first pura last none setup
+
+ic para
+ic seed 1 c4 1 n9 1 c8
+ic build
+
+update shift atom cutnb 999.0 
+coor print
+energy
+
+dele atom sele all end
+
+! guanine
+read sequence cards
+* guanine
+*   
+1
+gua
+generate a first purg last none setup
+
+ic para
+ic seed 1 c4 1 n9 1 c8
+ic build
+
+update shift atom cutnb 999.0 
+coor print
+energy
+
+dele atom sele all end
+
+read sequence cards
+* thymine
+*   
+1
+thy
+generate a first pyru last none setup
+
+ic para
+ic seed 1 c2 1 n1 1 c6
+ic build
+
+update shift atom cutnb 999.0 
+coor print
+energy
+
+dele atom sele all end
+
+read sequence cards
+* uracil
+*   
+1
+ura
+generate a first pyru last none setup
+
+ic para
+ic seed 1 c2 1 n1 1 c6
+ic build
+
+update shift atom cutnb 999.0 
+coor print
+energy
+
+dele atom sele all end
+
+read sequence cards
+* cytosine
+*   
+1
+cyt
+generate a first pyrc last none setup
+
+ic para
+ic seed 1 c2 1 n1 1 c6
+ic build
+
+update shift atom cutnb 999.0 
+energy
+coor print
+dele atom sele all end
+
+read sequence cards
+* adenine
+*   
+1
+ade
+generate a first 9ma last none setup
+
+ic para
+ic seed 1 c4 1 n9 1 c8
+ic build
+
+update shift atom cutnb 999.0 
+coor print
+energy
+
+dele atom sele all end
+
+read sequence cards
+* cytosine
+*   
+1
+cyt
+generate a first 1mc last none setup
+
+ic para
+ic seed 1 c2 1 n1 1 c6
+ic build
+
+update shift atom cutnb 999.0 
+energy
+coor print
+dele atom sele all end
+
+read sequence cards
+* thymine
+*   
+1
+thy
+generate a first 1mt last none setup
+
+ic para
+ic seed 1 c2 1 n1 1 c6
+ic build
+
+update shift atom cutnb 999.0 
+coor print
+energy
+
+dele atom sele all end
+
+! guanine
+read sequence cards
+* guanine
+*   
+1
+gua
+generate a first 9mg last none setup
+
+ic para
+ic seed 1 c4 1 n9 1 c8
+ic build
+
+update shift atom cutnb 999.0 
+coor print
+energy
+
+dele atom sele all end
+
+read sequence card
+* residue dimethylphosphate
+*
+1
+DMP
+
+generate a setup warn
+
+ic para
+ic seed 1 o3 1 p1 1 o1
+ic build
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+mini abnr nstep 20
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue methylphosphate, anionic
+*
+1
+MP_1
+
+generate a setup warn
+
+read coor cards
+*  methyl phosphate, anionic, 6-31G* opt geometry
+*
+   10
+    1    1 MP_1 C1     0.00000   0.00000   0.00000 A       1   0.00000
+    2    1 MP_1 O1     0.00000   0.00000   1.39201 A       1   0.00000
+    3    1 MP_1 P1     1.47167   0.00000   2.12939 A       1   0.00000
+    4    1 MP_1 O2     0.93716   0.14645   3.66197 A       1   0.00000
+    5    1 MP_1 O3     2.18753   1.22189   1.73140 A       1   0.00000
+    6    1 MP_1 O4     2.05496  -1.35264   1.99735 A       1   0.00000
+    7    1 MP_1 H11   -1.03284  -0.01560  -0.33668 A       1   0.00000
+    8    1 MP_1 H12    0.50600  -0.87715  -0.39499 A       1   0.00000
+    9    1 MP_1 H13    0.48538   0.88750  -0.39299 A       1   0.00000
+   10    1 MP_1 H2     0.89665  -0.72946   4.02012 A       1   0.00000
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue methylphosphate, dianionic
+*
+1
+MP_2
+
+generate a setup warn
+
+read coor cards
+* methylphosphate, dianonic, 6-31+G* opt. geometry
+*
+    9
+    1    1 MP_2 C1     0.00000   0.00000   0.00000 A       1   0.00000
+    2    1 MP_2 O1     1.37252   0.00000   0.00000 A       1   0.00000
+    3    1 MP_2 P1     2.15445   1.54327   0.00000 A       1   0.00000
+    4    1 MP_2 O2     3.61040   1.14734   0.00018 A       1   0.00000
+    5    1 MP_2 O3     1.63875   2.18851  -1.27257 A       1   0.00000
+    6    1 MP_2 O4     1.63860   2.18859   1.27247 A       1   0.00000
+    7    1 MP_2 H11   -0.35587  -1.03964   0.00002 A       1   0.00000
+    8    1 MP_2 H12   -0.40996   0.49626   0.88162 A       1   0.00000
+    9    1 MP_2 H13   -0.40997   0.49623  -0.88164 A       1   0.00000
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+delete atom sele all end
+
+!gen_na6.inp
+!* This is to test whether modifications in a set of topology/parameter files 
+!* affects or not the previous parameters.
+!* The present input file is for the nucleic acids (NA) model parameters 
+!* This is tested by successively generating the model compounds used in 
+!* the NA force field parameterization and computing the energy for each 
+!* of these model compound. 
+!* The coordinates for each model compound are read from the present 
+!* input file.
+!*
+
+! added to NA test set Sept. 1998
+
+! We open the file where to write the output energies:
+!open unit 99 write form name gen_na6.map
+
+!&&&&&&&&&&&&&&&&&&&&& Model compounds for DNA &&&&&&&&&&&&&&&&&&&&&&&
+
+!write title unit 99
+!* DNA model compounds test case with parameter set @b
+
+
+!===== Compound 1: 4'-methyl,3'-phosphate tetrahydrofuran (phosphate -2) =====
+
+read sequ card
+* 4'-methyl,3'-phosphate tetrahydrofuran (phosphate -2) 
+*
+1
+TM3P
+
+generate A first none last none setup warn
+
+read coor card 
+* THFM3P_OPTZ_AI.CRD WITH CORRECT ATOM NUMBERS
+*
+   20
+    1    1 TM3P O4'    0.54668  -2.85716  -0.71665 A    1      0.00000
+    2    1 TM3P C1'    0.52584  -2.86590   0.69962 A    1      0.00000
+    3    1 TM3P H11'   1.55380  -2.88128   1.06155 A    1      0.00000
+    4    1 TM3P H12'   0.04690  -3.78618   1.03229 A    1      0.00000
+    5    1 TM3P C4'    0.06811  -1.60366  -1.21135 A    1      0.00000
+    6    1 TM3P H42'  -0.97057  -1.72757  -1.51328 A    1      0.00000
+    7    1 TM3P C2'   -0.20235  -1.59891   1.13479 A    1      0.00000
+    8    1 TM3P H21'   0.12222  -1.19843   2.08570 A    1      0.00000
+    9    1 TM3P H22'  -1.27767  -1.75907   1.17658 A    1      0.00000
+   10    1 TM3P C3'    0.10497  -0.64042  -0.02083 A    1      0.00000
+   11    1 TM3P H31'   1.12242  -0.26970   0.09425 A    1      0.00000
+   12    1 TM3P O3'   -0.78096   0.38525  -0.18390 A    1      0.00000
+   13    1 TM3P P     -0.32300   1.92953   0.49124 A    1      0.00000
+   14    1 TM3P O1P   -0.02587   1.56940   1.93280 A    1      0.00000
+   15    1 TM3P O2P   -1.56179   2.74627   0.24410 A    1      0.00000
+   16    1 TM3P O3P    0.89778   2.29271  -0.32689 A    1      0.00000
+   17    1 TM3P C5'    0.89342  -1.16763  -2.40426 A    1      0.00000
+   18    1 TM3P H51'   0.56576  -0.18280  -2.71917 A    1      0.00000
+   19    1 TM3P H52'   1.94374  -1.10334  -2.13515 A    1      0.00000
+   20    1 TM3P H53'   0.79168  -1.86723  -3.23483 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = TM3P   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+!===== Compound 2: 3'phosphate-hydroxyl-tetrahydrofuran (phosphate -1) ===== 
+
+read sequ card
+* 3'phosphate-hydroxyl-tetrahydrofuran (phosphate -1) 
+*
+1
+T3PM
+
+generate A first none last none setup warn
+
+read coor card 
+* 3'phosphate-hydroxyl-tetrahydrofuran (phosphate -1) 
+*
+   21
+    1    1 T3PM O4'   -3.13401   0.16163  -0.62861 A    1      0.00000
+    2    1 T3PM C1'   -2.48800   1.21292   0.05479 A    1      0.00000
+    3    1 T3PM H11'  -3.25152   1.85588   0.47879 A    1      0.00000
+    4    1 T3PM H12'  -1.89035   1.79466  -0.64118 A    1      0.00000
+    5    1 T3PM C4'   -2.36111  -1.02362  -0.54242 A    1      0.00000
+    6    1 T3PM H41'  -2.98223  -1.79453  -0.09483 A    1      0.00000
+    7    1 T3PM H42'  -2.05789  -1.33932  -1.53167 A    1      0.00000
+    8    1 T3PM C2'   -1.60933   0.52638   1.09128 A    1      0.00000
+    9    1 T3PM H21'  -2.21206   0.22325   1.94517 A    1      0.00000
+   10    1 T3PM H22'  -0.78112   1.12695   1.44061 A    1      0.00000
+   11    1 T3PM C3'   -1.13807  -0.71165   0.32494 A    1      0.00000
+   12    1 T3PM H31'  -0.87831  -1.53004   0.97979 A    1      0.00000
+   13    1 T3PM O3'   -0.05661  -0.42095  -0.51656 A    1      0.00000
+   14    1 T3PM P      1.49755  -0.53586   0.00817 A    1      0.00000
+   15    1 T3PM O1P    2.32980  -0.71050  -1.19456 A    1      0.00000
+   16    1 T3PM O2P    1.51559  -1.43122   1.17902 A    1      0.00000
+   17    1 T3PM O3T    1.72712   0.98121   0.57442 A    1      0.00000
+   18    1 T3PM C3T    1.99010   2.01998  -0.32218 A    1      0.00000
+   19    1 T3PM H3T1   2.13697   2.92266   0.26270 A    1      0.00000
+   20    1 T3PM H3T2   1.15784   2.17618  -1.00378 A    1      0.00000
+   21    1 T3PM H3T3   2.87882   1.81679  -0.90628 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = T3PM   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+
+!===== Compound 3: THF with adenine on C1' =====
+
+read sequ card
+* THF with adenine on C1' 
+*
+1
+TADE
+
+generate A first none last none setup warn
+
+
+read coor card 
+* The following coordinates are with ring in C2endo
+*
+   26
+    1    1 TADE O4'    1.40814  -2.46793  -0.27149 A    1      0.00000
+    2    1 TADE C1'    0.45854  -1.58660  -0.78679 A    1      0.00000
+    3    1 TADE H12'  -0.52559  -2.03796  -0.78609 A    1      0.00000
+    4    1 TADE C4'    2.09277  -3.14760  -1.31032 A    1      0.00000
+    5    1 TADE H41'   3.14888  -2.92015  -1.22338 A    1      0.00000
+    6    1 TADE H42'   1.96103  -4.21329  -1.17676 A    1      0.00000
+    7    1 TADE C2'    0.91745  -1.28205  -2.21013 A    1      0.00000
+    8    1 TADE H21'   1.68710  -0.51753  -2.18259 A    1      0.00000
+    9    1 TADE H22'   0.10799  -0.93393  -2.83789 A    1      0.00000
+   10    1 TADE C3'    1.50178  -2.63039  -2.62799 A    1      0.00000
+   11    1 TADE H31'   2.24446  -2.55234  -3.41204 A    1      0.00000
+   12    1 TADE H32'   0.71692  -3.29218  -2.97937 A    1      0.00000
+   13    1 TADE C5    -0.27407   1.36249   1.12251 A    1      0.00000
+   14    1 TADE N7     1.01191   1.11406   1.55944 A    1      0.00000
+   15    1 TADE C8     1.35876   0.05427   0.92684 A    1      0.00000
+   16    1 TADE H8     2.29729  -0.44661   1.02695 A    1      0.00000
+   17    1 TADE N9     0.38802  -0.43672   0.08850 A    1      0.00000
+   18    1 TADE N1    -2.39999   2.30903   0.83162 A    1      0.00000
+   19    1 TADE C2    -2.64159   1.32913  -0.03063 A    1      0.00000
+   20    1 TADE H2    -3.61772   1.34628  -0.48100 A    1      0.00000
+   21    1 TADE N3    -1.85033   0.34916  -0.40184 A    1      0.00000
+   22    1 TADE C4    -0.67298   0.40896   0.21357 A    1      0.00000
+   23    1 TADE C6    -1.21329   2.35447   1.42412 A    1      0.00000
+   24    1 TADE N6    -0.94882   3.36435   2.27455 A    1      0.00000
+   25    1 TADE H61   -1.71000   3.92958   2.57402 A    1      0.00000
+   26    1 TADE H62   -0.14533   3.30635   2.85715 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = TADE   Ener = ?ener
+!*
+
+delete atom sele all end 
+
+!===== Compound 4: THF with cytosine on C1' =====
+
+read sequ card
+* THF with cytosine on C1' 
+*
+1
+TCYT
+
+generate A first none last none setup warn
+
+read coor card 
+* The following coordinates are with ring in C2endo
+*
+   24
+    1    1 TCYT O4'    1.95780  -0.97715  -0.69444 A    1      0.00000
+    2    1 TCYT C1'    1.33260   0.23693  -0.40007 A    1      0.00000
+    3    1 TCYT H12'   1.41912   0.91798  -1.23290 A    1      0.00000
+    4    1 TCYT C4'    3.26814  -1.02299  -0.15473 A    1      0.00000
+    5    1 TCYT H41'   3.32243  -1.86131   0.53089 A    1      0.00000
+    6    1 TCYT H42'   3.97000  -1.19595  -0.96003 A    1      0.00000
+    7    1 TCYT C2'    2.05690   0.77850   0.82822 A    1      0.00000
+    8    1 TCYT H21'   1.65819   0.30117   1.71844 A    1      0.00000
+    9    1 TCYT H22'   1.94329   1.84722   0.92823 A    1      0.00000
+   10    1 TCYT C3'    3.48771   0.31585   0.55898 A    1      0.00000
+   11    1 TCYT H31'   4.08273   0.21180   1.45785 A    1      0.00000
+   12    1 TCYT H32'   3.99575   1.01690  -0.09508 A    1      0.00000
+   13    1 TCYT N1    -0.09697  -0.00829  -0.20487 A    1      0.00000
+   14    1 TCYT C6    -0.59693  -1.24682  -0.00583 A    1      0.00000
+   15    1 TCYT H6     0.11633  -2.04364  -0.00981 A    1      0.00000
+   16    1 TCYT C2    -0.93646   1.12090  -0.22647 A    1      0.00000
+   17    1 TCYT O2    -0.43017   2.20004  -0.38088 A    1      0.00000
+   18    1 TCYT N3    -2.27017   0.91999  -0.07113 A    1      0.00000
+   19    1 TCYT C4    -2.73806  -0.27421   0.12197 A    1      0.00000
+   20    1 TCYT N4    -4.06851  -0.40166   0.30601 A    1      0.00000
+   21    1 TCYT H41   -4.62755   0.40300   0.13113 A    1      0.00000
+   22    1 TCYT H42   -4.50384  -1.29121   0.23381 A    1      0.00000
+   23    1 TCYT C5    -1.91224  -1.44710   0.17075 A    1      0.00000
+   24    1 TCYT H5    -2.31782  -2.42574   0.33311 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = TCYT   Ener = ?ener
+!*
+
+delete atom sele all end 
+
+!===== Compound 5: THF with guanine on C1' =====
+
+read sequ card
+* THF with guanine on C1' 
+*
+1
+TGUA
+
+generate A first none last none setup warn
+
+
+read coor card 
+* The following coordinates are with ring in C2endo
+*
+   27
+    1    1 TGUA O4'    2.03930  -1.88600  -1.19860 A    1      0.00000
+    2    1 TGUA C1'    0.71922  -1.45769  -1.05680 A    1      0.00000
+    3    1 TGUA H12'   0.16563  -2.12786  -0.41252 A    1      0.00000
+    4    1 TGUA C4'    2.21365  -2.62619  -2.39348 A    1      0.00000
+    5    1 TGUA H41'   2.95563  -2.11960  -2.99968 A    1      0.00000
+    6    1 TGUA H42'   2.59065  -3.60980  -2.14521 A    1      0.00000
+    7    1 TGUA C2'    0.14173  -1.45578  -2.47043 A    1      0.00000
+    8    1 TGUA H21'   0.43329  -0.54164  -2.97705 A    1      0.00000
+    9    1 TGUA H22'  -0.93879  -1.51947  -2.47426 A    1      0.00000
+   10    1 TGUA C3'    0.84292  -2.66710  -3.08180 A    1      0.00000
+   11    1 TGUA H31'   0.91964  -2.62033  -4.16084 A    1      0.00000
+   12    1 TGUA H32'   0.31548  -3.58052  -2.82631 A    1      0.00000
+   13    1 TGUA N9     0.72559  -0.17010  -0.40125 A    1      0.00000
+   14    1 TGUA C4    -0.21141   0.30381   0.45509 A    1      0.00000
+   15    1 TGUA N3    -1.30597  -0.37750   0.88226 A    1      0.00000
+   16    1 TGUA C2    -2.03896   0.30943   1.68779 A    1      0.00000
+   17    1 TGUA N1    -1.74908   1.57615   2.08092 A    1      0.00000
+   18    1 TGUA H1    -2.39629   2.07539   2.65313 A    1      0.00000
+   19    1 TGUA N2    -3.20308  -0.21806   2.16513 A    1      0.00000
+   20    1 TGUA H21   -3.50642   0.07050   3.06897 A    1      0.00000
+   21    1 TGUA H22   -3.29808  -1.19515   1.99443 A    1      0.00000
+   22    1 TGUA C6    -0.62803   2.34270   1.67675 A    1      0.00000
+   23    1 TGUA O6    -0.50573   3.45495   2.09275 A    1      0.00000
+   24    1 TGUA C5     0.18491   1.57239   0.77876 A    1      0.00000
+   25    1 TGUA N7     1.35784   1.88882   0.13247 A    1      0.00000
+   26    1 TGUA C8     1.64369   0.84542  -0.54992 A    1      0.00000
+   27    1 TGUA H8     2.50743   0.71981  -1.16640 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = TGUA   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end 
+
+!===== Compound 6: THF with thymine on C1' =====
+
+read sequ card
+* THF with thymine on C1' 
+*
+1
+TTHY
+
+generate A first none last none setup warn
+
+read coor card 
+* The following coordinates are with ring in C2endo
+*
+   26
+    1    1 TTHY O4'    2.04700  -0.77502  -0.92171 A    1      0.00000
+    2    1 TTHY C1'    1.57629   0.38138  -0.29919 A    1      0.00000
+    3    1 TTHY H12'   1.79007   1.25008  -0.90125 A    1      0.00000
+    4    1 TTHY C4'    3.31370  -1.15265  -0.40795 A    1      0.00000
+    5    1 TTHY H41'   3.22552  -2.14835   0.01165 A    1      0.00000
+    6    1 TTHY H42'   4.02364  -1.18824  -1.22350 A    1      0.00000
+    7    1 TTHY C2'    2.30565   0.44726   1.03910 A    1      0.00000
+    8    1 TTHY H21'   1.80963  -0.20032   1.75605 A    1      0.00000
+    9    1 TTHY H22'   2.33041   1.45081   1.44161 A    1      0.00000
+   10    1 TTHY C3'    3.67545  -0.11132   0.65877 A    1      0.00000
+   11    1 TTHY H31'   4.21141  -0.54406   1.49413 A    1      0.00000
+   12    1 TTHY H32'   4.29785   0.66890   0.23343 A    1      0.00000
+   13    1 TTHY N1     0.11998   0.29829  -0.20049 A    1      0.00000
+   14    1 TTHY C6    -0.52412  -0.91720  -0.06906 A    1      0.00000
+   15    1 TTHY H6     0.13023  -1.76258  -0.10382 A    1      0.00000
+   16    1 TTHY C2    -0.57671   1.47897  -0.17698 A    1      0.00000
+   17    1 TTHY O2    -0.05040   2.55446  -0.24199 A    1      0.00000
+   18    1 TTHY N3    -1.93296   1.33639  -0.06242 A    1      0.00000
+   19    1 TTHY H3    -2.45270   2.18858  -0.04892 A    1      0.00000
+   20    1 TTHY C4    -2.65932   0.16356   0.06835 A    1      0.00000
+   21    1 TTHY O4    -3.85016   0.19517   0.17506 A    1      0.00000
+   22    1 TTHY C5    -1.84215  -1.05207   0.06319 A    1      0.00000
+   23    1 TTHY C5M   -2.54484  -2.37455   0.19257 A    1      0.00000
+   24    1 TTHY H51   -1.83357  -3.19238   0.17014 A    1      0.00000
+   25    1 TTHY H52   -3.25520  -2.51493  -0.61441 A    1      0.00000
+   26    1 TTHY H53   -3.10151  -2.42742   1.12160 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = TTHY   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end 
+
+!===== Compound 7: THF with dianionic phosphate on O3' =====
+
+read sequ card
+* THF with  with dianionic phosphate on O3' 
+*
+1
+TH3P
+
+generate A first none last none setup warn
+
+
+read coor card 
+* The following coordinates are with ring in C2endo
+*
+   17
+    1    1 TH3P O4'    2.98796  -0.38800   0.45458 A    1      0.00000
+    2    1 TH3P C1'    2.50566   0.94448   0.45035 A    1      0.00000
+    3    1 TH3P H11'   3.36046   1.60275   0.30473 A    1      0.00000
+    4    1 TH3P H12'   2.04875   1.17027   1.40902 A    1      0.00000
+    5    1 TH3P C4'    2.00816  -1.24686  -0.12259 A    1      0.00000
+    6    1 TH3P H41'   2.46745  -1.73689  -0.98175 A    1      0.00000
+    7    1 TH3P H42'   1.71188  -1.99592   0.60059 A    1      0.00000
+    8    1 TH3P C2'    1.47244   0.99850  -0.66295 A    1      0.00000
+    9    1 TH3P H21'   1.97539   1.09056  -1.62915 A    1      0.00000
+   10    1 TH3P H22'   0.72638   1.77357  -0.55805 A    1      0.00000
+   11    1 TH3P C3'    0.80480  -0.37934  -0.52492 A    1      0.00000
+   12    1 TH3P H31'   0.37437  -0.71886  -1.46172 A    1      0.00000
+   13    1 TH3P O3'   -0.13390  -0.39106   0.47791 A    1      0.00000
+   14    1 TH3P P     -1.77264   0.03087   0.05433 A    1      0.00000
+   15    1 TH3P O1P   -1.63838   1.47240  -0.39700 A    1      0.00000
+   16    1 TH3P O2P   -2.48702  -0.19213   1.35908 A    1      0.00000
+   17    1 TH3P O3P   -2.08134  -0.94485  -1.06180 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = TH3P   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end 
+
+!===== Compound 8: THF with monoanionic phosphate on O3' =====
+
+read sequ card
+* THF with monoanionic phosphate on O3' 
+*
+1
+T3PH
+
+generate A first none last none setup warn
+
+
+read coor card 
+* The following coordinates are with ring in C2endo
+*
+   18
+    1    1 T3PH O4'    2.96516  -0.45625   0.48812 A    1      0.00000
+    2    1 T3PH C1'    2.53341   0.88924   0.53615 A    1      0.00000
+    3    1 T3PH H11'   3.40934   1.52398   0.45922 A    1      0.00000
+    4    1 T3PH H12'   2.04213   1.08349   1.48418 A    1      0.00000
+    5    1 T3PH C4'    2.01130  -1.25157  -0.19047 A    1      0.00000
+    6    1 T3PH H41'   2.49709  -1.70172  -1.05247 A    1      0.00000
+    7    1 T3PH H42'   1.65236  -2.03500   0.46400 A    1      0.00000
+    8    1 T3PH C2'    1.55849   1.03715  -0.62340 A    1      0.00000
+    9    1 T3PH H21'   2.10566   1.16788  -1.55573 A    1      0.00000
+   10    1 T3PH H22'   0.84737   1.84236  -0.50660 A    1      0.00000
+   11    1 T3PH C3'    0.86753  -0.32774  -0.61317 A    1      0.00000
+   12    1 T3PH H31'   0.46445  -0.60790  -1.57879 A    1      0.00000
+   13    1 T3PH O3'   -0.13898  -0.37960   0.35865 A    1      0.00000
+   14    1 T3PH P     -1.66522   0.08859  -0.04851 A    1      0.00000
+   15    1 T3PH O1P   -1.68742   1.55524  -0.19143 A    1      0.00000
+   16    1 T3PH O2P   -2.14058  -0.82873  -1.11107 A    1      0.00000
+   17    1 T3PH O3T   -2.39625  -0.32308   1.34095 A    1      0.00000
+   18    1 T3PH H3T   -2.67989  -1.22499   1.27744 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = T3PH   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end 
+
+!===== Compound 9: THF with dianionic phosphate on O5' =====
+
+read sequ card
+* THF with adenine on C1' 
+*
+1
+TH5P
+
+generate A first none last none setup warn
+
+
+read coor card 
+* The following coordinates are with ring in C2endo
+*
+   20
+    1    1 TH5P O4'    2.59274  -0.69492  -0.62445 A    1      0.00000
+    2    1 TH5P C1'    2.46333   0.66861  -0.95802 A    1      0.00000
+    3    1 TH5P H1'    3.45509   1.02625  -1.23556 A    1      0.00000
+    4    1 TH5P H1''   1.79789   0.77802  -1.80461 A    1      0.00000
+    5    1 TH5P C4'    1.67750  -1.01040   0.42182 A    1      0.00000
+    6    1 TH5P H4''   2.11108  -1.86549   0.94022 A    1      0.00000
+    7    1 TH5P C2'    1.89090   1.38363   0.28108 A    1      0.00000
+    8    1 TH5P H2'    2.58218   2.13487   0.66454 A    1      0.00000
+    9    1 TH5P H2''   0.95125   1.86084   0.04298 A    1      0.00000
+   10    1 TH5P C3'    1.65950   0.24829   1.29344 A    1      0.00000
+   11    1 TH5P H3'    0.71244   0.36086   1.80555 A    1      0.00000
+   12    1 TH5P H3''   2.47930   0.20418   2.01387 A    1      0.00000
+   13    1 TH5P C5'    0.29613  -1.40251  -0.09706 A    1      0.00000
+   14    1 TH5P H5'    0.43102  -2.20557  -0.83015 A    1      0.00000
+   15    1 TH5P H5''  -0.26649  -1.81419   0.73811 A    1      0.00000
+   16    1 TH5P O5'   -0.35022  -0.33344  -0.67053 A    1      0.00000
+   17    1 TH5P P     -1.88324   0.15910  -0.02069 A    1      0.00000
+   18    1 TH5P O1P   -1.55799   0.36534   1.44878 A    1      0.00000
+   19    1 TH5P O2P   -2.78175  -1.02381  -0.29901 A    1      0.00000
+   20    1 TH5P O3P   -2.14394   1.41282  -0.81381 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = TH5P   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end 
+
+!===== Compound 10: THF with monoanionic phosphate on O5' =====
+
+read sequ card
+* THF with monoanionic phosphate on O5' 
+*
+1
+T5PH
+
+generate A first none last none setup warn
+
+read coor card 
+* The following coordinates are with furanose in C2endo
+*
+   21
+    1    1 T5PH O4'   -0.12380   0.89309   1.44599 A    1      0.00000
+    2    1 T5PH C1'   -0.01042   0.10156   0.26492 A    1      0.00000
+    3    1 T5PH H1'    0.47822  -0.85156   0.55746 A    1      0.00000
+    4    1 T5PH H1''  -1.02629  -0.09245  -0.13968 A    1      0.00000
+    5    1 T5PH C4'    0.94720   1.87808   1.48733 A    1      0.00000
+    6    1 T5PH H4''   1.57275   1.68141   2.38372 A    1      0.00000
+    7    1 T5PH C2'    0.85486   0.88411  -0.70493 A    1      0.00000
+    8    1 T5PH H2'    1.38726   0.26383  -1.44906 A    1      0.00000
+    9    1 T5PH H2''   0.20619   1.61821  -1.24165 A    1      0.00000
+   10    1 T5PH C3'    1.76931   1.65199   0.21907 A    1      0.00000
+   11    1 T5PH H3'    2.07969   2.62917  -0.20870 A    1      0.00000
+   12    1 T5PH H3''   2.65725   1.05085   0.50042 A    1      0.00000
+   13    1 T5PH C5'    0.37763   3.30645   1.54854 A    1      0.00000
+   14    1 T5PH H5'   -0.37381   3.35632   2.36953 A    1      0.00000
+   15    1 T5PH H5''   1.20556   4.00227   1.81249 A    1      0.00000
+   16    1 T5PH O5'   -0.21572   3.71738   0.29709 A    1      0.00000
+   17    1 T5PH P     -0.84549   5.16494   0.20315 A    1      0.00000
+   18    1 T5PH O1P    0.25178   6.11888   0.45004 A    1      0.00000
+   19    1 T5PH O2P   -1.93003   5.24316   1.19789 A    1      0.00000
+   20    1 T5PH O3P   -1.36244   5.28577  -1.17646 A    1      0.00000
+   21    1 T5PH H5T   -1.76756   6.14658  -1.32271 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = T5PH   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end 
+
+!===== Compound 11: adenine deoxyribonucleoside, furanose in south =====
+
+read sequ card
+* adenine deoxyribonucleoside, furanose in south 
+*
+1
+NUSA
+
+generate A first none last none setup warn
+
+read coor card 
+* adenine deoxyribonucleoside, furanose in south 
+*
+   31
+    1    1 NUSA O4'   -0.73093   1.47570  -0.85593 A    1      0.00000
+    2    1 NUSA C4'    0.42572   2.36181  -0.85311 A    1      0.00000
+    3    1 NUSA H42'   0.12705   3.31323  -0.36295 A    1      0.00000
+    4    1 NUSA C1'   -0.45560   0.28689  -0.11493 A    1      0.00000
+    5    1 NUSA H12'  -0.92355   0.42321   0.88781 A    1      0.00000
+    6    1 NUSA C2'    1.06594   0.20798   0.02290 A    1      0.00000
+    7    1 NUSA H21'   1.51477  -0.30680  -0.85465 A    1      0.00000
+    8    1 NUSA H22'   1.35626  -0.32413   0.95077 A    1      0.00000
+    9    1 NUSA C5    -2.10875  -2.66120  -1.39294 A    1      0.00000
+   10    1 NUSA N7    -1.53200  -2.18679  -2.56445 A    1      0.00000
+   11    1 NUSA C8    -0.90599  -1.09912  -2.18528 A    1      0.00000
+   12    1 NUSA H8    -0.33388  -0.43530  -2.83857 A    1      0.00000
+   13    1 NUSA N9    -1.03683  -0.82812  -0.84500 A    1      0.00000
+   14    1 NUSA N1    -3.30059  -3.98746   0.16407 A    1      0.00000
+   15    1 NUSA C2    -2.92384  -3.09962   1.08772 A    1      0.00000
+   16    1 NUSA H2    -3.27210  -3.30736   2.10377 A    1      0.00000
+   17    1 NUSA N3    -2.17462  -2.00028   0.95374 A    1      0.00000
+   18    1 NUSA C4    -1.80596  -1.83412  -0.32609 A    1      0.00000
+   19    1 NUSA C6    -2.90191  -3.79369  -1.11607 A    1      0.00000
+   20    1 NUSA N6    -3.27747  -4.68187  -2.05362 A    1      0.00000
+   21    1 NUSA H61   -3.84756  -5.44409  -1.76312 A    1      0.00000
+   22    1 NUSA H62   -3.01627  -4.56461  -3.00804 A    1      0.00000
+   23    1 NUSA H31'   2.47510   1.77624  -0.48830 A    1      0.00000
+   24    1 NUSA C3'    1.48705   1.66073   0.01301 A    1      0.00000
+   25    1 NUSA O3'    1.57601   2.15584   1.35049 A    1      0.00000
+   26    1 NUSA H32'   2.17151   1.60029   1.86039 A    1      0.00000
+   27    1 NUSA C5'    0.88780   2.61948  -2.29402 A    1      0.00000
+   28    1 NUSA H51'   1.63350   3.44610  -2.28103 A    1      0.00000
+   29    1 NUSA H52'   0.01125   2.95591  -2.89368 A    1      0.00000
+   30    1 NUSA O5'    1.49599   1.44743  -2.92870 A    1      0.00000
+   31    1 NUSA H5T    1.68283   1.68134  -3.84448 A    1      0.00000 
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = NUSA   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+!===== Compound 12: cytosine deoxyribonucleoside, furanose in south =====
+
+read sequ card
+* cytosine deoxyribonucleoside, furanose in south 
+*
+1
+NUSC
+
+generate A first none last none setup warn
+
+read coor card 
+* cytosine deoxyribonucleoside, furanose in south 
+*
+   29
+    1    1 NUSC O4'   -1.32806   0.21384  -1.21508 A    1      0.00000
+    2    1 NUSC C4'   -2.66969   0.35689  -0.66413 A    1      0.00000
+    3    1 NUSC H42'  -3.39277   0.02007  -1.43775 A    1      0.00000
+    4    1 NUSC C1'   -0.58075  -0.74784  -0.45716 A    1      0.00000
+    5    1 NUSC H12'  -0.67232  -1.70736  -1.01927 A    1      0.00000
+    6    1 NUSC C2'   -1.29493  -0.88116   0.88689 A    1      0.00000
+    7    1 NUSC H21'  -0.93591  -0.10180   1.59386 A    1      0.00000
+    8    1 NUSC H22'  -1.12819  -1.88457   1.32728 A    1      0.00000
+    9    1 NUSC N1     0.82712  -0.31881  -0.33676 A    1      0.00000
+   10    1 NUSC C6     1.11553   1.01486  -0.16995 A    1      0.00000
+   11    1 NUSC H6     0.25762   1.69062  -0.23711 A    1      0.00000
+   12    1 NUSC C2     1.83203  -1.27306  -0.18578 A    1      0.00000
+   13    1 NUSC O2     1.52028  -2.47366  -0.16781 A    1      0.00000
+   14    1 NUSC N3     3.11915  -0.86284  -0.05504 A    1      0.00000
+   15    1 NUSC C4     3.40353   0.44217   0.03218 A    1      0.00000
+   16    1 NUSC N4     4.68086   0.79835   0.16723 A    1      0.00000
+   17    1 NUSC H41    5.33733   0.04962   0.18535 A    1      0.00000
+   18    1 NUSC H42    4.98048   1.74332   0.22658 A    1      0.00000
+   19    1 NUSC C5     2.37877   1.43562  -0.01075 A    1      0.00000
+   20    1 NUSC H5     2.63555   2.48870   0.08083 A    1      0.00000
+   21    1 NUSC H31'  -3.25353  -0.08678   1.37265 A    1      0.00000
+   22    1 NUSC C3'   -2.73992  -0.60893   0.53361 A    1      0.00000
+   23    1 NUSC O3'   -3.41525  -1.83682   0.25610 A    1      0.00000
+   24    1 NUSC H32'  -3.21651  -2.47246   0.94905 A    1      0.00000
+   25    1 NUSC C5'   -2.93325   1.82141  -0.28635 A    1      0.00000
+   26    1 NUSC H51'  -4.00699   1.92493  -0.01090 A    1      0.00000
+   27    1 NUSC H52'  -2.74491   2.45538  -1.18267 A    1      0.00000
+   28    1 NUSC O5'   -2.10956   2.29773   0.82801 A    1      0.00000
+   29    1 NUSC H5T   -2.34417   3.21834   0.98475 A    1      0.00000 
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = NUSC   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+!===== Compound 13: gunanine deoxyribonucleoside, furanose in south =====
+
+read sequ card
+* guanine deoxyribonucleoside, furanose in south 
+*
+1
+NUSG
+
+generate A first none last none setup warn
+
+read coor card 
+* guanine deoxyribonucleoside, furanose in south 
+*
+   32
+    1    1 NUSG O4'   -0.71936   1.50715  -0.85798 A    1      0.00000
+    2    1 NUSG C4'    0.45263   2.37143  -0.87737 A    1      0.00000
+    3    1 NUSG H42'   0.16937   3.34006  -0.41288 A    1      0.00000
+    4    1 NUSG C1'   -0.46175   0.32177  -0.10118 A    1      0.00000
+    5    1 NUSG H12'  -0.93410   0.47728   0.89542 A    1      0.00000
+    6    1 NUSG C2'    1.05946   0.22731   0.04669 A    1      0.00000
+    7    1 NUSG H21'   1.50615  -0.31323  -0.81604 A    1      0.00000
+    8    1 NUSG H22'   1.33753  -0.28844   0.98703 A    1      0.00000
+    9    1 NUSG N9    -1.05763  -0.80245  -0.81738 A    1      0.00000
+   10    1 NUSG C4    -1.96742  -1.70999  -0.34075 A    1      0.00000
+   11    1 NUSG N3    -2.49345  -1.73460   0.90120 A    1      0.00000
+   12    1 NUSG C2    -3.36401  -2.72103   1.05381 A    1      0.00000
+   13    1 NUSG N1    -3.67023  -3.62853   0.07036 A    1      0.00000
+   14    1 NUSG H1    -4.33492  -4.35189   0.25036 A    1      0.00000
+   15    1 NUSG N2    -3.98938  -2.87603   2.20958 A    1      0.00000
+   16    1 NUSG H21   -4.66480  -3.58326   2.37651 A    1      0.00000
+   17    1 NUSG H22   -3.76803  -2.20312   2.90804 A    1      0.00000
+   18    1 NUSG C6    -3.12956  -3.63727  -1.21099 A    1      0.00000
+   19    1 NUSG O6    -3.47352  -4.50280  -2.01696 A    1      0.00000
+   20    1 NUSG C5    -2.20424  -2.57499  -1.39384 A    1      0.00000
+   21    1 NUSG N7    -1.45311  -2.21836  -2.50637 A    1      0.00000
+   22    1 NUSG C8    -0.78809  -1.15968  -2.11761 A    1      0.00000
+   23    1 NUSG H8    -0.09528  -0.58230  -2.73347 A    1      0.00000
+   24    1 NUSG H31'   2.49147   1.76386  -0.49406 A    1      0.00000
+   25    1 NUSG C3'    1.50079   1.67343   0.00722 A    1      0.00000
+   26    1 NUSG O3'    1.59582   2.19541   1.33482 A    1      0.00000
+   27    1 NUSG H32'   2.20062   1.65342   1.84789 A    1      0.00000
+   28    1 NUSG C5'    0.91427   2.58261  -2.32619 A    1      0.00000
+   29    1 NUSG H51'   1.63839   3.42805  -2.34313 A    1      0.00000
+   30    1 NUSG H52'   0.03290   2.87182  -2.94324 A    1      0.00000
+   31    1 NUSG O5'    1.55954   1.40407  -2.90983 A    1      0.00000
+   32    1 NUSG H5T    1.70188   1.58807  -3.84484 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = NUSG   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+!===== Compound 14: thymine deoxyribonucleoside, furanose in south =====
+
+read sequ card
+* thymine deoxyribonucleoside, furanose in south 
+*
+1
+NUST
+
+generate A first none last none setup warn
+
+read coor card 
+* thymine deoxyribonucleoside, furanose in south 
+*
+   31
+    1    1 NUST O4'   -0.70707   1.18514  -0.96508 A    1      0.00000
+    2    1 NUST C4'    0.27385   2.25840  -0.87863 A    1      0.00000
+    3    1 NUST H42'  -0.23076   3.14249  -0.43329 A    1      0.00000
+    4    1 NUST C1'   -0.33196   0.09678  -0.12011 A    1      0.00000
+    5    1 NUST H12'  -0.89121   0.25021   0.83351 A    1      0.00000
+    6    1 NUST C2'    1.16594   0.25982   0.13114 A    1      0.00000
+    7    1 NUST H21'   1.75493  -0.20361  -0.68931 A    1      0.00000
+    8    1 NUST H22'   1.45852  -0.19592   1.09767 A    1      0.00000
+    9    1 NUST N1    -0.67637  -1.15606  -0.81064 A    1      0.00000
+   10    1 NUST C6    -0.28697  -1.33680  -2.11899 A    1      0.00000
+   11    1 NUST H6     0.19136  -0.45915  -2.56405 A    1      0.00000
+   12    1 NUST C2    -1.33180  -2.14374  -0.11591 A    1      0.00000
+   13    1 NUST O2    -1.63850  -2.03669   1.06609 A    1      0.00000
+   14    1 NUST N3    -1.60727  -3.27052  -0.84928 A    1      0.00000
+   15    1 NUST H3    -2.11880  -3.98663  -0.37461 A    1      0.00000
+   16    1 NUST C4    -1.27665  -3.50706  -2.16892 A    1      0.00000
+   17    1 NUST O4    -1.62113  -4.55891  -2.70259 A    1      0.00000
+   18    1 NUST C5    -0.52391  -2.45717  -2.81208 A    1      0.00000
+   19    1 NUST C5M   -0.19122  -2.58916  -4.26516 A    1      0.00000
+   20    1 NUST H51    0.70329  -1.98380  -4.53258 A    1      0.00000
+   21    1 NUST H52   -1.04215  -2.24596  -4.89523 A    1      0.00000
+   22    1 NUST H53    0.02570  -3.64776  -4.53392 A    1      0.00000
+   23    1 NUST H31'   2.35277   2.01554  -0.33212 A    1      0.00000
+   24    1 NUST C3'    1.35637   1.75993   0.09473 A    1      0.00000
+   25    1 NUST O3'    1.25497   2.29851   1.41481 A    1      0.00000
+   26    1 NUST H32'   1.84824   1.82134   2.00066 A    1      0.00000
+   27    1 NUST C5'    0.80996   2.59425  -2.27757 A    1      0.00000
+   28    1 NUST H51'   1.39815   3.53709  -2.20915 A    1      0.00000
+   29    1 NUST H52'  -0.05667   2.77776  -2.95311 A    1      0.00000
+   30    1 NUST O5'    1.66231   1.54708  -2.84864 A    1      0.00000
+   31    1 NUST H5T    1.93812   1.84962  -3.72050 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = NUST   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+
+!===== Compound 15: uracyl deoxyribonucleoside, furanose in south =====
+
+read sequ card
+* uracyl deoxyribonucleoside, furanose in south 
+*
+1
+NUSU
+
+generate A first none last none setup warn
+
+read coor card 
+* uracyl deoxyribonucleoside, furanose in south 
+*
+   28
+    1    1 NUSU O4'   -0.70424   1.20929  -0.71957 A    1      0.00000
+    2    1 NUSU C4'    0.29243   2.26882  -0.74703 A    1      0.00000
+    3    1 NUSU H42'  -0.10495   3.12498  -0.16197 A    1      0.00000
+    4    1 NUSU C1'   -0.18863   0.05800  -0.05907 A    1      0.00000
+    5    1 NUSU H12'  -0.54226   0.13536   0.99681 A    1      0.00000
+    6    1 NUSU C2'    1.33596   0.19792  -0.07626 A    1      0.00000
+    7    1 NUSU H21'   1.77421  -0.20014  -1.01500 A    1      0.00000
+    8    1 NUSU H22'   1.79320  -0.32137   0.78873 A    1      0.00000
+    9    1 NUSU N1    -0.71562  -1.11422  -0.77153 A    1      0.00000
+   10    1 NUSU C6    -0.31634  -1.35662  -2.06337 A    1      0.00000
+   11    1 NUSU H6     0.38028  -0.62198  -2.47409 A    1      0.00000
+   12    1 NUSU C2    -1.69178  -1.87676  -0.17259 A    1      0.00000
+   13    1 NUSU O2    -2.12140  -1.65142   0.95224 A    1      0.00000
+   14    1 NUSU N3    -2.15600  -2.91913  -0.93238 A    1      0.00000
+   15    1 NUSU H3    -2.89214  -3.45520  -0.51944 A    1      0.00000
+   16    1 NUSU C4    -1.82395  -3.21360  -2.23709 A    1      0.00000
+   17    1 NUSU O4    -2.39050  -4.13207  -2.82019 A    1      0.00000
+   18    1 NUSU C5    -0.81562  -2.36275  -2.79964 A    1      0.00000
+   19    1 NUSU H5    -0.52616  -2.52245  -3.83561 A    1      0.00000
+   20    1 NUSU H31'   2.42675   1.99675  -0.60626 A    1      0.00000
+   21    1 NUSU C3'    1.52392   1.69978  -0.02612 A    1      0.00000
+   22    1 NUSU O3'    1.66656   2.14090   1.32723 A    1      0.00000
+   23    1 NUSU H32'   2.45261   1.74893   1.71574 A    1      0.00000
+   24    1 NUSU C5'    0.57474   2.68322  -2.19494 A    1      0.00000
+   25    1 NUSU H51'   1.21437   3.59456  -2.17428 A    1      0.00000
+   26    1 NUSU H52'  -0.39166   2.94971  -2.68183 A    1      0.00000
+   27    1 NUSU O5'    1.25482   1.64345  -2.97485 A    1      0.00000
+   28    1 NUSU H5T    1.38607   1.99539  -3.86093 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = NUSU   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+
+!===== Compound 16: imidazole nucleoside analogue, furanose in south =====
+
+read sequ card
+* imidazole nucleoside analogue 
+*
+1
+THAO
+
+generate A first none last none setup warn
+
+read coor card 
+* imidazole nucleoside analogue, south energy minimum
+*
+   25
+    1    1 THAO O4'    0.50720  -0.11791   1.18247 A    1      0.00000
+    2    1 THAO C4'    1.86169   0.22374   0.76942 A    1      0.00000
+    3    1 THAO H42'   2.56734  -0.11680   1.55709 A    1      0.00000
+    4    1 THAO C1'   -0.13204  -0.93685   0.20196 A    1      0.00000
+    5    1 THAO H12'  -0.17064  -1.97427   0.59912 A    1      0.00000
+    6    1 THAO C2'    0.72324  -0.84866  -1.06231 A    1      0.00000
+    7    1 THAO H21'   0.40443   0.00921  -1.69421 A    1      0.00000
+    8    1 THAO H22'   0.67370  -1.77990  -1.66157 A    1      0.00000
+    9    1 THAO CG    -2.66249  -1.13689   0.26841 A    1      0.00000
+   10    1 THAO HG    -2.69802  -2.17343   0.56820 A    1      0.00000
+   11    1 THAO CD2   -3.67677  -0.25777   0.05062 A    1      0.00000
+   12    1 THAO HD2   -4.74776  -0.40417   0.12869 A    1      0.00000
+   13    1 THAO ND1   -1.49745  -0.44051   0.03073 A    1      0.00000
+   14    1 THAO CE1   -1.86150   0.82038  -0.30998 A    1      0.00000
+   15    1 THAO HE1   -1.12164   1.59228  -0.52742 A    1      0.00000
+   16    1 THAO NE2   -3.17446   0.97700  -0.31712 A    1      0.00000
+   17    1 THAO H31'   2.68612   0.05962  -1.22930 A    1      0.00000
+   18    1 THAO C3'    2.10880  -0.57585  -0.51935 A    1      0.00000
+   19    1 THAO O3'    2.79975  -1.81008  -0.32735 A    1      0.00000
+   20    1 THAO H32'   2.31807  -2.33595   0.31721 A    1      0.00000
+   21    1 THAO C5'    1.98789   1.74271   0.56697 A    1      0.00000
+   22    1 THAO H51'   3.05622   1.98591   0.37027 A    1      0.00000
+   23    1 THAO H52'   1.68679   2.24946   1.51222 A    1      0.00000
+   24    1 THAO O5'    1.17571   2.25946  -0.53619 A    1      0.00000
+   25    1 THAO H5T    1.23742   3.22071  -0.51711 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = THAO   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+
+!===== Compound 17: nucleotide analogue with imidazole =====
+
+read sequ card
+* Nucleotide analogue with imidazole 
+*
+1
+NUCL
+
+generate A first none last none setup warn
+
+
+read coor card 
+* The following coordinates are with ring in C2endo
+*
+   32
+    1    1 NUCL O4'    1.27716   0.66558  -1.06603 A    1      0.00000
+    2    1 NUCL C1'    1.52189  -0.55526  -0.44498 A    1      0.00000
+    3    1 NUCL H12'   1.26277  -1.36941  -1.11024 A    1      0.00000
+    4    1 NUCL C4'    0.03375   1.22722  -0.65066 A    1      0.00000
+    5    1 NUCL H42'  -0.61399   1.30268  -1.50914 A    1      0.00000
+    6    1 NUCL CG     3.74485  -1.74269  -0.52366 A    1      0.00000
+    7    1 NUCL HG     3.36559  -2.59899  -1.04010 A    1      0.00000
+    8    1 NUCL CD2    4.98304  -1.42848  -0.07400 A    1      0.00000
+    9    1 NUCL HD2    5.88108  -2.00684  -0.14746 A    1      0.00000
+   10    1 NUCL ND1    2.94453  -0.68161  -0.18887 A    1      0.00000
+   11    1 NUCL CE1    3.74039   0.21055   0.43377 A    1      0.00000
+   12    1 NUCL HE1    3.36188   1.14610   0.78813 A    1      0.00000
+   13    1 NUCL NE2    4.96852  -0.19616   0.52476 A    1      0.00000
+   14    1 NUCL C2'    0.64289  -0.56720   0.80251 A    1      0.00000
+   15    1 NUCL H21'   1.15036  -0.05194   1.60853 A    1      0.00000
+   16    1 NUCL H22'   0.38286  -1.56834   1.12069 A    1      0.00000
+   17    1 NUCL C3'   -0.57329   0.23242   0.35540 A    1      0.00000
+   18    1 NUCL H31'  -1.04749   0.74347   1.18102 A    1      0.00000
+   19    1 NUCL O3'   -1.47764  -0.62861  -0.27710 A    1      0.00000
+   20    1 NUCL P     -3.04410  -0.14293  -0.44421 A    1      0.00000
+   21    1 NUCL O1P   -3.02808   1.32071  -0.63337 A    1      0.00000
+   22    1 NUCL O2P   -3.68139  -1.10361  -1.35741 A    1      0.00000
+   23    1 NUCL O3P   -3.58043  -0.40699   1.07194 A    1      0.00000
+   24    1 NUCL C3T   -3.88158  -1.70948   1.48275 A    1      0.00000
+   25    1 NUCL H3T1  -4.64346  -2.15058   0.85258 A    1      0.00000
+   26    1 NUCL H3T2  -4.24199  -1.65006   2.50420 A    1      0.00000
+   27    1 NUCL H3T3  -3.00037  -2.34495   1.45797 A    1      0.00000
+   28    1 NUCL C5'    0.25454   2.62298  -0.11461 A    1      0.00000
+   29    1 NUCL H51'   0.76109   3.21593  -0.87152 A    1      0.00000
+   30    1 NUCL H52'  -0.71731   3.05867   0.08914 A    1      0.00000
+   31    1 NUCL H5T    1.17439   3.45045   1.39196 A    1      0.00000
+   32    1 NUCL O5'    1.03985   2.57438   1.06160 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = NUCL   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end 
+
+
+!===== Compound 18: THF with imidazole on C1' =====
+
+read sequ card
+* THF with adenine on C1' 
+*
+1
+THFI
+
+generate A first none last none setup warn
+
+
+read coor card 
+* The following coordinates are with ring in C2endo
+*
+   20
+    1    1 THFI O4'    0.23957   0.79578  -1.44396 A    1      0.00000
+    2    1 THFI C1'    0.23041   0.80663  -0.04598 A    1      0.00000
+    3    1 THFI H12'  -0.14511   1.76294   0.29791 A    1      0.00000
+    4    1 THFI C4'    1.55507   0.79760  -1.95966 A    1      0.00000
+    5    1 THFI H41'   1.80086  -0.19636  -2.32201 A    1      0.00000
+    6    1 THFI H42'   1.59266   1.48331  -2.79507 A    1      0.00000
+    7    1 THFI C2'    1.68673   0.60881   0.38769 A    1      0.00000
+    8    1 THFI H21'   1.90059  -0.44918   0.49055 A    1      0.00000
+    9    1 THFI H22'   1.89364   1.08415   1.33817 A    1      0.00000
+   10    1 THFI C3'    2.45265   1.20207  -0.79221 A    1      0.00000
+   11    1 THFI H31'   3.46294   0.82309  -0.88616 A    1      0.00000
+   12    1 THFI H32'   2.50409   2.28339  -0.71180 A    1      0.00000
+   13    1 THFI CG    -0.68450  -1.53484   0.21015 A    1      0.00000
+   14    1 THFI HG     0.03033  -1.99720  -0.43480 A    1      0.00000
+   15    1 THFI CD2   -1.73186  -2.03306   0.89959 A    1      0.00000
+   16    1 THFI HD2   -2.06285  -3.04924   0.95490 A    1      0.00000
+   17    1 THFI ND1   -0.68594  -0.18236   0.45763 A    1      0.00000
+   18    1 THFI CE1   -1.74133   0.04429   1.27191 A    1      0.00000
+   19    1 THFI HE1   -1.98251   1.02865   1.61974 A    1      0.00000
+   20    1 THFI NE2   -2.38751  -1.03035   1.56685 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = THFI   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end 
+
+!===== Compound 19: furanose with 3'-hydroxyl, furanose c2'endo, hydroxyl in trans =====
+
+read sequ card
+* furanose with 2'-hydroxyl 
+*
+1
+THFO
+
+generate A first none last none setup warn
+
+read coor card 
+* furanose with 2'-hydroxyl
+*
+   14
+    1    1 THFO O4'    1.33148   0.66370  -0.27625 A    1      0.00000
+    2    1 THFO C1'    1.13796  -0.74772  -0.43696 A    1      0.00000
+    3    1 THFO C2'    0.08704  -1.11454   0.60204 A    1      0.00000
+    4    1 THFO C4'    0.14173   1.23103   0.29550 A    1      0.00000
+    5    1 THFO H11'   2.10469  -1.23462  -0.28376 A    1      0.00000
+    6    1 THFO H12'   0.77863  -0.97134  -1.44934 A    1      0.00000
+    7    1 THFO H21'   0.53584  -1.15825   1.60049 A    1      0.00000
+    8    1 THFO H22'  -0.41953  -2.06495   0.40395 A    1      0.00000
+    9    1 THFO H41'   0.40277   1.70671   1.24876 A    1      0.00000
+   10    1 THFO H42'  -0.27937   1.98262  -0.37997 A    1      0.00000
+   11    1 THFO C3'   -0.84585   0.08865   0.49788 A    1      0.00000
+   12    1 THFO H31'  -1.47245   0.23440   1.38872 A    1      0.00000
+   13    1 THFO O3'   -1.64960   0.02523  -0.68387 A    1      0.00000
+   14    1 THFO H32'  -2.23089  -0.75055  -0.59865 A    1      0.00000
+
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = THFO   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+!===== Compound 20: furanose with trans 5'-CH2-OH group, furanose c2'endo =====
+
+read sequ card
+* furanose with 5'-CH2-OH group 
+*
+1
+TH5H
+
+generate A first none last none setup warn
+
+read coor card 
+* furanose with 5'-CH2-OH group
+*
+   17
+    1    1 TH5H O4'   -0.39177   1.13983   0.82749 A    1      0.00000
+    2    1 TH5H C1'    0.12261  -0.06589   0.26571 A    1      0.00000
+    3    1 TH5H H1'    0.40737  -0.74428   1.10204 A    1      0.00000
+    4    1 TH5H H1''  -0.65644  -0.53679  -0.37052 A    1      0.00000
+    5    1 TH5H C4'    0.69570   2.08076   1.04664 A    1      0.00000
+    6    1 TH5H H4''   0.78622   2.26786   2.13833 A    1      0.00000
+    7    1 TH5H C2'    1.32350   0.40301  -0.52064 A    1      0.00000
+    8    1 TH5H H2'    1.99027  -0.44141  -0.79367 A    1      0.00000
+    9    1 TH5H H2''   1.02256   0.96914  -1.42725 A    1      0.00000
+   10    1 TH5H C3'    1.92694   1.30575   0.55121 A    1      0.00000
+   11    1 TH5H H3'    2.69494   1.99068   0.14387 A    1      0.00000
+   12    1 TH5H H3''   2.33911   0.70934   1.38934 A    1      0.00000
+   13    1 TH5H C5'    0.43836   3.40205   0.30447 A    1      0.00000
+   14    1 TH5H H5'    1.32846   4.05631   0.43738 A    1      0.00000
+   15    1 TH5H H5''   0.30759   3.19248  -0.77765 A    1      0.00000
+   16    1 TH5H O5'   -0.74175   4.12523   0.79394 A    1      0.00000
+   17    1 TH5H H5T   -0.83512   4.93376   0.28448 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = TH5H   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+!&&&&&&&&&&&&&&&&&&&&& Model compounds for RNA &&&&&&&&&&&&&&&&&&&&&&&
+
+!write title unit 99
+!* RNA model compounds test case with parameter set
+!*
+
+!===== 4'-methyl,3'-phosphate tetrahydrofuran (phosphate -2), for RNA ===== 
+
+read sequ card
+* 4'-methyl,3'-phosphate tetrahydrofuran (phosphate -2), for RNA 
+*
+1
+RM3P
+
+generate A first none last none setup warn
+
+read coor card 
+* 4'-methyl,3'-phosphate tetrahydrofuran (phosphate -2), for RNA
+*
+   20
+    1    1 RM3P O4'    0.54668  -2.85716  -0.71665 A    1      0.00000
+    2    1 RM3P C1'    0.52584  -2.86590   0.69962 A    1      0.00000
+    3    1 RM3P H11'   1.55380  -2.88128   1.06155 A    1      0.00000
+    4    1 RM3P H12'   0.04690  -3.78618   1.03229 A    1      0.00000
+    5    1 RM3P C4'    0.06811  -1.60366  -1.21135 A    1      0.00000
+    6    1 RM3P H42'  -0.97057  -1.72757  -1.51328 A    1      0.00000
+    7    1 RM3P C2'   -0.20235  -1.59891   1.13479 A    1      0.00000
+    8    1 RM3P H21'   0.12222  -1.19843   2.08570 A    1      0.00000
+    9    1 RM3P H22'  -1.27767  -1.75907   1.17658 A    1      0.00000
+   10    1 RM3P C3'    0.10497  -0.64042  -0.02083 A    1      0.00000
+   11    1 RM3P H31'   1.12242  -0.26970   0.09425 A    1      0.00000
+   12    1 RM3P O3'   -0.78096   0.38525  -0.18390 A    1      0.00000
+   13    1 RM3P P     -0.32300   1.92953   0.49124 A    1      0.00000
+   14    1 RM3P O1P   -0.02587   1.56940   1.93280 A    1      0.00000
+   15    1 RM3P O2P   -1.56179   2.74627   0.24410 A    1      0.00000
+   16    1 RM3P O3P    0.89778   2.29271  -0.32689 A    1      0.00000
+   17    1 RM3P C5'    0.89342  -1.16763  -2.40426 A    1      0.00000
+   18    1 RM3P H51'   0.56576  -0.18280  -2.71917 A    1      0.00000
+   19    1 RM3P H52'   1.94374  -1.10334  -2.13515 A    1      0.00000
+   20    1 RM3P H53'   0.79168  -1.86723  -3.23483 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = RM3P   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+
+!===== Compound: adenine ribonucleoside, ribose in south =====
+
+read sequ card
+* adenine ribonucleoside, ribose in south 
+*
+1
+RNUA
+
+generate A first none last none setup warn
+
+read coor card 
+* adenine ribonucleoside, ribose in south
+*
+   32
+    1    1 RNUA O4'   -0.48418   0.52467  -1.28196 A    1      0.00000
+    2    1 RNUA C4'   -1.85191   0.63161  -0.78987 A    1      0.00000
+    3    1 RNUA H42'  -2.54113   0.46541  -1.64649 A    1      0.00000
+    4    1 RNUA C1'    0.18751  -0.51687  -0.60047 A    1      0.00000
+    5    1 RNUA H12'   0.14366  -1.40077  -1.27860 A    1      0.00000
+    6    1 RNUA H21'  -0.31067  -0.08662   1.47447 A    1      0.00000
+    7    1 RNUA C2'   -0.58529  -0.80176   0.66542 A    1      0.00000
+    8    1 RNUA O2'   -0.39229  -2.14371   1.11876 A    1      0.00000
+    9    1 RNUA H22'  -0.45766  -2.74228   0.36565 A    1      0.00000
+   10    1 RNUA C5     3.74967  -0.16075  -0.10339 A    1      0.00000
+   11    1 RNUA N7     3.31887   1.06146   0.39896 A    1      0.00000
+   12    1 RNUA C8     2.01731   1.01805   0.25289 A    1      0.00000
+   13    1 RNUA H8     1.32204   1.81421   0.53175 A    1      0.00000
+   14    1 RNUA N9     1.56746  -0.14887  -0.31416 A    1      0.00000
+   15    1 RNUA N1     5.11202  -1.97830  -0.76977 A    1      0.00000
+   16    1 RNUA C2     3.98273  -2.58296  -1.14729 A    1      0.00000
+   17    1 RNUA H2     4.10979  -3.58210  -1.57426 A    1      0.00000
+   18    1 RNUA N3     2.72047  -2.14608  -1.07928 A    1      0.00000
+   19    1 RNUA C4     2.67780  -0.91563  -0.54370 A    1      0.00000
+   20    1 RNUA C6     5.02984  -0.73784  -0.23118 A    1      0.00000
+   21    1 RNUA N6     6.16175  -0.12124   0.15281 A    1      0.00000
+   22    1 RNUA H61    7.01864  -0.61067   0.02405 A    1      0.00000
+   23    1 RNUA H62    6.14107   0.78974   0.55595 A    1      0.00000
+   24    1 RNUA H31'  -2.60609  -0.14624   1.08389 A    1      0.00000
+   25    1 RNUA C3'   -2.01647  -0.52175   0.21793 A    1      0.00000
+   26    1 RNUA O3'   -2.68140  -1.67850  -0.34585 A    1      0.00000
+   27    1 RNUA H32'  -2.74331  -2.35482   0.33812 A    1      0.00000
+   28    1 RNUA C5'   -2.08944   2.02355  -0.18531 A    1      0.00000
+   29    1 RNUA H51'  -3.17784   2.13793   0.01991 A    1      0.00000
+   30    1 RNUA H52'  -1.79921   2.79145  -0.93865 A    1      0.00000
+   31    1 RNUA O5'   -1.34898   2.25377   1.05605 A    1      0.00000
+   32    1 RNUA H5T   -1.50478   3.16757   1.32073 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = RNUA   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+!===== Compound: guanine ribonucleoside, ribose in south =====
+
+read sequ card
+* guanine ribonucleoside, ribose in south 
+*
+1
+RNUG
+
+generate A first none last none setup warn
+
+read coor card 
+* guanine ribonucleoside, ribose in south
+*
+   33
+    1    1 RNUG O4'   -0.66677   0.84408  -1.24436 A    1      0.00000
+    2    1 RNUG C4'   -1.96786   0.76657  -0.59608 A    1      0.00000
+    3    1 RNUG H42'  -2.74724   0.75960  -1.38890 A    1      0.00000
+    4    1 RNUG C1'    0.13495  -0.25873  -0.85548 A    1      0.00000
+    5    1 RNUG H12'   0.09696  -0.97440  -1.70791 A    1      0.00000
+    6    1 RNUG H21'  -0.16719  -0.36691   1.30044 A    1      0.00000
+    7    1 RNUG C2'   -0.49891  -0.87977   0.36903 A    1      0.00000
+    8    1 RNUG O2'   -0.22045  -2.27967   0.45965 A    1      0.00000
+    9    1 RNUG H22'  -0.39194  -2.68085  -0.39908 A    1      0.00000
+   10    1 RNUG N9     1.51280   0.15747  -0.59393 A    1      0.00000
+   11    1 RNUG C4     2.65696  -0.37290  -1.13083 A    1      0.00000
+   12    1 RNUG N3     2.72534  -1.39045  -2.01453 A    1      0.00000
+   13    1 RNUG C2     3.97596  -1.67740  -2.34567 A    1      0.00000
+   14    1 RNUG N1     5.07023  -1.01832  -1.84291 A    1      0.00000
+   15    1 RNUG H1     5.98813  -1.28489  -2.13254 A    1      0.00000
+   16    1 RNUG N2     4.22410  -2.64938  -3.20879 A    1      0.00000
+   17    1 RNUG H21    5.13850  -2.90524  -3.49646 A    1      0.00000
+   18    1 RNUG H22    3.42371  -3.11542  -3.57122 A    1      0.00000
+   19    1 RNUG C6     5.02735   0.02947  -0.92954 A    1      0.00000
+   20    1 RNUG O6     6.07418   0.55061  -0.54281 A    1      0.00000
+   21    1 RNUG C5     3.69203   0.35030  -0.56655 A    1      0.00000
+   22    1 RNUG N7     3.20447   1.31407   0.30679 A    1      0.00000
+   23    1 RNUG C8     1.90556   1.16194   0.25953 A    1      0.00000
+   24    1 RNUG H8     1.17809   1.75838   0.81420 A    1      0.00000
+   25    1 RNUG H31'  -2.48314  -0.44526   1.11829 A    1      0.00000
+   26    1 RNUG C3'   -1.97931  -0.58725   0.13617 A    1      0.00000
+   27    1 RNUG O3'   -2.66699  -1.62671  -0.60487 A    1      0.00000
+   28    1 RNUG H32'  -2.65664  -2.43094  -0.07409 A    1      0.00000
+   29    1 RNUG C5'   -2.16855   1.97702   0.32889 A    1      0.00000
+   30    1 RNUG H51'  -3.23882   2.01246   0.63380 A    1      0.00000
+   31    1 RNUG H52'  -1.94440   2.90486  -0.24590 A    1      0.00000
+   32    1 RNUG O5'   -1.34021   1.93564   1.53446 A    1      0.00000
+   33    1 RNUG H5T   -1.46406   2.77065   2.00030 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = RNUG   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+!===== Compound: THF with 2'-OH and 3'-PO3H(-) =====
+
+read sequ card
+* THF with 2'-OH and 3'-PO3H(-) 
+*
+1
+R3PH
+
+generate A first none last none setup warn
+
+read coor card 
+* THF with 2'-OH and 3'-PO3H(-), C3'endo 
+*
+   19
+    1    1 R3PH O4'    1.22974  -2.82331  -0.61020 A    1      0.00000
+    2    1 R3PH C1'    0.74192  -2.74454   0.71418 A    1      0.00000
+    3    1 R3PH H11'   1.58536  -2.81544   1.39546 A    1      0.00000
+    4    1 R3PH H12'   0.06708  -3.56960   0.91044 A    1      0.00000
+    5    1 R3PH C4'    0.88662  -1.66104  -1.33099 A    1      0.00000
+    6    1 R3PH H41'   1.69879  -1.41956  -2.00521 A    1      0.00000
+    7    1 R3PH H42'  -0.01805  -1.81909  -1.90879 A    1      0.00000
+    8    1 R3PH C2'    0.01881  -1.41044   0.86019 A    1      0.00000
+    9    1 R3PH H21'   0.19260  -0.95501   1.82946 A    1      0.00000
+   10    1 R3PH O2'   -1.35153  -1.60178   0.65240 A    1      0.00000
+   11    1 R3PH H22'  -1.73279  -0.73715   0.53249 A    1      0.00000
+   12    1 R3PH C3'    0.64395  -0.59309  -0.27439 A    1      0.00000
+   13    1 R3PH H31'   1.58279  -0.17449   0.06241 A    1      0.00000
+   14    1 R3PH O3'   -0.18476   0.40560  -0.77316 A    1      0.00000
+   15    1 R3PH P     -0.23687   1.88587  -0.08147 A    1      0.00000
+   16    1 R3PH O1P    1.01496   2.12191   0.66007 A    1      0.00000
+   17    1 R3PH O2P   -0.78447   2.83554  -1.05601 A    1      0.00000
+   18    1 R3PH O3T   -1.41778   1.48894   1.00757 A    1      0.00000
+   19    1 R3PH H3T   -1.61984   2.24167   1.54657 A    1      0.00000
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = R3PH   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+!new models 2010
+set count 1
+
+label loop2010
+
+if count eq 1 then
+ set residue tbp1
+ set seed 1 c5m 1 o3a 1 pa
+endif
+if count eq 2 then
+  set residue rbp1
+  set seed 1 c5m 1 o3a 1 pa
+endif
+if count eq 3 then
+  set residue t3ps
+  set seed 1 c4' 1 o4' 1 c1'
+endif
+if count eq 4 then
+  set residue r3ps
+  set seed 1 c4' 1 o4' 1 c1'
+endif
+if count eq 5 then
+  set residue nuta
+  set seed 1 c4' 1 o4' 1 c1'
+endif
+if count eq 6 then
+  set residue nutc
+  set seed 1 c4' 1 o4' 1 c1'
+endif
+
+
+read sequ card
+* @residue
+*
+1
+@residue
+
+generate A first none last none setup warn
+
+ic param
+ic seed 1 c4' 1 o4' 1 c1'
+ic build
+
+coor print
+
+update inbfrq 20 ihbfrq 0 -
+switch atom vatom vswitch cutnb 99.0 ctofnb 98.0 ctonnb 97.0
+
+ener
+
+! write in the *.map file
+!write title unit 99
+!* Compound = @residue   Ener = ?ener
+!*
+
+define COMP sele all end
+
+delete atom sele all end
+
+calc count = @count + 1
+
+if count le 6 goto loop2010
+stop

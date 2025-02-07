@@ -1,0 +1,83 @@
+* test case for toppar_all36_lipid_prot.inp
+* 
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+set pdbdir pdb
+
+set resi cysp
+read sequ card unit 5
+* @resi
+*
+1  
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+update cutnb 990.0  ctofnb 980.0  ctonnb 970.0  !set once for remaining residues
+energy
+delete atom select all end
+
+set resi glym
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi cysf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi cysg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi cysl
+read sequ card unit 5
+* @resi
+* 
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 ca1 @resi 1 ca2 @resi 1 ca3
+ic build
+energy
+delete atom select all end
+
+set resi lysm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 C1 @resi 1 C2 @resi 1 C3
+ic build
+energy
+delete atom select all end
+
+STOP
+

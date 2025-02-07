@@ -1,0 +1,193 @@
+* generate and energy of water and ions
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+read sequence card
+* resi tip3
+*
+1
+tip3
+
+generate test first none last none setup warn noangle nodihedral
+
+read coor card
+* test
+*
+    3
+    1    1 TIP3 OH2   -5.76008   3.27789  -3.46973
+    2    1 TIP3 H1    -5.57742   3.20183  -2.53321
+    3    1 TIP3 H2    -5.78382   4.22062  -3.63382
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* hydroxide ion
+*
+1
+oh
+
+generate A first none last none setup warn
+
+read coor card
+* hydroxide coordinates
+*
+    2
+    1    1 OH   O1     0.00000   0.00000   0.00000 A       1   0.00000
+    2    1 OH   H1     0.00000   0.96000   0.00000 A       1   0.00000
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* hydrogen peroxide
+*
+1
+h2o2
+
+generate A first none last none setup warn
+
+read coor card
+* h2o2
+*
+    4
+    1    1 H2O2 OP1    0.00000   0.72438  -0.05159
+    2    1 H2O2 HP1    0.82948   0.88516   0.41275
+    3    1 H2O2 OP2   -0.00000  -0.72438  -0.05159
+    4    1 H2O2 HP2   -0.82948  -0.88516   0.41275
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue sodium
+*
+1
+sod
+
+generate test first none last none setup warn 
+
+read coor card
+* test
+*
+    1
+    1    1 SOD  SOD   0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue mg
+*
+1
+mg
+
+generate test first none last none setup warn 
+
+read coor card
+* test
+*
+    1
+    1    1 MG   MG     0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue potassium
+*
+1
+pot
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 POT  POT    0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue cesium
+*
+1
+ces
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 CES  CES    0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue calcium
+*
+1
+cal
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 CAL  CAL    0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue cla (chloride ion)
+*
+1
+cla
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 CLA  CLA    0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* residue zn2 (zinc ion)
+*
+1
+zn2
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 ZN2  ZN     0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy
+
+delete atom sele all end
+
+stop

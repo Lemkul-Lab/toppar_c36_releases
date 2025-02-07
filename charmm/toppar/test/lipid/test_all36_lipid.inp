@@ -1,0 +1,290 @@
+*  Generate, IC build and energy of molecules in the
+*  Lipid All-hydrogen topology and parameter files
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+set count 1
+set countfinal 40
+
+label loop1
+
+if count eq 1 then
+set residue lppc
+set seed 1 c13 1 n 1 c12
+set energy -38.8775 !expected energy
+endif
+
+if count eq 2 then
+set residue sds
+set seed 1 os4 1 s 1 os1
+set energy  68.7581 !expected energy
+endif
+
+if count eq 3 then
+set residue dlpc
+set seed 1 c13 1 n 1 c12
+set energy  5.48206 !expected energy
+endif
+
+if count eq 4 then
+set residue dlpe
+set seed 1 n 1 c12 1 c11
+set energy -26.4854 !expected energy
+endif
+
+if count eq 5 then
+set residue dlps
+set seed 1 n 1 c12 1 c11
+set energy -18.8923 !expected energy
+endif
+
+if count eq 6 then
+set residue dlpa
+set seed 1 h12 1 o12 1 p
+set energy -42.575 !expected energy
+endif
+
+if count eq 7 then
+set residue dlpg
+set seed 1 c13 1 c12 1 c11
+set energy 69.6081 !expected energy
+endif
+
+if count eq 8 then
+set residue dmpc
+set seed 1 c13 1 n 1 c12
+set energy 5.5797 !expected energy
+endif
+
+if count eq 9 then
+set residue dmpe
+set seed 1 n 1 c12 1 c11
+set energy -9.03015 !expected energy
+endif
+
+if count eq 10 then
+set residue dmps
+set seed 1 n 1 c12 1 c11
+set energy 41.9886 !expected energy
+endif
+
+if count eq 11 then
+set residue dmpa
+set seed 1 o11 1 p 1 o12
+set energy 22.2505 !expected energy
+endif
+
+if count eq 12 then
+set residue dmpg
+set seed 1 c13 1 c12 1 c11
+set energy 75.734 !expected energy
+endif
+
+if count eq 13 then
+set residue dppc
+set seed 1 c13 1 n 1 c12
+set energy 7.74233 !expected energy
+endif
+
+if count eq 14 then
+set residue dppe
+set seed 1 n 1 c12 1 c11
+set energy -13.8613 !expected energy
+endif
+
+if count eq 15 then
+set residue dpps
+set seed 1 n 1 c12 1 c11
+set energy -4.37962 !expected energy
+endif
+
+if count eq 16 then
+set residue dppa
+set seed 1 h12 1 o12 1 p
+set energy -33.2928 !expected energy
+endif
+
+if count eq 17 then
+set residue dppg
+set seed 1 c13 1 c12 1 c11
+set energy 90.084 !expected energy
+endif
+
+if count eq 18 then
+set residue dspc
+set seed 1 c13 1 n 1 c12
+set energy 20.5361 !expected energy
+endif
+
+if count eq 19 then
+set residue dspe
+set seed 1 n 1 c12 1 c11
+set energy -8.04365 !expected energy
+endif
+
+if count eq 20 then
+set residue dsps
+set seed 1 n 1 c12 1 c11
+set energy 57.3894 !expected energy
+endif
+
+if count eq 21 then
+set residue dspa
+set seed 1 h12 1 o12 1 p
+set energy 90.7583 !expected energy
+endif
+
+if count eq 22 then
+set residue dspg
+set seed 1 c13 1 c12 1 c11
+set energy 159.879 !expected energy
+endif
+
+if count eq 23 then
+set residue dopc
+set seed 1 c13 1 n 1 c12
+set energy 21.2412 !expected energy
+endif
+
+if count eq 24 then
+set residue dope
+set seed 1 n 1 c12 1 c11
+set energy 141.789 !expected energy
+endif
+
+if count eq 25 then
+set residue dops
+set seed 1 n 1 c12 1 c11
+set energy 66.8856 !expected energy
+endif
+
+if count eq 26 then
+set residue dopa
+set seed 1 h12 1 o12 1 p
+set energy -31.4266 !expected energy
+endif
+
+if count eq 27 then
+set residue dopg
+set seed 1 c13 1 c12 1 c11
+set energy 164.767 !expected energy
+endif
+
+if count eq 28 then
+set residue popc
+set seed 1 c13 1 n 1 c12
+set energy 11.0508 !expected energy
+endif
+
+if count eq 29 then
+set residue pope
+set seed 1 n 1 c12 1 c11
+set energy -0.111009 !expected energy
+endif
+
+if count eq 30 then
+set residue pops
+set seed 1 n 1 c12 1 c11
+set energy -19.4767 !expected energy
+endif
+
+if count eq 31 then
+set residue popa
+set seed 1 h12 1 o12 1 p
+set energy -41.3488 !expected energy
+endif
+
+if count eq 32 then
+set residue popg
+set seed 1 c13 1 c12 1 c11
+set energy 80.1686 !expected energy
+endif
+
+if count eq 33 then
+set residue sapc
+set seed 1 c13 1 n 1 c12
+set energy 156.726 !expected energy
+endif
+
+if count eq 34 then
+set residue sdpc
+set seed 1 c13 1 n 1 c12
+set energy 31.9082 !expected energy
+endif
+
+if count eq 35 then
+set count 36
+!set residue sepc
+!set seed 1 c13 1 n 1 c12
+!set energy 36.0279 !expected energy
+endif
+
+if count eq 36 then
+set residue sopc
+set seed 1 c13 1 n 1 c12
+set energy 15.7865 !expected energy
+endif
+
+if count eq 37 then
+set count 38
+!set residue sppc
+!set seed 1 c13 1 n 1 c12
+!set energy 35.8721 !expected energy
+endif
+
+if count eq 38 then
+set residue dapc
+set seed 1 c13 1 n 1 c12
+set energy 112.571 !expected energy
+endif
+
+if count eq 39 then
+stop
+!set residue pip2
+!set seed 1 c11 1 c12 1 c13
+!set energy 482.576 !expected energy
+endif
+
+if count eq 40 then
+!set residue pip3
+!set seed 1 c11 1 c12 1 c13
+!set energy 973.578 !expected energy
+endif
+
+
+read sequence card
+* @residue
+*
+1
+@residue
+
+generate a first none last none setup warn
+
+!ic delete sele all end
+!ic generate
+ic para
+ic seed @seed
+ic build
+!coor print
+
+update cutnb 999.0 ctofnb 98.0 ctonnb 97.0 inbfrq -1 switch vfswitch
+!mini SD nstep 200 nprint 100 
+!mini abnr nstep 500 tolgrd 0.00001
+!ic fill
+!ic print
+
+energy
+calc diff = @energy - ?ener
+! expected value: @energy
+!write title unit 10
+!* @residue @energy ?ener @diff
+!*
+
+delete atom sele all end
+
+calc count = @count + 1
+if count le @countfinal goto loop1
+
+stop

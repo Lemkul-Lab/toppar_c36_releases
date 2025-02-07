@@ -1,0 +1,6927 @@
+* test case for carb_imlab
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+wrnlev 5
+
+!!!!!!!!!!!!!!
+! new sugars !
+!!!!!!!!!!!!!!
+
+set resi agalf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+update cutnb 990.0  ctofnb 980.0  ctonnb 970.0  !set once for remaining residues
+energy
+delete atom select all end
+
+set resi agala
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi atyv
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi amu2ac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blido
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agaln
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alarb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi akda
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdarbp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aaltn
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ballna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi altana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aalta
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alrib
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi akdn
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi akdo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aidona
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi brhmna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blalt
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blman
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bneu
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aalla
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aoli
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blall
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi afucna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aalln
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi etpp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 n @resi 1 c9 @resi 1 c8
+ic build
+energy
+delete atom select all end
+
+set resi bl6tal
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agalaa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi boli
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi atag
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi barbp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agula
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi basc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blglna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blgal
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bltagp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi alyxp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aguln
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bguln
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bkdn
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bgulna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bleg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bgula
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blyxp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blgul
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aaltna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blguna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bfrup
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi bltana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adfucf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi almana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bribp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi atala
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blgula
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bmann
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ataln
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi btalna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bgaln
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdhep
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blribp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bgala
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alxyl
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bgalf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adrhm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alalta
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alidna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alido
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi btaln
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bpse
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blgana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi a6hep
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bqui
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bpsi
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi btala
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglcn
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi altal
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bmana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdrhm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blrulf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi btyv
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi algula
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aleg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bmu2ac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi btag
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi balla
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alfru
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi aallna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alman
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdfucf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blalta
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bpsip
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi altagp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi ane5gc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blrib
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi quita
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aidon
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bmanna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aquina
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adarbp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alglna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alglc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adha
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blglc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ako
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bidon
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi asorp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi alrulf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi dglya
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bpar
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blidna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blqui
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi amann
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi al6tal
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blxyl
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi amana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi asor
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi b6hep
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aarbp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi algana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blgalf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglgl
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdfuc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+
+delete atom select all end
+
+set resi baltna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+
+delete atom select all end
+
+set resi bxulf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi alglaa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglaa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bcol
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alalt
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bmur
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi b8leg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alall
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi algalf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi a8leg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adig
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adpsi
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi bdig
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blfru
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi bmu2gc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi al6alt
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bl6alt
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bfucna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alguna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi atalna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi btagp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi apar
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aneu
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdpsi
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi adfuc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi axulf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi baltn
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi dphg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alribp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bsorp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi agulna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi amu2gc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi balta
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bne5gc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blarb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi amur
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdha
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blalna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi apsi
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi blmana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aasc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi algal
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglcn
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alalna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bsor
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi algul
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bko
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi amanna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aribp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bltal
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bhep
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi balln
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi acol
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adhep
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aqui
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bquina
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arhmna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi alqui
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi apsip
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi bidona
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi afrup
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi atagp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi apse
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! new chemical modification patches !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+set resi aglc
+set patchname p6en
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2aac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agalf
+set patchname 2bacf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3aac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4aac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6tac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agalf
+set patchname 6tacf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ane5ac
+set patchname 7aac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aleg
+set patchname 8aac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi a8leg
+set patchname 8bac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ane5ac
+set patchname 9tac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2anam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bnam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3anam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bnam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi apse
+set patchname 5bnam2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1anac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bnac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2anac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bnac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3anac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bnac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4anac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bnac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ane5ac
+set patchname 9tnac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bnfo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3anfo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bnfo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi apse
+set patchname 7bnfo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2ansb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bnsb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bnrb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi apse
+set patchname 5bnrb2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi a8leg
+set patchname 5anrb2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi apse
+set patchname 7bnrb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bnsb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bnrb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4anrb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bnsb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bqui
+set patchname 4bnasb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bqui
+set patchname 4bdasb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bnana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3anana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bnana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4anana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bqui
+set patchname 4bnsna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bqui
+set patchname 3bnsna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4antna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bqui
+set patchname 4bntna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4angna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bqui
+set patchname 4bngna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agalna
+set patchname 6tan
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agala
+set patchname 6tan2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 7tcbm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglca
+set patchname 6tng2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6tng
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 7tng
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglca
+set patchname 6tndt2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6tndt
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bgala
+set patchname 6tna2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6tna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2ana
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bna
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aleg
+set patchname 7anda
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arhm
+set patchname 3arlac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3brlac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3aslac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bslac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4arlac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 4brlac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4aslac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglcna
+set patchname 4bslac
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1deo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2deo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3deo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4deo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6deo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 7deo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglcna
+set patchname 6tcoo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1aam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2aam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3aam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4aam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6tam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ane5ac
+set patchname 9tam
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arib
+set patchname 1aamf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi brib
+set patchname 1bamf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1betpp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 2aetpp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 3betpp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 4betpp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi akdo
+set patchname 7betpp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi aman
+set patchname 2apea
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bpea
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arhm
+set patchname 3apea
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 3bpea
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 6tpea
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 6apea
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 7tpea
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ako
+set patchname 7bpea
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1aph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2aph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3aph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4aph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 4bph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 6tph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 6aph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arib
+set patchname 5tphf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahep
+set patchname 7tph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi akdo
+set patchname 8tph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1aome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2aome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3aome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4aome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6tome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1ash
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bsh
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2ash
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bsh
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3ash
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bsh
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4ash
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bsh
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2ansf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bnsf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglcna
+set patchname 46spyr
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 46rpyr
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1acf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bcf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2acf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bcf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ane5ac
+set patchname 2acf2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bne5ac
+set patchname 2bcf2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3acf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bcf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ane5ac
+set patchname 3acf2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ane5ac
+set patchname 3bcf2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4acf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bcf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 5acf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi amu2ac
+set patchname 3bmdp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1apph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bpph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4apph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bpph
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arib
+set patchname 1apphf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bpea
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arib
+set patchname 1aphr
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi brib
+set patchname 1bphr
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi afru
+set patchname 1tphf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi afru
+set patchname 2aphf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi bfru
+set patchname 2bphf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi afru
+set patchname 1tsuff
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi afru
+set patchname 3asuff
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi afru
+set patchname 4asuff
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi afru
+set patchname 6tsuff
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c2 @resi 1 c3 @resi 1 c4
+ic build
+energy
+delete atom select all end
+
+set resi ane5ac
+set patchname 2aome2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bne5ac
+set patchname 2bome2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1aspro
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bspro
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 6coome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1amgly
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bmgly
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1aglya
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bglya
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arib
+set patchname 1aomef
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi brib
+set patchname 1bomef
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi akdo
+set patchname 7bome
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1aos
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arib
+set patchname 1angf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi brib
+set patchname 1bngf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3ac8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bc8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6tc8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aqui
+set patchname 6tsfo
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1asc8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bsc8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname lipao1
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglcn
+set patchname lipan1
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname lipao2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglcn
+set patchname lipan2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4ansdb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adrhm
+set patchname 4bnsdb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4andhh
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bquina
+set patchname 4bndhh
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agal
+set patchname 4anrhp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adrhm
+set patchname 4bnrhp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi arhm
+set patchname 4anshp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 4bnshp
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3aalaf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglcna
+set patchname 3balaf
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agala
+set patchname 6tgro2
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi afuc
+set patchname 3anopr
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2ac10
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bc10
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aman
+set patchname 2ac12
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2bc12
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3ac10
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bc10
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi agul
+set patchname 3ac12
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 3bc12
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6tc10
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 6tc12
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1asc10
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bsc10
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1asc12
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bsc12
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! new sugar linkage patches !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+set resi1 aglc
+set resi2 dphg
+set patchname dphga
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bglc
+set resi2 dphg
+set patchname dphgb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 afuc
+set resi2 ane5ac
+set patchname sa23aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 akdo
+set resi2 akdo
+set patchname sa24ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 akdo
+set resi2 akdo
+set patchname sa25aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bglcn
+set resi2 akdo
+set patchname sa26bt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 akdo
+set resi2 ahep
+set patchname 15aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 akdo
+set resi2 bhep
+set patchname 15ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 ahep
+set resi2 ahep
+set patchname 17at
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 ahep
+set resi2 bhep
+set patchname 17bt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 akdo
+set resi2 agal
+set patchname 18at
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 akdo
+set resi2 bgal
+set patchname 18bt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 ahep
+set resi2 ahep
+set patchname 16aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 ahep
+set resi2 bhep
+set patchname 16ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 ane5ac
+set resi2 bgalna
+set patchname 17ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 akdo
+set resi2 bglcn
+set patchname 17bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 ablipa
+set resi2 akdo
+set patchname lk26a
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 ca1 cara 1 ca2 cara 1 ca3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 a8leg
+set resi2 aglcna
+set patchname 18ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aleg
+set resi2 bglcna
+set patchname 18ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bglc
+set resi2 a8leg
+set patchname sa24ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgal
+set resi2 bpse
+set patchname sa24ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 mglyol
+set resi2 aglc
+set patchname 12ag
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 mribol
+set resi2 aglc
+set patchname 12ar
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 mribol
+set resi2 bglc
+set patchname 12br
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 mglyol
+set resi2 bglc
+set patchname 13bg
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 mribol
+set resi2 bglc
+set patchname 13br
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 afru
+set patchname pf21aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgalf
+set resi2 bgal
+set patchname pf16bt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgalf
+set resi2 agal
+set patchname pf13ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 brib
+set resi2 bqui
+set patchname pf13ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgalf
+set resi2 bgalna
+set patchname pf13bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bfru
+set resi2 bglc
+set patchname pf14ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c2 cara 1 c3 cara 1 c4
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgalf
+set resi2 bglcna
+set patchname pf15ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 brib
+set resi2 aglcna
+set patchname pf12ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 agalf
+set resi2 bglcna
+set patchname pf12bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 brhm
+set resi2 bxulf
+set patchname xf12bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 brhm
+set resi2 bxulf
+set patchname xf22bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 arhm
+set resi2 agalf
+set patchname fp13aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 agalf
+set patchname fp13ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 arhm
+set resi2 brib
+set patchname fp13ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bglcna
+set resi2 bgalf
+set patchname fp13bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgal
+set resi2 bgalf
+set patchname fp14ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 agal
+set resi2 agalf
+set patchname fp14aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bko
+set resi2 brib
+set patchname fp15ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aarb
+set resi2 aarb
+set patchname ff15at
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 bgalf
+set patchname fp16bt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 bfru
+set patchname fp21ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 afru
+set patchname fp21aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 bfru
+set patchname fp26bt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 brib
+set resi2 brib
+set patchname ff12bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgalf
+set resi2 bgalf
+set patchname ff13bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgalf
+set resi2 bgalf
+set patchname ff15ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 arhm
+set resi2 mglyol
+set patchname 1p3ga
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgalna
+set resi2 mglyol
+set patchname 1p3gb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 aglc
+set patchname 1p4ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 alqui
+set resi2 aglc
+set patchname 1p4aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 aglc
+set patchname 1p6at
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bglcna
+set resi2 mglyol
+set patchname 1p4gb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bglc
+set resi2 mglyol
+set patchname 1p6gt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 mglyol
+set patchname 2p4gb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgalna
+set resi2 mglyol
+set patchname 2p4ga
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 dglya
+set patchname 2p6gat
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 agal
+set resi2 mribol
+set patchname 5p6rt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bglca
+set resi2 bgalf
+set patchname fp14bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 akdo
+set resi2 akdo
+set patchname sa28at
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bfru
+set resi2 bfru
+set patchname ff21bt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c2 cara 1 c3 cara 1 c4
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bfru
+set resi2 bfru
+set patchname ff26bt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c2 cara 1 c3 cara 1 c4
+ic build
+energy
+delete atom select all end
+
+
+set resi1 arhm
+set resi2 agalf
+set patchname fp12ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aarb
+set resi2 barb
+set patchname ff12ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 arib
+set resi2 arib
+set patchname ff13aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bglc
+set resi2 bglc
+set patchname 1s1bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aman
+set resi2 aglc
+set patchname 1s2aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 aglc
+set patchname 1s2ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aman
+set resi2 bglc
+set patchname 1s2ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 bglc
+set patchname 1s2bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 agul
+set resi2 aglc
+set patchname 1s3aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 aglc
+set patchname 1s3ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 agul
+set resi2 bglc
+set patchname 1s3ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 bglc
+set patchname 1s3bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 agal
+set resi2 aglc
+set patchname 1s4aa
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 aglc
+set patchname 1s4ab
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 agal
+set resi2 bglc
+set patchname 1s4ba
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 bglc
+set patchname 1s4bb
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 aglc
+set patchname 1s6at
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 bglc
+set patchname 1s6bt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 bgala
+set resi2 mglyol
+set patchname 2n6gt
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aglc
+set resi2 mglyol
+set patchname 2n6gt2
+
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+!!!!!!!!!!!!!!!!!
+! special cases !
+!!!!!!!!!!!!!!!!!
+
+set resi1 apse
+set resi2 bquina
+set patchname 13rhbb
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch 7bnrb cara 1 setup warn   ! required to apply 13rhbb
+patch @patchname cara 1 cara 2 setup warn
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi1 aman
+set resi2 thr
+set resi3 asn
+set patchname 6tpeap
+
+read sequence card
+* ceramide
+*
+1
+@resi1
+generate carb first none last none setup warn
+
+read sequence card
+* oligosaccharide chain
+*
+2
+@resi2 @resi3
+generate pep first nter last ct3 setup warn
+patch @patchname carb 1 pep 2 setup warn
+
+ic seed 1 o5 1 c1 1 c2
+ic build
+hbuild
+energy
+delete atom select all end
+
+
+!2019_7
+
+set resi1 AHEP
+set resi2 BGALF
+set patchname FP17BT
+read sequ card unit 5
+* Glycan Chain CARA: PDB chain
+*
+2
+@resi1 @resi2
+gene CARA first none last none setup
+patch @patchname CARA 1 CARA 2 setup warn
+autogenerate angle dihe
+ic para
+ic seed CARA 1 C1 CARA 1 C2 CARA 1 C3
+ic build
+
+ENERGY
+
+delete atom select all end
+
+stop
+
+

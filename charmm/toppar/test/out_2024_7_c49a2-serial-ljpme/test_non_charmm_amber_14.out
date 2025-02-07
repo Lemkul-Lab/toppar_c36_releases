@@ -1,0 +1,652 @@
+ Parameter: A <- "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/PARM14SB_ALL.RTF"
+ Parameter: B <- "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/PARM14SB_ALL.PRM"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+           (CHARMM) - Developmental Version 49a2   February 15, 2024            
+                                Revision unknown                                
+       Copyright(c) 1984-2023  President and Fellows of Harvard College
+                              All Rights Reserved
+         Current operating system: Linux-4.9.0-9-amd64(x86_64)@ocracoke         
+                 Created on  7/26/24 at 16:25:53 by user: alex        
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> * TEST AMBER PROTEIN AND NUCLEIC ACID PARAMETERS
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    !set a ../non_charmm/top_amber_cornell.inp
+ CHARMM>    !set b ../non_charmm/par_amber_cornell.inp
+ CHARMM>     
+  
+ CHARMM>    ! read the topology
+ CHARMM>    open unit 9 read form name @a
+ Parameter: A -> "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/PARM14SB_ALL.RTF"
+ VOPEN> Attempting to open::/raid/alex/param/toppar_jul24/non_charmm/parm14sb_all.rtf::
+ OPNLGU> Unit  9 opened for READONLY access to /raid/alex/param/toppar_jul24/non_charmm/parm14sb_all.rtf
+  
+ CHARMM>    read rtf card unit 9
+ MAINIO> Residue topology file being read from unit   9.
+ TITLE> *  AMBER 2014SB FORCE-FIELD CONVERSION
+ TITLE> *  SEE: HTTP://PUBS.ACS.ORG/DOI/ABS/10.1021/ACS.JCTC.5B00255
+ TITLE> *  J. CHEM. THEORY COMPUT., DOI: 10.1021/ACS.JCTC.5B00255
+ TITLE> *
+  
+ CHARMM>     
+  
+ CHARMM>    ! read the parameters
+ CHARMM>    open unit 9 read form name @b
+ Parameter: B -> "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/PARM14SB_ALL.PRM"
+ OPNLGU> Unit already open. The old file will be closed first.
+ VCLOSE: Closing unit    9 with status "KEEP"
+ VOPEN> Attempting to open::/raid/alex/param/toppar_jul24/non_charmm/parm14sb_all.prm::
+ OPNLGU> Unit  9 opened for READONLY access to /raid/alex/param/toppar_jul24/non_charmm/parm14sb_all.prm
+  
+ CHARMM>    read para card unit 9
+
+          PARAMETER FILE BEING READ FROM UNIT  9
+ TITLE> *  AMBER FF14SB FORCE FIELD CONVERSION
+ TITLE> *  SEE: HTTP://PUBS.ACS.ORG/DOI/ABS/10.1021/ACS.JCTC.5B00255
+ TITLE> *  J. CHEM. THEORY COMPUT., DOI: 10.1021/ACS.JCTC.5B00255
+ TITLE> *
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>     
+  
+ CHARMM>    !crambin
+ CHARMM>    read sequence cards
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * CRAMBIN
+ RDTITL> *
+  
+ SEQRDR>    46
+  
+ SEQRDR>    THR THR CYS CYS PRO SER ILE VAL ALA ARG SER ASN PHE
+  
+ SEQRDR>    ASN VAL CYS ARG LEU PRO GLY THR PRO GLU ALA ILE CYS
+  
+ SEQRDR>    ALA THR TYR THR GLY CYS ILE ILE ILE PRO GLY ALA THR
+  
+ SEQRDR>    CYS PRO GLY ASP TYR ALA ASN
+
+          RESIDUE SEQUENCE --    46 RESIDUES
+          THR THR CYS CYS PRO SER ILE VAL ALA ARG SER ASN PHE ASN VAL CYS ARG LEU PRO GLY 
+          THR PRO GLU ALA ILE CYS ALA THR TYR THR GLY CYS ILE ILE ILE PRO GLY ALA THR CYS 
+          PRO GLY ASP TYR ALA ASN 
+ ***** Message from SEQRDR ***** THE SYSTEM CONTAINS  4 TITRATABLE GROUPS
+ THE USER MUST PREDETERMINE THE PROTONATION STATE THROUGH THE SEQUENCE AND RTF
+ HIS -  0  HSD -  0  HSE -  0  HSP -  0  ASP -  1  GLU -  1  LYS -  0  TYR -  2
+  
+ CHARMM>     
+  
+ CHARMM>    generate crm1 first nthr last casn setup warn
+ THE PATCH 'NTHR' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CASN' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "N     " "HN    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "-C    " "CA    " "N     " "HN    " WERE REQUESTED.
+ ** WARNING ** DONOR NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "HN    " "N     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "C     " "O     " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "CA    " "+N    " "C     " "O     " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is CRM1.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      648   Number of groups     =       45
+         Number of bonds         =      655   Number of angles     =     1183
+         Number of dihedrals     =     1744   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =       64   Number of HB donors  =       75
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ! patch in disulfides
+ CHARMM>    patch disu crm1  3 crm1 40
+ ATOM  CRM1 3    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  CRM1 40   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      646   Number of groups     =       47
+         Number of bonds         =      654   Number of angles     =     1183
+         Number of dihedrals     =     1745   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =        9
+         Number of HB acceptors  =       64   Number of HB donors  =       73
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    patch disu crm1  4 crm1 32
+ ATOM  CRM1 4    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  CRM1 32   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      644   Number of groups     =       49
+         Number of bonds         =      653   Number of angles     =     1183
+         Number of dihedrals     =     1746   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =       18
+         Number of HB acceptors  =       64   Number of HB donors  =       71
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    patch disu crm1 16 crm1 26
+ ATOM  CRM1 16   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  CRM1 26   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      642   Number of groups     =       51
+         Number of bonds         =      652   Number of angles     =     1183
+         Number of dihedrals     =     1747   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =       27
+         Number of HB acceptors  =       64   Number of HB donors  =       69
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angle dihedral
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:  1183 angles are removed before regeneration for selected atoms.
+ AUTOGEN:  1747 dihedrals are removed before regeneration for selected atoms.
+ Requested angle for addition already exists:          35          38         561  Nothing done.
+ Requested angle for addition already exists:          38         561         558  Nothing done.
+ Requested angle for addition already exists:          45          48         449  Nothing done.
+ Requested angle for addition already exists:          48         449         446  Nothing done.
+ Requested angle for addition already exists:         224         227         373  Nothing done.
+ Requested angle for addition already exists:         227         373         370  Nothing done.
+ Requested dihedral for addition already exists:          36          35          38         561  Nothing done.
+ Requested dihedral for addition already exists:          37          35          38         561  Nothing done.
+ Requested dihedral for addition already exists:          38         561         558         559  Nothing done.
+ Requested dihedral for addition already exists:          38         561         558         560  Nothing done.
+ Requested dihedral for addition already exists:          33          35          38         561  Nothing done.
+ Requested dihedral for addition already exists:          38         561         558         556  Nothing done.
+ Requested dihedral for addition already exists:          35          38         561         558  Nothing done.
+ Requested dihedral for addition already exists:          46          45          48         449  Nothing done.
+ Requested dihedral for addition already exists:          47          45          48         449  Nothing done.
+ Requested dihedral for addition already exists:          48         449         446         447  Nothing done.
+ Requested dihedral for addition already exists:          48         449         446         448  Nothing done.
+ Requested dihedral for addition already exists:          43          45          48         449  Nothing done.
+ Requested dihedral for addition already exists:          48         449         446         444  Nothing done.
+ Requested dihedral for addition already exists:          45          48         449         446  Nothing done.
+ Requested dihedral for addition already exists:         225         224         227         373  Nothing done.
+ Requested dihedral for addition already exists:         226         224         227         373  Nothing done.
+ Requested dihedral for addition already exists:         227         373         370         371  Nothing done.
+ Requested dihedral for addition already exists:         227         373         370         372  Nothing done.
+ Requested dihedral for addition already exists:         222         224         227         373  Nothing done.
+ Requested dihedral for addition already exists:         227         373         370         368  Nothing done.
+ Requested dihedral for addition already exists:         224         227         373         370  Nothing done.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      642   Number of groups     =       51
+         Number of bonds         =      652   Number of angles     =     1183
+         Number of dihedrals     =     1747   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =       27
+         Number of HB acceptors  =       64   Number of HB donors  =       69
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * CRAMBIN, XTAL ASYMMETRIC UNIT WITH WATER, FROM KURIYAN
+ RDTITL> * GENERATED AND IMAGE CENTERED
+ RDTITL> * SEGIDS RENAMED AND IMAGE CENTERED
+ RDTITL> * 200 SD STEPS SOLVENT FOLLOWED BY 200 ABNR STEPS WITH PME
+ RDTITL> * 20 PS NVT, SOLUTE HARMONICALLY CONSTRAINED
+ RDTITL> * ../TOPPAR/TOP_P22B5I_N271F.INP
+ RDTITL> * ../TOPPAR/PAR_P22B5I_N271F.INP
+ RDTITL> *  DATE:     3/21/ 2     12: 9: 1      CREATED BY USER: ALEXMAC
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      GROUps   CDIElec  SWITch   VGROup   VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.400 WRNMXD =  0.500 E14FAC =  0.833 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found   1835 exclusions and   1713 interactions(1-4)
+ <MAKGRP> found     68 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND     1326 GROUP PAIRS
+
+ General group nonbond list generation found:
+      834 GROUP PAIRS WERE FOUND FOR GROUP LIST
+      492 GROUP PAIRS WERE BEYOND CUTOFFS
+        0 GROUP PAIRS WERE NOT SELECTED
+        0 QM group pairs excluded
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0   -263.79243      0.00000     21.03855
+ENER INTERN>      154.03889    306.93860      0.00000    544.89330     10.10943
+ENER EXTERN>     -120.54290  -1159.22975      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * 1BNA, STRAND 1
+ RDTITL> *
+  
+ SEQRDR>    12
+  
+ SEQRDR>    cyt gua cyt gua ade ade thy thy cyt gua cyt gua
+
+          RESIDUE SEQUENCE --    12 RESIDUES
+          CYT GUA CYT GUA ADE ADE THY THY CYT GUA CYT GUA 
+  
+ CHARMM>     
+  
+ CHARMM>    !generate dna first none last none setup warn
+ CHARMM>    generate dna first cyt5 last gua3 setup warn
+ THE PATCH 'CYT5' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'GUA3' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  47 CYT   .
+ ATOMS "P     " "O1P   " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  47 CYT   .
+ ATOMS "P     " "O2P   " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  47 CYT   .
+ ATOMS "P     " "O5'   " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE  47 CYT   .
+ ATOMS "O1P   " "P     " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE  47 CYT   .
+ ATOMS "O2P   " "P     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  58 GUA   .
+ ATOMS "O3'   " "+P    " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   2 has been generated. Its identifier is DNA.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1031   Number of groups     =       63
+         Number of bonds         =     1070   Number of angles     =     1931
+         Number of dihedrals     =     2855   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =       27
+         Number of HB acceptors  =      162   Number of HB donors  =      107
+         Number of NB exclusions =        0   Total charge =  -11.00000
+  
+ CHARMM>     
+  
+ CHARMM>    bomlev -1
+  
+ CHARMM>     
+  
+ CHARMM>    !deoxy patches;
+ CHARMM>    patch doc5 dna 1 setup warn  !note terminal patch
+ ATOM  DNA  1    CYT  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+
+ Warning from PSFSUM: The sum of charges (  -10.999800) is not an integer
+
+
+      ***** LEVEL  0 WARNING FROM <PSFSUM> *****
+      ***** Total charge not an integer
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1030   Number of groups     =       63
+         Number of bonds         =     1069   Number of angles     =     1930
+         Number of dihedrals     =     2852   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =       36
+         Number of HB acceptors  =      161   Number of HB donors  =      106
+         Number of NB exclusions =        0   Total charge =  -10.99980
+  
+ CHARMM>    patch dog  dna 2 setup warn
+ ATOM  DNA  2    GUA  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+
+ Warning from PSFSUM: The sum of charges (  -10.999800) is not an integer
+
+
+      ***** LEVEL  0 WARNING FROM <PSFSUM> *****
+      ***** Total charge not an integer
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1029   Number of groups     =       63
+         Number of bonds         =     1068   Number of angles     =     1929
+         Number of dihedrals     =     2849   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =       45
+         Number of HB acceptors  =      160   Number of HB donors  =      105
+         Number of NB exclusions =        0   Total charge =  -10.99980
+  
+ CHARMM>    patch doc  dna 3 setup warn
+ ATOM  DNA  3    CYT  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+
+ Warning from PSFSUM: The sum of charges (  -10.999800) is not an integer
+
+
+      ***** LEVEL  0 WARNING FROM <PSFSUM> *****
+      ***** Total charge not an integer
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1028   Number of groups     =       63
+         Number of bonds         =     1067   Number of angles     =     1928
+         Number of dihedrals     =     2846   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =       54
+         Number of HB acceptors  =      159   Number of HB donors  =      104
+         Number of NB exclusions =        0   Total charge =  -10.99980
+  
+ CHARMM>    patch dog  dna 4 setup warn
+ ATOM  DNA  4    GUA  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+
+ Warning from PSFSUM: The sum of charges (  -10.999800) is not an integer
+
+
+      ***** LEVEL  0 WARNING FROM <PSFSUM> *****
+      ***** Total charge not an integer
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1027   Number of groups     =       63
+         Number of bonds         =     1066   Number of angles     =     1927
+         Number of dihedrals     =     2843   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =       63
+         Number of HB acceptors  =      158   Number of HB donors  =      103
+         Number of NB exclusions =        0   Total charge =  -10.99980
+  
+ CHARMM>    patch doa  dna 5 setup warn
+ ATOM  DNA  5    ADE  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+
+ Warning from PSFSUM: The sum of charges (  -10.999800) is not an integer
+
+
+      ***** LEVEL  0 WARNING FROM <PSFSUM> *****
+      ***** Total charge not an integer
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1026   Number of groups     =       63
+         Number of bonds         =     1065   Number of angles     =     1926
+         Number of dihedrals     =     2840   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =       72
+         Number of HB acceptors  =      157   Number of HB donors  =      102
+         Number of NB exclusions =        0   Total charge =  -10.99980
+  
+ CHARMM>    patch doa  dna 6 setup warn
+ ATOM  DNA  6    ADE  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+
+ Warning from PSFSUM: The sum of charges (  -10.999800) is not an integer
+
+
+      ***** LEVEL  0 WARNING FROM <PSFSUM> *****
+      ***** Total charge not an integer
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1025   Number of groups     =       63
+         Number of bonds         =     1064   Number of angles     =     1925
+         Number of dihedrals     =     2837   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =       81
+         Number of HB acceptors  =      156   Number of HB donors  =      101
+         Number of NB exclusions =        0   Total charge =  -10.99980
+  
+ CHARMM>    patch doc  dna 9 setup warn
+ ATOM  DNA  9    CYT  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+
+ Warning from PSFSUM: The sum of charges (  -10.999800) is not an integer
+
+
+      ***** LEVEL  0 WARNING FROM <PSFSUM> *****
+      ***** Total charge not an integer
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1024   Number of groups     =       63
+         Number of bonds         =     1063   Number of angles     =     1924
+         Number of dihedrals     =     2834   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =       90
+         Number of HB acceptors  =      155   Number of HB donors  =      100
+         Number of NB exclusions =        0   Total charge =  -10.99980
+  
+ CHARMM>    patch dog  dna 10 setup warn
+ ATOM  DNA  10   GUA  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+
+ Warning from PSFSUM: The sum of charges (  -10.999800) is not an integer
+
+
+      ***** LEVEL  0 WARNING FROM <PSFSUM> *****
+      ***** Total charge not an integer
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1023   Number of groups     =       63
+         Number of bonds         =     1062   Number of angles     =     1923
+         Number of dihedrals     =     2831   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =       99
+         Number of HB acceptors  =      154   Number of HB donors  =       99
+         Number of NB exclusions =        0   Total charge =  -10.99980
+  
+ CHARMM>    patch doc  dna 11 setup warn
+ ATOM  DNA  11   CYT  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+
+ Warning from PSFSUM: The sum of charges (  -10.999800) is not an integer
+
+
+      ***** LEVEL  0 WARNING FROM <PSFSUM> *****
+      ***** Total charge not an integer
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1022   Number of groups     =       63
+         Number of bonds         =     1061   Number of angles     =     1922
+         Number of dihedrals     =     2828   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =      108
+         Number of HB acceptors  =      153   Number of HB donors  =       98
+         Number of NB exclusions =        0   Total charge =  -10.99980
+  
+ CHARMM>    patch dog3 dna 12 setup warn !note terminal patch
+ ATOM  DNA  12   GUA  O2'  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         4 angles deleted
+ DELTIC:         9 dihedrals deleted
+ DELTIC:         1 donors deleted
+ DELTIC:         1 acceptors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        2   Number of residues   =       58
+         Number of atoms         =     1021   Number of groups     =       63
+         Number of bonds         =     1060   Number of angles     =     1921
+         Number of dihedrals     =     2825   Number of impropers  =      195
+         Number of cross-terms   =        0   Number of autogens   =      117
+         Number of HB acceptors  =      152   Number of HB donors  =       97
+         Number of NB exclusions =        0   Total charge =  -11.00000
+  
+ CHARMM>     
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 47 h5t 47 O5' 47 C5'
+  
+ CHARMM>    ic build
+  
+ CHARMM>     
+  
+ CHARMM>    coor trans xdir 0.0 ydir 1.0 zdir 1.0 dist -35. sele segid dna end
+ SELRPN>    379 atoms have been selected out of   1021
+ TRANSLATION VECTOR    -0.000000  -24.748737  -24.748737
+ SELECTED COORDINATES TRANSLATED IN THE MAIN SET.
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      GROUps   CDIElec  SWITch   VGROup   VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 10.000 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.400 WRNMXD =  0.500 E14FAC =  0.833 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found   2981 exclusions and   2665 interactions(1-4)
+ <MAKGRP> found     79 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   293386 ATOM PAIRS AND     1373 GROUP PAIRS
+
+ General group nonbond list generation found:
+      867 GROUP PAIRS WERE FOUND FOR GROUP LIST
+     1149 GROUP PAIRS WERE BEYOND CUTOFFS
+        0 GROUP PAIRS WERE NOT SELECTED
+        0 QM group pairs excluded
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0   -813.77786    549.98543     26.00007
+ENER INTERN>      324.50679    428.68642      0.00000    786.34730     10.10948
+ENER EXTERN>      238.75267  -2602.18052      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+ VCLOSE: Closing unit    9 with status "KEEP"
+$$$$$$  New timer profile $$$$$
+   List time                       0.01 Other:            0.00
+      Nonbond force                   0.01 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.00 Other:            0.00
+         Dihedral energy                 0.00 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.00 Other:            0.00
+   Energy time                     0.01 Other:            0.00
+ Total time                      0.12 Other:            0.11
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    MOST SEVERE WARNING WAS AT LEVEL  0
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.13  SECONDS 
+                         CPU TIME:     0.12  SECONDS 

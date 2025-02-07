@@ -1,0 +1,137 @@
+* generate and minimize amines
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+set 3 999.0  ! cutim
+set 4 999.0  ! cutnb
+set 5 997.0  ! ctonnb
+set 6 998.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+!loop over all amines
+
+set count 1
+
+label loop
+
+if count eq 1 set resn AMM1
+if count eq 2 set resn MAM1
+if count eq 3 set resn DMAM
+if count eq 4 set resn TMAM
+
+read sequence card
+* @resn
+*
+1
+@resn
+
+generate test first none last none setup warn
+
+if count eq 1 goto read_1
+if count eq 2 goto read_2
+if count eq 3 goto read_3
+if count eq 4 goto read_4
+
+label read_1
+read coor card
+* AMMONIA, MP2/6-31G(D) OPTIMIZED STRUCTURE, standard orientation
+* hf/6-31g(d) dipole
+* X=     0.0000    Y=     0.0000    Z=    -1.9715  Tot=     1.9715
+*  DATE:     6/21/96     15:31:22      CREATED BY USER:
+*
+    4
+    1    1 AMM1 N1     0.00000   0.00000   0.11665 TEST 1      0.00000
+    2    1 AMM1 H11    0.00000   0.93982  -0.27220 TEST 1      0.00000
+    3    1 AMM1 H12    0.81391  -0.46991  -0.27220 TEST 1      0.00000
+    4    1 AMM1 H13   -0.81391  -0.46991  -0.27220 TEST 1      0.00000
+
+goto finish_read
+
+label read_2
+read coor card
+* methylamine, MP2/6-31G(D) OPTIMIZED STRUCTURE, standard orientation
+* hf/6-31g* dipole moment
+* X=    -1.5315    Y=     0.4742    Z=     0.0000  Tot=     1.6032
+*  DATE:     6/21/96     18:45:19      CREATED BY USER:
+*
+    7
+    1    1 MAM1 N1     0.05178  -0.76021   0.00000 TEST 1      0.00000
+    2    1 MAM1 C1     0.05178   0.70498   0.00000 TEST 1      0.00000
+    3    1 MAM1 HN1   -0.45873  -1.09982   0.81237 TEST 1      0.00000
+    4    1 MAM1 HC1    0.59312   1.05715   0.88094 TEST 1      0.00000
+    5    1 MAM1 HC2   -0.94203   1.17694   0.00000 TEST 1      0.00000
+    6    1 MAM1 HC3    0.59312   1.05715  -0.88094 TEST 1      0.00000
+    7    1 MAM1 HN2   -0.45873  -1.09982  -0.81237 TEST 1      0.00000
+
+goto finish_read
+
+label read_3
+read coor card
+* DIMETHYLAMINE, MP2/6-31G(D) OPTIMIZED STRUCTURE, standard
+* orientation
+* X= 1.0875    Y= -0.5700    Z= 0.0000  Tot= 1.2278
+*  DATE:     6/25/96     11:42:22      CREATED BY USER:
+*
+   10
+    1    1 DMAM N1    -0.02758  0.59377    0.00000 TEST 1      0.00000
+    2    1 DMAM C1    -0.02758 -0.22525   -1.20633 TEST 1      0.00000
+    3    1 DMAM HN1    0.80791  1.17625    0.00000 TEST 1      0.00000
+    4    1 DMAM H11    0.03671  0.42133   -2.08497 TEST 1      0.00000
+    5    1 DMAM H12    0.79329 -0.96139   -1.25067 TEST 1      0.00000
+    6    1 DMAM H13   -0.97191 -0.77475   -1.26030 TEST 1      0.00000
+    7    1 DMAM C2    -0.02758 -0.22525    1.20633 TEST 1      0.00000
+    8    1 DMAM H21   -0.97191 -0.77475    1.26030 TEST 1      0.00000
+    9    1 DMAM H22    0.79329 -0.96139    1.25067 TEST 1      0.00000
+   10    1 DMAM H23    0.03671  0.42133    2.08497 TEST 1      0.00000
+
+goto finish_read
+
+label read_4
+read coor card
+* TRIMETHYLAMINE, MP2/6-31G(D) OPTIMIZED STRUCTURE, standard
+* orientation, hf/6-31g(d) dipole moment
+* X=  0.0001    Y= -0.0001    Z=  0.8461  Tot=  0.8461
+*  DATE:     6/25/96     15:52:40      CREATED BY USER:
+*
+   13
+    1    1 TMAM N1     0.00002   0.00000  -0.39623 TEST 1      0.00000
+    2    1 TMAM C1    -0.70599  -1.18563   0.06540 TEST 1      0.00000
+    3    1 TMAM H11   -0.74869  -1.25700   1.16837 TEST 1      0.00000
+    4    1 TMAM H12   -1.72991  -1.17247  -0.31821 TEST 1      0.00000
+    5    1 TMAM H13   -0.20645  -2.07962  -0.31799 TEST 1      0.00000
+    6    1 TMAM C2    -0.67385   1.20419   0.06540 TEST 1      0.00000
+    7    1 TMAM H21   -0.14974   2.08441  -0.31704 TEST 1      0.00000
+    8    1 TMAM H22   -1.69739   1.21918  -0.31915 TEST 1      0.00000
+    9    1 TMAM H23   -0.71554   1.27614   1.16837 TEST 1      0.00000
+   10    1 TMAM C3     1.37983  -0.01855   0.06540 TEST 1      0.00000
+   11    1 TMAM H31    1.88008  -0.91244  -0.31727 TEST 1      0.00000
+   12    1 TMAM H32    1.90454   0.86047  -0.31895 TEST 1      0.00000
+   13    1 TMAM H33    1.46305  -0.01868   1.16836 TEST 1      0.00000
+
+label finish_read
+
+energy
+!mini abnr nstep 20 nprint 10
+!mini nraph nstep 20 nprint 10 tolgrd 0.000001
+!vibran
+!diag
+!end
+
+!write minimized coordinates if desired
+!open unit 20 write form name pdb/@resn.pdb
+!write coor pdb unit 20
+!* charmm optimized @resn
+!*
+
+delete atom sele all end
+
+calc count = @count + 1
+
+if count le 4 goto loop
+
+stop
+

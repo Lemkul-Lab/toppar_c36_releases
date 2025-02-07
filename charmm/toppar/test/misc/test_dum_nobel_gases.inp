@@ -1,0 +1,72 @@
+* generate and energy of rare gases and dummy atom
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+set 3 99.0  ! cutim
+set 4 99.0  ! cutnb
+set 5 97.0  ! ctonnb
+set 6 98.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+read sequence card
+* helium
+*
+1
+he1
+
+generate test first none last none setup warn 
+
+read coor card
+* test
+*
+    1
+    1    1 HE1  HE01   0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* neon
+*
+1
+ne1
+
+generate test first none last none setup warn 
+
+read coor card
+* test
+*
+    1
+    1    1 NE1  NE01   0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* dummy atom
+*
+1
+dum
+
+generate test first none last none setup warn 
+
+read coor card
+* test
+*
+    1
+    1    1 DUM  DUM    0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+stop

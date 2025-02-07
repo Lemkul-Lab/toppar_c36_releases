@@ -1,0 +1,256 @@
+NOTE: As of 2019 I need to create a unique git branch into which the
+toppar changes will be submitted.  Josh will then submit them to the
+main branch when it is time for a new release. 
+
+Access git through nihiwatu in /raid/alex/charmm/code/charmm_git
+
+See https://charmm-dev.org/wiki/index.php/GitLab/Merging
+and
+http://mackerell.umaryland.edu/pmwiki/pmwiki.php?n=Main.CharmmGitRepositoryAtUMich
+
+Toppar change log
+
+All files in the toppar subdirectory that are included in the final
+release (eg. files in toppar_jul16/toppar) will be maintained in the
+Michigan GIT.  The procedure will allow for the files to be maintained
+locally at UMB and then uploaded into the git repository prior to new
+releases of CHARMM.  This will assure consistency with the UM Git.
+Information on performing the process is in the MacKerell lab wiki.
+
+### 2024_7  steps after creation of toppar_jul24/toppar subdirectory with all the files
+##create new stable-release directory, go into directory and clone stable-release
+
+##on nihiwatu: see description of steps below
+## files 
+cd charmm_git
+rm -rf stable-release
+git clone gitlab:/bucknerj/stable-release
+cd stable-release
+git checkout -b toppar-updates-2024
+rm -r toppar
+cp -r /raid/alex/param/toppar_jul24/toppar .
+git commit -a -m "2023 to 2024 CHARMM and Drude toppar updates. See toppar_all.history for details."
+git add toppar/drude/drude_toppar_2023.tgz  
+git commit -a -m "2023 release of the Drude polarizable force field, no changes from 2024 beyond reference updates"
+git push -u origin toppar-updates-2024
+$ git add toppar/charmm_modifications toppar/stream/prot/toppar_all36_prot_cofactors.str
+$ git commit -a -m "New protein cofacotors toppar stream file"
+$ git push origin toppar-updates-2024
+
+### 2023_7 steps after creation of toppar_jul22/toppar subdirectory with all the files
+##create new stable-release directory, go into directory and clone stable-release
+
+##on nihiwatu: see description of steps below
+##create new stable-release directory, go into directory and clone stable-release
+
+
+alex@nihiwatu:/raid/alex/charmm/code/charmm_git
+
+rm -rf stable-release
+git clone gitlab:/bucknerj/stable-release
+cd stable-release
+git checkout -b toppar-updates-2023
+rm -r toppar
+cp -r /raid/alex/param/toppar_jul23/toppar .
+git commit -a -m "2022 to 2023 CHARMM and Drude toppar updates. See toppar_all.history for details."
+git push -u origin toppar-updates-2023
+git pull                                     
+git add toppar/drude/drude_toppar_2023.tgz  #this and following step should be done before first git push
+git commit -a -m "2023 release of the Drude polarizable force field"
+git push -u origin toppar-updates-2023
+
+untracked files identified:
+Untracked files:
+    toppar/cheq/top_all30_cheq_prot.inp_orig: deleted
+    toppar/cheq/top_all30_cheq_prot.inp~: deleted
+    toppar/metals/CHARMM_METAL.tgz_orig: deleted
+    toppar/metals/CHARMM_METAL/
+    toppar/non_charmm/gromacs/
+    toppar/par_all36_lipid_ljpme.prm
+    toppar/rush/top_rush_058.inp_orig: deleted
+    toppar/rush/top_rush_058.inp~: deleted
+    toppar/stream/lipid/toppar_all36_lipid_bacterial_ljpme.str
+    toppar/stream/lipid/toppar_all36_lipid_ether_ljpme.str
+    toppar/stream/lipid/toppar_all36_lipid_miscellaneous_ljpme.str
+    toppar/stream/lipid/toppar_all36_lipid_yeast_ljpme.str
+    toppar/stream/misc/toppar_cgenff_misc.str
+    toppar/stream/na/toppar_all36_na_rna_modified_for_new_psf_gen_code_2022.str
+    toppar/stream/prot/toppar_all36_prot_heme_for_new_psf_gen_code_2022.str
+    toppar/tamdfff/top_all22_prot_cmap.ahbb4.inp_orig: deleted
+    toppar/top_all36_lipid_ljpme.rtf
+
+selected files marked above were deteled from toppar_jul23 and toppar
+and remaining files added to git as follows
+
+git add toppar/metals/CHARMM_METAL
+git add toppar/non_charmm/gromacs
+git add toppar/par_all36_lipid_ljpme.prm
+git add toppar/stream/lipid/toppar_all36_lipid_bacterial_ljpme.str
+git add toppar/stream/lipid/toppar_all36_lipid_ether_ljpme.str
+git add toppar/stream/lipid/toppar_all36_lipid_miscellaneous_ljpme.str
+git add toppar/stream/lipid/toppar_all36_lipid_yeast_ljpme.str
+git add  toppar/stream/misc/toppar_cgenff_misc.str
+git add toppar/stream/na/toppar_all36_na_rna_modified_for_new_psf_gen_code_2022.str
+git add toppar/stream/prot/toppar_all36_prot_heme_for_new_psf_gen_code_2022.str
+git add  toppar/top_all36_lipid_ljpme.rtf
+
+git commit -a -m "2023: untracked files added to git"
+git push -u origin toppar-updates-2023
+
+
+### 2022_7 steps after creation of toppar_jul22/toppar subdirectory with all the files
+
+##on nihiwatu: see description of steps below
+##create new stable-release directory, go into directory and clone stable-release
+
+alex@nihiwatu:/raid/alex/charmm/code/charmm_git
+
+git clone ssh://git@charmm-dev.org:65492/bucknerj/stable-release
+cd stable-release
+git checkout -b toppar-updates-2022
+rm -r toppar
+cp -r /raid/alex/param/toppar_jul22/toppar .
+git commit -a -m "2021 to 2022 charmm toppar updates. See toppar_all.history for details."
+git push -u origin toppar-updates-2022
+
+### 2021_8 steps
+##on nihiwatu: see description of steps below
+##create new stable-release directory, go into directory and clone stable-release
+
+git clone ssh://git@charmm-dev.org:65492/bucknerj/stable-release
+cd stable-release
+git checkout -b toppar-updates-2021
+rm -r toppar
+cp -r /raid/alex/param/toppar_jul21/toppar .
+git commit -a -m "2020 to 2021 charmm toppar updates.  see toppar_all.history for details"
+git push -u origin toppar-updates-2021
+
+### 2020_7 directions
+
+Hi Alex
+
+Are these the changes that you would like to go into the next stable version of CHARMM?
+
+/raid/alex/charmm/code/charmm_git/stable-release
+
+If so, please try the instructions below:
+
+1. get a clone of the repository 'stable-release'
+
+git clone ssh://git@charmm-dev.org:65492/bucknerj/stable-release
+or
+git clone ssh://git@charmm-dev.org:65492/bucknerj/dev-release
+
+2. make a new branch:
+cd stable-release
+git checkout -b toppar-updates-2020
+for example. You can name it anything you want.
+
+3. copy your new files into place in the stable-release repository.
+cp -r /raid/alex/param/toppar_jul20/toppar .
+
+4. commit your changes
+git commit -a -m "2019 to 2020 charmm toppar updates.  see toppar_all.history for details"
+
+5. push your changes up to my server
+git push -u origin toppar-updates-2020
+(must match the name you gave the branch in 2)
+
+You are getting an error because no one is allowed to change the master branch directly.
+Once you have pushed your branch of new changes up to me, then I can do a merge request for you.
+Then I can merge that with the master branch.
+
+Please let me know if the above instructions work for you. If not,
+then we can use dropbox or something to get me the files and I can
+make the changes for you.
+
+Best Josh
+
+
+#old information
+goto /raid/alex/charmm/code/charmm_git/dev_release
+git pull
+goto /raid/alex/charmm/code/charmm_git/stable_release
+git pull
+
+ls -R toppar/* > toppar_files_umb.list' from the local /raid/alex/param/toppar_jul20
+
+and
+
+'ls -R toppar/* > toppar_files_git.list' from the local /raid/alex/charmm/code/charmm_git
+
+!Diff to identify files to add to or rename in Michigan Git
+
+diff toppar_files_umb.list /raid/alex/charmm/code/charmm_git/stable-release/toppar_files_git.list
+33c33
+< drude_toppar_2019.tgz
+---
+> drude_toppar_2018_10.tgz
+50d49
+< gromacs
+74,76d72
+< 
+< toppar/non_charmm/gromacs:
+< charmm36-mar2019.ff.tgz
+
+#commands to perform in /raid/alex/charmm/code/charmm_git/stable_release PRIOR to copying "cp -r /raid/alex/param/toppar_jul20/toppar ."
+
+#make sure everything is up to date prior to making changes.
+git pull
+
+#to rename files
+git mv toppar/stream/prot/toppar_all36_prot_d_aminoacids.str toppar/stream/prot/toppar_all36_prot_c36_d_aminoacids.str
+
+cp -r /raid/alex/param/toppar_jul20/toppar .
+
+#delete old file
+git rm toppar/drude/drude_toppar_2018_10.tgz
+#add new file
+git add toppar/non_charmm/gromacs/charmm36-mar2019.ff.tgz
+#add updated files 
+git add toppar/par_all36_cgenff.prm
+git add toppar/par_all36m_prot.prm
+git add toppar/par_all36_prot.prm
+git add toppar/par_all36_na.prm
+git add toppar/top_all36_cgenff.rtf
+git add toppar/top_all36_prot.rtf
+git add toppar/toppar_all.history
+git add toppar/toppar_water_ions.str
+git add toppar/drude/drude_toppar_2019.tgz
+git add toppar/stream/carb/toppar_all36_carb_imlab.str
+git add toppar/stream/lipid/toppar_all36_lipid_sphingo.str
+git add toppar/stream/na/toppar_all36_na_modifications.str
+git add toppar/stream/na/toppar_all36_na_rna_modified.str
+git add toppar/stream/prot/toppar_all36_prot_fluoro_alkanes.str
+git add toppar/stream/prot/toppar_all36_prot_modify_res.str
+git add toppar/stream/prot/toppar_all36_prot_na_combined.str
+
+git status
+
+git commit -a -m "2019 to 2020 charmm toppar updates.  see toppar_all.history for details"
+
+git push origin master
+
+
+
+I think you have cloned dev-release while already in the directory of a charmm git repository.
+
+You can move the directory dev-release somewhere else, or clone the dev-release repository again after cd-ing somewhere.
+
+git clone ssh://git@charmm-dev.org:65492/bucknerj/dev-release
+
+Then you can cd to your dev-release directory and do
+cd dev-release
+git checkout version-c45a1
+
+On the other hand, if you already have a copy of dev-release sitting somewhere that you want to use:
+1. cd into the top level of that source directory (the dev-release directory)
+2. git pull origin master
+3. git fetch --tags
+4. git checkout version-c45a1
+
+Please let me know how it goes.
+
+to clone the dev-release repository again
+
+git clone ssh://git@charmm-dev.org:65492/bucknerj/dev-release

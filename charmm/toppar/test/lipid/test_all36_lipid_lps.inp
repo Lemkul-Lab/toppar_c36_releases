@@ -1,0 +1,489 @@
+* test case for toppar_all36_lipid_prot.inp
+* 
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+set pdbdir pdb
+!ioformat extended
+
+set resi kplipb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi kplipc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi kplipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi mclipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi palipc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi eclipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi vclipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi selipc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi selipb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi selipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi vclipb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi hplipb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi hplipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi ablipb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi vclipc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi ablipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi bclipb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi bclipc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi vclipd
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi bclipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi nglipb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi nglipc
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi nglipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi palipb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi cjlipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi palipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi palipd
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi palipe
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi vclipe
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi ctlipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi yplipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi yplipb
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi sflipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+set resi lilipa
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 oa5 @resi 1 ca1 @resi 1 ca2
+ic build
+energy
+delete atom select all end
+
+
+!2019_7
+
+set resi ECLIPB
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+autogenerate angle dihe
+ic para
+ic seed @resi 1 CA1 @resi 1 CA2 @resi 1 CA3
+ic build
+
+ENERGY
+
+delete atom select all end
+
+set resi ECLIPC
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+autogenerate angle dihe
+ic para
+ic seed @resi 1 CA1 @resi 1 CA2 @resi 1 CA3
+ic build
+
+ENERGY
+
+delete atom select all end
+
+stop
+
+

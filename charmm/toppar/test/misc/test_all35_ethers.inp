@@ -1,0 +1,318 @@
+* Ether energy and geometry optimization test
+* used for checking force field parameters and
+* CHARMM code
+* Read IC coordinates, not QM structures
+*
+
+DIMENS CHSIZE 1000000
+
+!set externally
+! read the topology
+open unit 9 read form name @a
+read rtf card unit 9
+
+! read the parameters
+open unit 9 read form name @b
+read para card flex unit 9
+
+set toppar jul11
+
+!! to use long atom type names 
+ioformat extended
+
+!! turn off fast subroutines
+faster off
+
+bomlev -1 ! Set error level
+
+!! Non-bonded parameters
+set 3 999.0  ! cutim
+set 4 999.0  ! cutnb
+set 5 995.0  ! ctonnb
+set 6 997.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+!loop over all residues/conformation
+
+!open unit 90 form write name ethers_ic_@{toppar}.ene
+
+set count 1
+set restot 19
+
+label loop
+
+!! List of molecules used in this study
+!options
+!resn molec
+!deet deet_tt, used
+!deet deet_gt
+!deet deet_gg
+!dme dme_ttt, used
+!dme dme_gtt
+!dme dme_tgg
+!dmet dmet_c2v, used
+!meet meet_t, used
+!meet meet_g
+!thf thf_c2, used
+!thf thf_c2v
+!thf thf_cs
+!tf2m tf2m_c2, used
+!thp thp_chair, used
+!thp thp_bo14
+!thp thp_bo25
+!thp thp_tw14
+!thp thp_tw25
+!mpet, tt, used
+!mbet, ttt, used
+!epet, ttt, used
+!etha, stag., used
+!prop, stag., used
+!buta, t, used
+!pent, tt, used
+!hexa, ttt, used
+!hept, tttt, used
+!cpen, C2, used
+!chex, chair, used
+
+if count eq 1 then
+  set residue deet
+  set molec deet_tt
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 O3
+endif
+
+
+if count eq 2 then
+  set residue dme
+  set molec dme_ttt
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 C1
+  set sat2 O2
+  set sat3 C3
+endif
+
+if count eq 3 then
+  set residue dmet
+  set molec dmet_c2v
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 C1
+  set sat2 O2
+  set sat3 C3
+endif
+
+if count eq 4 then
+  set residue meet
+  set molec meet_t
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 O3
+endif
+
+if count eq 5 then
+  set residue thf
+  set molec thf_c2
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 O1
+  set sat2 C1
+  set sat3 C2
+endif
+
+if count eq 6 then
+  set residue tf2m
+  set molec tf2m_c2
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 O1
+  set sat2 C1
+  set sat3 C2
+endif
+
+if count eq 7 then
+  set residue thp
+  set molec thp_chair
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 O1
+  set sat2 C1
+  set sat3 C2
+endif
+
+
+if count eq 8 then
+  set residue mpet
+  set molec mpet_tt
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 C1
+  set sat2 O2
+  set sat3 C3
+endif
+
+if count eq 9 then
+  set residue mbet
+  set molec mbet_ttt
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 C1
+  set sat2 O2
+  set sat3 C3
+endif
+
+if count eq 10 then
+  set residue epet
+  set molec epet_ttt
+  set lonepair    TRUE
+  set anisotropy  TRUE
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 O3
+endif
+
+!! The rest are alkanes
+!! and cycloalkanes
+
+if count eq 11 then
+  set residue etha 
+  set molec   etha
+!! seed atoms
+  set sat1 H11
+  set sat2 C1
+  set sat3 C2
+endif
+
+if count eq 12 then
+  set residue prop
+  set molec   prop
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 C3
+endif
+
+if count eq 13 then
+  set residue ibut
+  set molec   ibut
+!! seed atoms
+  set sat1 C1
+  set sat2 CT
+  set sat3 C2
+endif
+
+if count eq 14 then
+  set residue buta
+  set molec   buta_t
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 C3
+endif
+
+if count eq 15 then
+  set residue pent
+  set molec   pent_tt
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 C3
+endif
+
+if count eq 16 then
+  set residue hexa 
+  set molec hexa_ttt
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 C3
+endif
+
+if count eq 17 then
+  set residue hept 
+  set molec hept_tttt
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 C3
+endif
+
+if count eq 18 then
+  set residue cpen
+  set molec cpen_c2
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 C3
+endif
+
+if count eq 19 then
+  set residue chex
+  set molec chex_chair
+!! seed atoms
+  set sat1 C1
+  set sat2 C2
+  set sat3 C3
+endif
+
+!! Optimize molecular geometry of the monomer and get monomer energy
+
+! generate isolated molecule
+read sequence card
+* @residue
+*  
+1
+@residue
+
+! construct PSF for a molecular segment from the sequence information
+generate @residue first none last none setup warn
+!ic generate
+
+ic seed 1 @sat1 1 @sat2 1 @sat3
+ic build
+coor print
+print ic
+
+update inbfrq -1 ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5 
+coor print
+
+mini abnr nstep 50 tolgrd 0.0001 nprint 50
+
+ic fill
+ic print
+
+!write data to check
+!write title unit 90
+!* @residue @molec ?ener
+!*
+
+!! Check molecular polarizability
+VIBRAN
+DIAGONALIZE
+END
+
+dele atom sele all end
+
+calc count = @count + 1
+
+if count le @restot goto loop
+
+stop

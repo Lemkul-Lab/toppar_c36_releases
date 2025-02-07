@@ -1,0 +1,41 @@
+* test cases for BMS DNA topology and parameter file
+*
+
+!set a ../non_charmm/top_bms_dec03.inp
+!set b ../non_charmm/par_bms_dec03.inp
+
+open unit 1 form read name @a
+read rtf card unit 1
+close unit 1
+
+open unit 1 form read name @b
+read para card unit 1
+close unit 1
+                 
+read sequence card
+* 1bna, strand 1
+*
+12             
+c g c g a a t t c g c g 
+
+generate a first 5ter last 3ter setup warn
+
+ic para
+ic seed 1 H5T 1 O5' 1 C5'
+ic build
+
+!print psf
+!ic print
+!print coor
+
+energy 
+
+!test that autogenerate gives identical energy
+autogenerate angles dihedrals
+
+energy
+
+delete atom sele all end
+
+stop
+

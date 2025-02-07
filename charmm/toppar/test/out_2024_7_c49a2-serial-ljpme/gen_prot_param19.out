@@ -1,0 +1,215 @@
+ Parameter: A <- "/RAID/ALEX/PARAM/TOPPAR_JUL24/TOPH19.INP"
+ Parameter: B <- "/RAID/ALEX/PARAM/TOPPAR_JUL24/PARAM19.INP"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+           (CHARMM) - Developmental Version 49a2   February 15, 2024            
+                                Revision unknown                                
+       Copyright(c) 1984-2023  President and Fellows of Harvard College
+                              All Rights Reserved
+         Current operating system: Linux-4.9.0-9-amd64(x86_64)@ocracoke         
+                 Created on  7/26/24 at 16:18:53 by user: alex        
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> *  GENERATE AND MINIMIZED BPTI
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    bomlev -1
+  
+ CHARMM>     
+  
+ CHARMM>    ! first generate the enzyme
+ CHARMM>     
+  
+ CHARMM>    !set 1 /week/alex/toppar/toph19.inp
+ CHARMM>    !set 2 /week/alex/toppar/param19.inp
+ CHARMM>     
+  
+ CHARMM>    ! read the topology
+ CHARMM>    open unit 9 read form name @a
+ Parameter: A -> "/RAID/ALEX/PARAM/TOPPAR_JUL24/TOPH19.INP"
+ VOPEN> Attempting to open::/raid/alex/param/toppar_jul24/toph19.inp::
+ OPNLGU> Unit  9 opened for READONLY access to /raid/alex/param/toppar_jul24/toph19.inp
+  
+ CHARMM>    read rtf card unit 9
+ MAINIO> Residue topology file being read from unit   9.
+ TITLE> * TOPOLOGY FILE FOR PROTEINS USING EXPLICIT HYDROGEN ATOMS: VERSION 19
+ TITLE> *
+  
+ CHARMM>    close unit 9
+ VCLOSE: Closing unit    9 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    read sequence card
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * ALL AMINO ACIDS IN YIPES TOPOLOGY FILE
+ RDTITL> *
+  
+ SEQRDR>    20
+  
+ SEQRDR>    ALA ARG ASN ASP CYS GLN GLU GLY
+  
+ SEQRDR>    His ILE LEU LYS MET PHE PRO SER THR TRP TYR VAL
+
+          RESIDUE SEQUENCE --    20 RESIDUES
+          ALA ARG ASN ASP CYS GLN GLU GLY HIS ILE LEU LYS MET PHE PRO SER THR TRP TYR VAL 
+ ***** Message from SEQRDR ***** THE SYSTEM CONTAINS  5 TITRATABLE GROUPS
+ THE USER MUST PREDETERMINE THE PROTONATION STATE THROUGH THE SEQUENCE AND RTF
+ HIS -  1  HSD -  0  HSE -  0  HSP -  0  ASP -  1  GLU -  1  LYS -  1  TYR -  1
+  
+ CHARMM>     
+  
+ CHARMM>    generate a setup warn
+ THE PATCH 'NTER' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CTER' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "H     " WERE REQUESTED.
+ ** WARNING ** DIHEDRAL NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "-C    " "N     " "CA    " "C     " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "N     " "-C    " "CA    " "H     " WERE REQUESTED.
+ ** WARNING ** DONOR NOT FOUND FOR RESIDUE   1 ALA   .
+ ATOMS "H     " "N     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  20 VAL   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  20 VAL   .
+ ATOMS "C     " "O     " WERE REQUESTED.
+ ** WARNING ** DIHEDRAL NOT FOUND FOR RESIDUE  20 VAL   .
+ ATOMS "N     " "CA    " "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** DIHEDRAL NOT FOUND FOR RESIDUE  20 VAL   .
+ ATOMS "CA    " "C     " "+N    " "+CA   " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE  20 VAL   .
+ ATOMS "C     " "CA    " "+N    " "O     " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE  20 VAL   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles.
+ GENPSF> Segment   1 has been generated. Its identifier is A.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       20
+         Number of atoms         =      206   Number of groups     =       80
+         Number of bonds         =      211   Number of angles     =      303
+         Number of dihedrals     =      119   Number of impropers  =      105
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =       31   Number of HB donors  =       38
+         Number of NB exclusions =       42   Total charge =   -0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    !print psf
+ CHARMM>    !stop
+ CHARMM>     
+  
+ CHARMM>    ! read the parameters
+ CHARMM>    open unit 9 read form name @b
+ Parameter: B -> "/RAID/ALEX/PARAM/TOPPAR_JUL24/PARAM19.INP"
+ VOPEN> Attempting to open::/raid/alex/param/toppar_jul24/param19.inp::
+ OPNLGU> Unit  9 opened for READONLY access to /raid/alex/param/toppar_jul24/param19.inp
+  
+ CHARMM>    read para card unit 9
+
+          PARAMETER FILE BEING READ FROM UNIT  9
+ TITLE> * - PARAMETER FILE PARAM19 * PEPTIDE GEOMETRY FROM RAMACHANDRAN ET AL BBA 359:298 (1974)
+ TITLE> * TORSIONS FROM HAGLER ET AL JACS 98:4600 (1976)
+ TITLE> * JORGENSEN NONBOND PARAMETERS JACS 103:3976-3985 WITH 1-4 RC=1.80/0.1
+ TITLE> *
+ PARRDR> NOTE: atom type "OC  " is removed from previous group
+ PARRDR> NOTE: atom type "OT  " is removed from previous group
+ PARRDR> NOTE: atom type "OH2 " is removed from previous group
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>    close unit 9
+ VCLOSE: Closing unit    9 with status "KEEP"
+  
+ CHARMM>     
+  
+ CHARMM>    ic para
+  
+ CHARMM>    ic seed 1 n 1 ca 1 c
+  
+ CHARMM>    ic build
+  
+ CHARMM>    hbuild
+
+      ***** LEVEL  4 WARNING FROM <GTHBUI> *****
+      ***** Zero selection specified
+      ******************************************
+      BOMLEV ( -1) IS NOT REACHED. WRNLEV IS  5
+
+  
+ CHARMM>     
+  
+ CHARMM>    update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+ CHARMM>    cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  0.400 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found    533 exclusions and    351 interactions(1-4)
+ <MAKGRP> found    202 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    11045 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     3133 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      275 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SHIFt    VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  =  8.000 CTEXNB =999.000 CTONNB =  6.500 CTOFNB =  7.500
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  0.400 EPS    =  1.000
+ NBXMOD =      5
+ There are     3133 atom  pairs and      884 atom  exclusions.
+ There are        0 group pairs and      202 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR    11045 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+     3133 ATOM PAIRS WERE FOUND FOR ATOM LIST
+      275 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0   8315.77636      0.00000   2173.68064
+ENER INTERN>      121.42695     25.06438      0.00000     12.60000      0.63021
+ENER EXTERN>     8651.33186   -495.27703      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+$$$$$$  New timer profile $$$$$
+   List time                       0.00 Other:            0.00
+         Electrostatic & VDW             0.00 Other:            0.00
+      Nonbond force                   0.00 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.00 Other:            0.00
+         Dihedral energy                 0.00 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.00 Other:            0.00
+   Energy time                     0.00 Other:            0.00
+ Total time                      0.08 Other:            0.08
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    MOST SEVERE WARNING WAS AT LEVEL  4
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.08  SECONDS 
+                         CPU TIME:     0.06  SECONDS 

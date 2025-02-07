@@ -1,0 +1,152 @@
+2024_1
+
+Initial set up of Github for additive toppar files
+
+All files in toppar_jul23 copied into directory toppar_git and then the git commands were performed.
+
+Mkdir toppar_git
+cd toppar_git
+cp -r ../toppar_jul23/* .
+cd ..
+git init toppar_git
+cd toppar_git
+git add .
+lsa
+git commit -m "Initial additive toppar upload of jul23"
+git log
+git tag jul23
+
+See below for command to add additional updates to git.  The plan is to maintain the approach of adding changes to the toppar files over the course of the year and then updating the git files in July/August of each year when the toppar files are sent for submission to the Michigan Git.  Note that the UMB git contains all the toppar files as well as the changes in the new_* directories.  This will require adding/deleting some new files in the new_* subdirectories each year.  The Michigan Git only contains the toppar files that are released to the community at large.
+
+
+Github tutorial for CHARMM toppar files.
+
+As far as git, I find dealing with the GitHub web interface kind of clunky. Git on the command line, however, is a thing of beauty, in my opinion.
+
+Here's an executive summary: (the following assumes files have only been added or updated in newer release; a little more housekeeping is required if files have been deleted or renamed/moved)
+
+# download toppar_c36_aug14.tgz
+tar xvzf toppar_c36_aug14.tgz
+git init toppar  # toppar directory is now a git repository
+cd toppar
+
+git add .  # stage all files within toppar for addition to the repository; the "." is required; this command will traverse directories and add all subdirectories and their files
+git commit -m "Added aug14" # commit files to the repository with the message "Added aug14"
+git log # outputs history of all commits and their associated comments; each commit has a unique hash, which follows the word "commit" in the below output
+
+commit a6819bf4d5fbf9952f9fd8f795549390c6783d76 (HEAD -> main)
+Author: oguvench <oguvench@gmail.com>
+Date:   Fri Dec 29 15:06:27 2023 -0500
+
+    Added aug14
+
+git tag aug14 # you can always use the hash to go to the version of the files associated with that commit's hash, but hashes are ugly; so, lets tag this commit as "aug14"...later, if we want to see this version of the files, we would do "git checkout aug14"
+cd ..
+# download toppar_c36_aug15.tgz
+tar xvzf toppar_c36_aug15.tgz # we're now intentionally overwriting the aug14 files with the aug15 files
+cd toppar
+git status  # please tell me what I've changed and if there are any new (aka "untracked") files
+
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+modified:   00toppar_file_format.txt
+modified:   drude/00readme
+modified:   non_charmm/00readme
+modified:   par_all36_carb.prm
+modified:   par_all36_cgenff.prm
+modified:   par_all36_prot.prm
+modified:   stream/lipid/toppar_all36_lipid_inositol.str
+modified:   stream/lipid/toppar_all36_lipid_list.str
+modified:   stream/lipid/toppar_all36_lipid_llo.str
+modified:   stream/lipid/toppar_all36_lipid_miscellaneous.str
+modified:   stream/lipid/toppar_all36_lipid_model.str
+modified:   stream/na/toppar_all36_na_nad_ppi.str
+modified:   stream/prot/toppar_all36_prot_heme.str
+modified:   stream/prot/toppar_all36_prot_retinol.str
+modified:   top_all36_carb.rtf
+modified:   top_all36_cgenff.rtf
+modified:   top_all36_na.rtf
+modified:   top_all36_prot.rtf
+modified:   toppar_all.history
+modified:   toppar_water_ions.str
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+drude/drude_aug15.doc
+drude/drude_toppar_2015_7.tgz
+non_charmm/par_opls_aam.inp
+non_charmm/parm14sb_all.prm
+non_charmm/parm14sb_all.rtf
+non_charmm/top_opls_aam.inp
+non_charmm/toppar_chloroform_dh.str
+stream/lipid/toppar_all36_lipid_prot.str
+stream/misc/toppar_ions_won.str
+stream/prot/toppar_all36_prot_modify_res.str
+
+git diff par_all36_carb.prm  # let's see what's been changed between the committed version of the file par_all36_carb.prm  and what I just overwrote it with
+diff --git a/par_all36_carb.prm b/par_all36_carb.prm
+index 5944be1..1ac26cd 100644
+--- a/par_all36_carb.prm
++++ b/par_all36_carb.prm
+@@ -65,6 +65,7 @@
+ ! viv:   Igor Vorobyov
+ ! pram:  E.Prabhu Raman
+ ! sai:   Sairam S. Mallajosyula
++! my:    Mingjun Yang
+ ! par22: par_all22_prot.inp
+ ! par27: par_all27_lipid.prm
+ ! par35: par_all35_ethers.prm
+@@ -128,19 +129,17 @@ MASS   218 CC3051  12.01100 ! furan ring carbon; C2 fructose
+ ! pyranose derivatives
+ MASS   219 CC3062  12.01100 ! C2 on NE5AC
+ MASS   220 CC3261  12.01100 ! C3 on NE5AC
+-!dummy atom
+-!MASS    99 DUM      1.00800   H ! dummy atom
+-
+(+ indicates new lines, - indicates deleted lines)
+
+git add .  # let's update the repository to include the aug15 version of the toppar files; we need to both "add" and "commit"
+git commit -m "Updated with aug15 toppar files"
+git tag aug15 # so we don't have to use the commit hash explicitly to access this version of the files
+git log # let's see our commit history
+
+commit 0eab53ac5cd0ba03a0e3a053f9051c3a3166302f (HEAD -> main, tag: aug15)
+Author: oguvench <oguvench@gmail.com>
+Date:   Fri Dec 29 15:18:33 2023 -0500
+
+    Updated with aug15 toppar files
+
+commit a6819bf4d5fbf9952f9fd8f795549390c6783d76 (tag: aug14)
+Author: oguvench <oguvench@gmail.com>
+Date:   Fri Dec 29 15:06:27 2023 -0500
+
+    Added aug14
+
+# OK, great, so currently my toppar directory is the "'aug15" release; what if I want to use the "aug14" release? Easy peasy:
+git checkout aug14
+git log
+commit a6819bf4d5fbf9952f9fd8f795549390c6783d76 (HEAD, tag: aug14)
+Author: oguvench <oguvench@gmail.com>
+Date:   Fri Dec 29 15:06:27 2023 -0500
+
+    Added aug14
+
+# That's it. 
+
+# Let's say we continued this work and added toppar_c36_feb16.tgz and tagged it "feb16" and now we're curious about any differences between par_all36_carb.prm in the aug14 vs feb16 releases:
+
+git diff par_all36_carb.prm aug14 feb16 # here we're using our tags "aug14" and "feb16" to compare the associated versions of the file par_all36_carb.prm
+
+I did all that on my mac just now. In case you want to try and have
+not yet used command line git, it comes pre-installed on MacOS at
+/usr/bin/git
+
+The real utility comes when adding new stuff for a future release. You
+can create a "remote" repository and multiple users can push their
+changes to that repository. GitHub is a service that can host remote
+repositories. There is also a way to enforce that someone (e.g. you or
+a designated manager) check any proposed changes by any of the users
+before their proposed changes get added to the main remote repository.
+

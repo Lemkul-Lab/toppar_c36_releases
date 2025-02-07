@@ -1,0 +1,10 @@
+*  test print rtf command
+*
+
+DIMENS CHSIZE 1000000
+ioformat extended
+stream ./toppar.str
+
+print rtf
+
+stop

@@ -1,0 +1,43 @@
+*  Test hbond stream file following generation of DNA
+*  adm jr.
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+read sequence card
+* 1bna, strand 1
+*
+12
+cyt gua cyt gua ade ade thy thy cyt gua cyt gua
+
+generate a first 5pho last 3ter setup warn
+
+! patch for deoxy, 1 for pyrimidine, 2 for purine
+patch deo5 a 1 setup warn
+patch deox a 2 setup warn
+patch deox a 3 setup warn
+patch deox a 4 setup warn
+patch deox a 5 setup warn
+patch deox a 6 setup warn
+patch deox a 7 setup warn
+patch deox a 8 setup warn
+patch deox a 9 setup warn
+patch deox a 10 setup warn
+patch deox a 11 setup warn
+patch deox a 12 setup warn
+
+autogenerate angles dihedrals
+
+ic para
+ic seed 1 P 1 O5' 1 C5'
+ic build
+
+hbond NOACCEPTORS HBNOEXCLUSIONS ALL -
+CUTHB 20.0 CTOFHB 25.0 CTONHB 15.0 CUTHA 100.0 CTOFHA 90.0 CTONHA 90.0
+
+!old hbond options
+!AEXP 4 REXP 6 HAEX 2 AAEX 2
+print hbond
+
+stop

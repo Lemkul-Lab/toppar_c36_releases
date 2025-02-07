@@ -1,0 +1,349 @@
+* generate and energy of water and ions
+*
+
+!set a top_all22_prot.inp
+!set b par_all22_prot.inp
+set 3 99.0  ! cutim
+set 4 99.0  ! cutnb
+set 5 97.0  ! ctonnb
+set 6 98.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+!open unit 10 read form name @a
+!read rtf card unit 10
+
+!open unit 10 read form name @b
+!read param card flex unit 10
+
+!set count 1
+!label loop
+
+if count eq 1 then
+set residue TP3B  ! tip3p-PME water model B
+set fname tip3p_pme_b
+endif
+
+if count eq 2 then
+set residue TP3F  ! tip3p-PME water model F
+set fname tip3p_pme_f
+endif
+
+if count eq 3 then
+set residue TIP4  ! tip4p water model
+set fname tip4p
+endif
+
+if count eq 4 then
+set residue TP4E  ! tip4p-Ewald water model
+set fname tip4p_ew
+endif
+
+if count eq 5 then
+set residue TP45  ! tip4p-2005 water model
+set fname tip4p_2005
+endif
+
+if count eq 6 then
+set residue TIP5  ! tip5p water model
+set fname tip5p
+endif
+
+if count eq 7 then
+set residue TP5E  ! tip5p-Ewald water model
+set fname tip5p_ew
+endif
+
+if count eq 8 then
+set residue SPC   ! SPC water model
+set fname spc
+endif
+
+if count eq 9 then
+set residue SPCE  ! SPC/E water model
+set fname spc_e
+endif
+
+set stream @dir/non_charmm/toppar_water_ions_@fname.str
+stream @stream
+
+read sequence card
+* resi tip3
+*
+1
+@residue
+
+generate test first none last none noangle nodihedral
+
+!generate test first none last none setup warn noangle nodihedral
+
+
+if residue .eq. TP3B then
+read coor card
+* test
+*
+    3
+    1    1 TP3B OH2   -5.76008   3.27789  -3.46973
+    2    1 TP3B H1    -5.57742   3.20183  -2.53321
+    3    1 TP3B H2    -5.78382   4.22062  -3.63382
+endif
+
+if residue .eq. TP3F then
+read coor card
+* test
+*
+    3
+    1    1 TP3F OH2   -5.76008   3.27789  -3.46973
+    2    1 TP3F H1    -5.57742   3.20183  -2.53321
+    3    1 TP3F H2    -5.78382   4.22062  -3.63382
+endif
+
+if residue .eq. TIP4 then
+read coor card
+* test
+*
+    3
+    1    1 TIP4 OH2   -5.76008   3.27789  -3.46973
+    2    1 TIP4 H1    -5.57742   3.20183  -2.53321
+    3    1 TIP4 H2    -5.78382   4.22062  -3.63382
+
+!generate LPs
+coor shake
+endif
+if residue .eq. TP4E then
+read coor card
+* test
+*
+    3
+    1    1 TP4E OH2   -5.76008   3.27789  -3.46973
+    2    1 TP4E H1    -5.57742   3.20183  -2.53321
+    3    1 TP4E H2    -5.78382   4.22062  -3.63382
+
+!generate LPs
+coor shake
+endif
+
+if residue .eq. TP45 then
+read coor card
+* test
+*
+    3
+    1    1 TP45 OH2   -5.76008   3.27789  -3.46973
+    2    1 TP45 H1    -5.57742   3.20183  -2.53321
+    3    1 TP45 H2    -5.78382   4.22062  -3.63382
+
+!generate LPs
+coor shake
+endif
+
+if residue .eq. TIP5 then
+read coor card
+* test
+*
+    3
+    1    1 TIP5 OH2   -5.76008   3.27789  -3.46973
+    2    1 TIP5 H1    -5.57742   3.20183  -2.53321
+    3    1 TIP5 H2    -5.78382   4.22062  -3.63382
+
+!generate LPs
+coor shake
+endif
+
+if residue .eq. TP5E then
+read coor card
+* test
+*
+    3
+    1    1 TP5E OH2   -5.76008   3.27789  -3.46973
+    2    1 TP5E H1    -5.57742   3.20183  -2.53321
+    3    1 TP5E H2    -5.78382   4.22062  -3.63382
+
+!generate LPs
+coor shake
+endif
+
+if residue .eq. SPC then
+read coor card
+* test
+*
+    3
+    1    1 SPC  OH2   -5.76008   3.27789  -3.46973
+    2    1 SPC  H1    -5.57742   3.20183  -2.53321
+    3    1 SPC  H2    -5.78382   4.22062  -3.63382
+endif
+
+if residue .eq. SPCE then
+read coor card
+* test
+*
+    3
+    1    1 SPCE OH2   -5.76008   3.27789  -3.46973
+    2    1 SPCE H1    -5.57742   3.20183  -2.53321
+    3    1 SPCE H2    -5.78382   4.22062  -3.63382
+endif
+
+coor print
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* hydroxide ion
+*
+1
+oh
+
+generate A first none last none setup warn
+
+read coor card
+* hydroxide coordinates
+*
+    2
+    1    1 OH   O1     0.00000   0.00000   0.00000 A       1   0.00000
+    2    1 OH   H1     0.00000   0.96000   0.00000 A       1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* residue sodium
+*
+1
+sod
+
+generate test first none last none setup warn 
+
+read coor card
+* test
+*
+    1
+    1    1 SOD  SOD   0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* residue mg
+*
+1
+mg
+
+generate test first none last none setup warn 
+
+read coor card
+* test
+*
+    1
+    1    1 MG   MG     0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* residue potassium
+*
+1
+pot
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 POT  POT    0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* residue cesium
+*
+1
+ces
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 CES  CES    0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* residue calcium
+*
+1
+cal
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 CAL  CAL    0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* residue cla (chloride ion)
+*
+1
+cla
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 CLA  CLA    0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+read sequence card
+* residue zn2 (zinc ion)
+*
+1
+zn2
+
+generate test first none last none setup warn
+
+read coor card
+* test
+*
+    1
+    1    1 ZN2  ZN     0.00000   0.00000   0.00000 TEST    1   0.00000
+
+energy inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+delete atom sele all end
+
+!calc count = @count + 1
+!if count le 9 goto loop
+
+stop

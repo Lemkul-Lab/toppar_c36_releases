@@ -1,0 +1,295 @@
+* test cases for charmm27 nucleic acid topology and parameter files
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+                 
+read sequence card
+* 1bna, strand 1
+*
+12             
+cyt gua cyt gua ade ade thy thy cyt gua cyt gua 
+
+generate a first 5ter last 3ter setup warn
+
+! patch for deoxy
+patch deo5 a 1 setup warn
+patch deox a 2 setup warn
+patch deox a 3 setup warn
+patch deox a 4 setup warn
+patch deox a 5 setup warn
+patch deox a 6 setup warn
+patch deox a 7 setup warn
+patch deox a 8 setup warn
+patch deox a 9 setup warn
+patch deox a 10 setup warn
+patch deox a 11 setup warn
+patch deox a 12 setup warn
+
+ic para
+ic seed 1 C5' 1 C4' 1 C3'
+ic build
+
+print psf xplor
+!ic print
+!print coor
+
+energy 
+
+delete atom sele all end
+
+read sequence card
+* 1bna, strand 1
+*
+12             
+cyt gua cyt gua ade ade thy thy cyt gua cyt gua 
+
+generate a first 5pho last 3ter setup warn
+
+! patch for deoxy
+patch deo5 a 1 setup warn
+patch deox a 2 setup warn
+patch deox a 3 setup warn
+patch deox a 4 setup warn
+patch deox a 5 setup warn
+patch deox a 6 setup warn
+patch deox a 7 setup warn
+patch deox a 8 setup warn
+patch deox a 9 setup warn
+patch deox a 10 setup warn
+patch deox a 11 setup warn
+patch deox a 12 setup warn
+
+ic para
+ic seed 1 P 1 O5' 1 C5'
+ic build
+
+!print psf
+!ic print
+!print coor
+
+energy 
+
+delete atom sele all end
+
+read sequence card
+* 1bna, strand 1
+*
+12             
+cyt gua cyt gua ade ade thy thy cyt gua cyt gua 
+
+generate a first 5ter last 3pho setup warn
+
+! patch for deoxy
+patch deo5 a 1 setup warn
+patch deox a 2 setup warn
+patch deox a 3 setup warn
+patch deox a 4 setup warn
+patch deox a 5 setup warn
+patch deox a 6 setup warn
+patch deox a 7 setup warn
+patch deox a 8 setup warn
+patch deox a 9 setup warn
+patch deox a 10 setup warn
+patch deox a 11 setup warn
+patch deox a 12 setup warn
+
+ic para
+ic seed 1 C5' 1 C4' 1 C3'
+ic build
+
+!print psf
+print coor
+
+energy 
+
+!test that autogenerate gives identical energy
+autogenerate angles dihedrals
+
+energy
+
+delete atom sele all end
+
+read sequence card
+* 1bna, strand 1
+*
+12             
+cyt gua cyt gua ade ade thy thy cyt gua cyt gua 
+
+generate a first 5ter last 3pho setup warn
+
+! patch for deoxy
+patch deo5 a 1 setup warn
+patch deox a 2 setup warn
+patch deox a 3 setup warn
+patch deox a 4 setup warn
+patch deox a 5 setup warn
+patch deox a 6 setup warn
+patch deox a 7 setup warn
+patch deox a 8 setup warn
+patch deox a 9 setup warn
+patch deox a 10 setup warn
+patch deox a 11 setup warn
+patch deox a 12 setup warn
+
+ic para
+ic seed 1 O5' 1 C5' 1 C4'
+ic build
+
+!print psf
+!print coor
+
+energy 
+
+delete atom sele all end
+
+!gen_na1_rna.inp
+!* Test of IC BUILD, CGCGAATTCGCG, 5pho, 3ter, deo patches
+!*
+                 
+read sequence card
+* 1bna, strand 1
+*
+12             
+cyt gua cyt gua ade ade thy thy cyt gua cyt gua 
+
+generate a first 5pho last 3ter setup warn
+
+! patch for deoxy
+patch deo5 a 1 setup warn
+patch deox a 2 setup warn
+patch deox a 3 setup warn
+patch deox a 4 setup warn
+patch deox a 5 setup warn
+patch deox a 6 setup warn
+patch deox a 7 setup warn
+patch deox a 8 setup warn
+patch deox a 9 setup warn
+patch deox a 10 setup warn
+patch deox a 11 setup warn
+patch deox a 12 setup warn
+
+ic para
+ic seed 1 P 1 O5' 1 C5'
+ic build
+
+!print psf
+!ic print
+!print coor
+
+energy 
+
+delete atom sele all end
+
+!RNA tests
+
+read sequence card
+* 1bna, strand 1
+*
+12             
+cyt gua cyt gua ade ade thy thy cyt gua cyt gua 
+
+generate a first 5met last 3pho setup warn
+
+ic para
+ic seed 1 C5' 1 C4' 1 C3'
+ic build
+
+!print psf
+print coor
+
+energy 
+
+delete atom sele all end
+
+!gen_na2.inp
+!* Test of IC BUILD, CGCGAAUUCGCG, 5ter, 3pho, ribose compounds
+!*
+
+read sequence card
+* 1bna, strand 1
+*
+12             
+cyt gua cyt gua ade ade ura ura cyt gua cyt gua 
+
+generate a first 5ter last 3ter setup warn
+
+autogenerate angles dihedrals       
+
+ic para
+ic seed 1 O5' 1 C5' 1 C4'
+ic build
+
+!print psf
+print coor
+
+energy 
+
+delete atom sele all end
+
+!test for one ribonucleotide in DNA
+read sequence card
+* 1bna, strand 1
+*
+12             
+cyt gua cyt gua ade ade thy thy cyt gua cyt gua 
+
+generate a first 5ter last 3ter setup warn
+
+! patch for deoxy
+patch deo5 a 1 setup warn
+patch deox a 2 setup warn
+patch deox a 3 setup warn
+!patch deox a 4 setup warn !keeps as RNA; invoke DEOR patch to this nucleotide below
+patch deox a 5 setup warn
+patch deox a 6 setup warn
+patch deox a 7 setup warn
+patch deox a 8 setup warn
+patch deox a 9 setup warn
+patch deox a 10 setup warn
+patch deox a 11 setup warn
+patch deox a 12 setup warn
+!patch to assign proper atom types to RNA nucleotide
+patch deor a 4 setup warn
+
+ic para
+ic seed 1 C5' 1 C4' 1 C3'
+ic build
+
+print psf
+!ic print
+!print coor
+
+energy 
+
+delete atom sele all end
+
+!test patch to convert single nucleotide to DNA in an RNA strand
+
+read sequence card
+* 1bna, strand 1
+*
+12             
+cyt gua cyt gua ade ade thy thy cyt gua cyt gua 
+
+generate a first 5ter last 3ter setup warn
+
+! patch for deoxy
+patch deos a 3 setup warn
+patch deos a 6 setup warn
+patch deos a 10 setup warn
+
+ic para
+ic seed 1 C5' 1 C4' 1 C3'
+ic build
+
+print psf xplor
+!ic print
+!print coor
+
+energy 
+
+delete atom sele all end
+
+stop
+

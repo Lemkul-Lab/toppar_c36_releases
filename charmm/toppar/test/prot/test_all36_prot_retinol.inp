@@ -1,0 +1,779 @@
+* Generate, ic build and energy surface of model compounds used
+* in the retinol parametrization
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+!
+!goto bte2 ! 2-Butene
+!goto hep3 ! 1,3,5-heptatriene
+!goto 13db ! 1,3-dibutene
+!goto 13dp ! 1,3-dipentene
+!goto dmb1 ! 1,3-diene-2-methylbutane
+!goto dmp1 ! 1,3-diene-4-methylpentane
+!goto dmp2 ! 1,3-diene-2-methylpentane
+!goto prol ! 1-hydroxy-2-propene (3-propenol)
+!goto prac ! 2-propenoic acid
+!goto pacp ! p-acetamide-phenol
+!goto crot ! 2-buteneamide,N,3-dimethyl (crotonamide)
+!goto pral ! 1-propenal 
+!goto mech ! 1,6,6-trimethyl-2-ethene-cyclohexene
+!goto tmch ! 1,2,6,6-tetramethylcyclohexene
+!goto fret ! fennretinide
+!goto rtol ! retinol
+!goto rtal ! retinal
+!goto rtac ! retinoic acid
+!goto sch1 ! Schiff's base model compound 1, deprotonated
+!goto sch2 ! Schiff's base model compound 2, protonated
+!goto sch3 ! Schiff's base model compound 3, protonated
+!goto schiff_patch0
+!goto schiff_patch1
+
+!set stop 1 !stop after selected molecule
+set stop 0 !do all molecules
+
+label bte2
+set residue bte2
+
+read sequence cards
+* cmpd 2-butene
+*
+1
+@residue
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label hep3
+set residue hep3
+
+read sequence cards
+* cmpd 1,3,5-heptatriene
+*
+1
+@residue
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+
+label 13db
+
+read sequence cards
+* cmpd 1,3-dibutene
+*
+1
+13db
+ 
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label 13dp
+
+read sequence cards
+* cmpd 1,3-dipentene
+*
+1
+13dp
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!get internal coordinates
+ic fill
+ic print
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label dmb1
+
+read sequence cards
+* cmpd 1,3-diene-2-methylbutane
+*
+1
+dmb1
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label dmp1
+
+read sequence cards
+* cmpd 1,3-diene-4-methylpentane
+*
+1
+dmp1
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label dmp2
+
+read sequence cards
+* cmpd 1,3-diene-2-methylpentane
+*
+1
+dmp2
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label prol
+
+read sequence cards
+* cmpd 3-propenol (1-hydroxy-2-propene)
+*
+1
+prol
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label prac
+
+read sequence cards
+* cmpd 2-propenoic acid
+*
+1
+prac
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 cg
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label pacp
+
+read sequence cards
+* cmpd p-acetamide-phenol
+*
+1
+pacp
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c14 1 c15 1 n21
+ic build
+
+coor print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label crot 2-buteneamide,N,3-dimethyl (crotonamide)
+
+read sequence cards
+* cmpd 1-(2,2-dimethylethene)-formamide
+*
+1
+crot
+
+generate a first none last none setup warn
+!ic generate
+
+ic param
+ic seed 1 c12 1 c13 1 c14
+ic build
+
+coor print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label pral
+
+read sequence cards
+* cmpd 1-propenal
+*
+1
+pral
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 cg
+ic build
+
+coor print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+label mech
+
+read sequence cards
+* cmpd 1,6,6-trimethyl-2-ethene-cyclohexene
+*
+1
+mech
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+coor print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label tmch
+
+read sequence cards
+* cmpd 1,2,6,6-tetramethyl-cyclohexene
+*
+1
+tmch
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+coor print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label fret
+!goto skip_fret
+
+read sequence cards
+* cmpd fennretinide
+*
+1
+fret
+ 
+generate a first none last none setup warn
+!ic generate
+
+!pdb coordinates from 1brp
+read coor pdb 
+REMARK retinol from 1brp
+ATOM      1  C1  FRET    1      17.964  51.169 -35.880  1.00 17.52      A
+ATOM      2  C2  FRET    1      19.404  51.490 -35.468  1.00 15.76      A
+ATOM      3  C3  FRET    1      19.515  52.770 -34.652  1.00 25.52      A
+ATOM      4  C4  FRET    1      18.464  53.761 -35.124  1.00 58.06      A
+ATOM      5  C5  FRET    1      17.072  53.191 -34.892  1.00 38.74      A
+ATOM      6  C6  FRET    1      16.826  51.864 -35.137  1.00 37.88      A
+ATOM      7  C7  FRET    1      15.422  51.460 -35.051  1.00 21.06      A
+ATOM      8  C8  FRET    1      14.593  52.127 -35.925  1.00 23.45      A
+ATOM      9  C9  FRET    1      13.219  51.597 -35.972  1.00 25.96      A
+ATOM     10  C10 FRET    1      12.482  52.271 -36.912  1.00 32.37      A
+ATOM     11  C11 FRET    1      11.091  51.811 -36.974  1.00 21.62      A
+ATOM     12  C12 FRET    1      10.371  52.637 -37.807  1.00 12.68      A
+ATOM     13  C13 FRET    1       8.911  52.463 -37.768  1.00 15.69      A
+ATOM     14  C14 FRET    1       8.350  53.496 -38.477  1.00 34.11      A
+ATOM     15  C15 FRET    1       7.020  53.196 -38.992  1.00 20.49      A
+ATOM     16  C16 FRET    1      17.905  49.951 -34.967  1.00  6.93      A
+ATOM     17  C17 FRET    1      17.889  50.728 -37.324  1.00 19.29      A
+ATOM     18  C18 FRET    1      16.406  54.140 -33.911  1.00 39.96      A
+ATOM     19  C19 FRET    1      13.033  50.367 -35.090  1.00 11.99      A
+ATOM     20  C20 FRET    1       8.523  51.054 -38.201  1.00  7.88      A
+END
+
+ic para 
+ic build
+coor print
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 10
+!mini nraph nstep 50
+
+delete atom sele all end
+
+if stop eq 1 then STOP
+label skip_fret
+
+label rtol
+
+read sequence cards
+* cmpd retinol
+*
+1
+rtol
+ 
+generate a first none last none setup warn
+
+!pdb coordinates from 1brp
+read coor pdb 
+REMARK retinol from 1brp
+ATOM      1  C1  RTOL    1      17.964  51.169 -35.880  1.00 17.52      A
+ATOM      2  C2  RTOL    1      19.404  51.490 -35.468  1.00 15.76      A
+ATOM      3  C3  RTOL    1      19.515  52.770 -34.652  1.00 25.52      A
+ATOM      4  C4  RTOL    1      18.464  53.761 -35.124  1.00 58.06      A
+ATOM      5  C5  RTOL    1      17.072  53.191 -34.892  1.00 38.74      A
+ATOM      6  C6  RTOL    1      16.826  51.864 -35.137  1.00 37.88      A
+ATOM      7  C7  RTOL    1      15.422  51.460 -35.051  1.00 21.06      A
+ATOM      8  C8  RTOL    1      14.593  52.127 -35.925  1.00 23.45      A
+ATOM      9  C9  RTOL    1      13.219  51.597 -35.972  1.00 25.96      A
+ATOM     10  C10 RTOL    1      12.482  52.271 -36.912  1.00 32.37      A
+ATOM     11  C11 RTOL    1      11.091  51.811 -36.974  1.00 21.62      A
+ATOM     12  C12 RTOL    1      10.371  52.637 -37.807  1.00 12.68      A
+ATOM     13  C13 RTOL    1       8.911  52.463 -37.768  1.00 15.69      A
+ATOM     14  C14 RTOL    1       8.350  53.496 -38.477  1.00 34.11      A
+ATOM     15  C15 RTOL    1       7.020  53.196 -38.992  1.00 20.49      A
+ATOM     16  C16 RTOL    1      17.905  49.951 -34.967  1.00  6.93      A
+ATOM     17  C17 RTOL    1      17.889  50.728 -37.324  1.00 19.29      A
+ATOM     18  C18 RTOL    1      16.406  54.140 -33.911  1.00 39.96      A
+ATOM     19  C19 RTOL    1      13.033  50.367 -35.090  1.00 11.99      A
+ATOM     20  C20 RTOL    1       8.523  51.054 -38.201  1.00  7.88      A
+ATOM     21  OR  RTOL    1       6.105  54.016 -38.397  1.00 39.99      A
+END
+
+ic para
+ic build
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 10
+!mini nraph nstep 50
+ic fill
+ic print
+
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label rtal
+
+read sequence cards
+* cmpd retinal
+*
+1
+rtal
+ 
+generate a first none last none setup warn
+
+!ic generate
+
+!pdb coordinates from 1brp
+read coor pdb 
+REMARK retinal adapted from retinol from 1brp
+ATOM      1  C1  RTAL    1      17.964  51.169 -35.880  1.00 17.52      A
+ATOM      2  C2  RTAL    1      19.404  51.490 -35.468  1.00 15.76      A
+ATOM      3  C3  RTAL    1      19.515  52.770 -34.652  1.00 25.52      A
+ATOM      4  C4  RTAL    1      18.464  53.761 -35.124  1.00 58.06      A
+ATOM      5  C5  RTAL    1      17.072  53.191 -34.892  1.00 38.74      A
+ATOM      6  C6  RTAL    1      16.826  51.864 -35.137  1.00 37.88      A
+ATOM      7  C7  RTAL    1      15.422  51.460 -35.051  1.00 21.06      A
+ATOM      8  C8  RTAL    1      14.593  52.127 -35.925  1.00 23.45      A
+ATOM      9  C9  RTAL    1      13.219  51.597 -35.972  1.00 25.96      A
+ATOM     10  C10 RTAL    1      12.482  52.271 -36.912  1.00 32.37      A
+ATOM     11  C11 RTAL    1      11.091  51.811 -36.974  1.00 21.62      A
+ATOM     12  C12 RTAL    1      10.371  52.637 -37.807  1.00 12.68      A
+ATOM     13  C13 RTAL    1       8.911  52.463 -37.768  1.00 15.69      A
+ATOM     14  C14 RTAL    1       8.350  53.496 -38.477  1.00 34.11      A
+ATOM     15  C15 RTAL    1       7.020  53.196 -38.992  1.00 20.49      A
+ATOM     16  C16 RTAL    1      17.905  49.951 -34.967  1.00  6.93      A
+ATOM     17  C17 RTAL    1      17.889  50.728 -37.324  1.00 19.29      A
+ATOM     18  C18 RTAL    1      16.406  54.140 -33.911  1.00 39.96      A
+ATOM     19  C19 RTAL    1      13.033  50.367 -35.090  1.00 11.99      A
+ATOM     20  C20 RTAL    1       8.523  51.054 -38.201  1.00  7.88      A
+ATOM     21  O15 RTAL    1       6.105  54.016 -38.397  1.00 39.99      A
+END
+
+ic para
+ic build
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 10
+!mini nraph nstep 50
+
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label rtac
+
+read sequence cards
+* cmpd retinoic acid
+*
+1
+rtac
+ 
+generate a first none last none setup warn
+!ic generate
+
+!pdb coordinates from 1brp
+read coor pdb 
+REMARK retinoic acid adapted from retinol from 1brp
+ATOM      1  C1  RTAC    1      17.964  51.169 -35.880  1.00 17.52      A
+ATOM      2  C2  RTAC    1      19.404  51.490 -35.468  1.00 15.76      A
+ATOM      3  C3  RTAC    1      19.515  52.770 -34.652  1.00 25.52      A
+ATOM      4  C4  RTAC    1      18.464  53.761 -35.124  1.00 58.06      A
+ATOM      5  C5  RTAC    1      17.072  53.191 -34.892  1.00 38.74      A
+ATOM      6  C6  RTAC    1      16.826  51.864 -35.137  1.00 37.88      A
+ATOM      7  C7  RTAC    1      15.422  51.460 -35.051  1.00 21.06      A
+ATOM      8  C8  RTAC    1      14.593  52.127 -35.925  1.00 23.45      A
+ATOM      9  C9  RTAC    1      13.219  51.597 -35.972  1.00 25.96      A
+ATOM     10  C10 RTAC    1      12.482  52.271 -36.912  1.00 32.37      A
+ATOM     11  C11 RTAC    1      11.091  51.811 -36.974  1.00 21.62      A
+ATOM     12  C12 RTAC    1      10.371  52.637 -37.807  1.00 12.68      A
+ATOM     13  C13 RTAC    1       8.911  52.463 -37.768  1.00 15.69      A
+ATOM     14  C14 RTAC    1       8.350  53.496 -38.477  1.00 34.11      A
+ATOM     15  C15 RTAC    1       7.020  53.196 -38.992  1.00 20.49      A
+ATOM     16  C16 RTAC    1      17.905  49.951 -34.967  1.00  6.93      A
+ATOM     17  C17 RTAC    1      17.889  50.728 -37.324  1.00 19.29      A
+ATOM     18  C18 RTAC    1      16.406  54.140 -33.911  1.00 39.96      A
+ATOM     19  C19 RTAC    1      13.033  50.367 -35.090  1.00 11.99      A
+ATOM     20  C20 RTAC    1       8.523  51.054 -38.201  1.00  7.88      A
+ATOM     21  O29 RTAC    1       6.105  54.016 -38.397  1.00 39.99      A
+END
+
+ic para
+ic build
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 10
+!mini nraph nstep 50
+
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+!Schiff's base model compounds and patches
+
+label sch1
+set residue sch1
+
+read sequence cards
+* cmpd Schiff's base model compound 1, deprotonated
+*
+1
+@residue
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 n2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label sch2
+set residue sch2
+
+read sequence cards
+* cmpd Schiff's base model compound 2, protonated
+*
+1
+@residue
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 n2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label sch3
+set residue sch3
+
+read sequence cards
+* cmpd  Schiff's base model compound 3, protonated
+*
+1
+@residue
+
+generate a first none last none setup warn
+
+ic param
+ic seed 1 c1 1 n2 1 c3
+ic build
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+!delete all atoms before generating next structure
+delete atom sele all end
+
+if stop eq 1 then STOP
+
+label schiff_patch0
+
+set residue schiff_patch0
+
+read sequence cards
+* lysine
+*
+1
+lys
+
+generate a first aced last ct3 setup warn
+
+read sequence cards
+* rtal
+*
+1
+rtal
+
+generate b first none last none setup warn
+
+!patch to link residus
+patch sck0 a 1 b 1 setup warn
+
+autogenerate angle dihedral
+
+!ic generate
+
+ic param
+ic seed 1 n 1 ca 1 c
+ic build
+
+coor print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+if stop eq 1 then STOP
+
+delete atom sele all end
+
+set label schiff_patch1
+set residue schiff_patch1
+
+read sequence cards
+* lysine
+*
+1
+lys
+
+generate a first aced last ct3 setup warn
+
+read sequence cards
+* rtal
+*
+1
+rtal
+
+generate b first none last none setup warn
+
+!patch to link residus
+patch sck1 a 1 b 1 setup warn
+
+autogenerate angle dihedral
+
+ic param
+ic seed 1 n 1 ca 1 c
+ic build
+
+coor print
+
+update cutnb 99.0 ctofnb 98.0 ctonnb 97.0 switch vswitch
+energy
+!mini conj nstep 200 nprint 100
+!mini nraph nstep 50
+
+coor copy comp
+
+if stop eq 1 then STOP
+
+delete atom sele all end
+
+set resi LYR
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+
+gene @resi first nter last cter setup
+
+ic para
+ic seed @resi 1 C @resi 1 CA @resi 1 N
+ic build
+
+energy
+
+delete atom select all end
+set resi LYR
+read sequ card unit 5
+* @resi test as a trisaccharide
+*
+3
+ala lyr ala
+
+gene @resi first nter last cter setup
+
+ic para
+ic seed @resi 1 C @resi 1 CA @resi 1 N
+ic build
+
+energy
+
+delete atom select all end
+
+stop
+

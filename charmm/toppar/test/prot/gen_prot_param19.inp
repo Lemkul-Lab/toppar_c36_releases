@@ -1,0 +1,43 @@
+*  Generate and Minimized BPTI 
+*
+
+bomlev -1
+
+! first generate the enzyme
+
+!set 1 /week/alex/toppar/toph19.inp
+!set 2 /week/alex/toppar/param19.inp
+
+! read the topology
+open unit 9 read form name @a
+read rtf card unit 9
+close unit 9
+
+read sequence card
+* all amino acids in yipes topology file
+*
+20
+ALA ARG ASN ASP CYS GLN GLU GLY
+His ILE LEU LYS MET PHE PRO SER THR TRP TYR VAL 
+
+generate a setup warn
+
+!print psf
+!stop
+
+! read the parameters
+open unit 9 read form name @b
+read para card unit 9
+close unit 9
+
+ic para
+ic seed 1 n 1 ca 1 c
+ic build
+hbuild
+
+update inbfrq 20 ihbfrq 0 shift atom vswitch vatom -
+cutnb 8.0 ctonnb 6.5 ctofnb 7.5
+
+energy
+
+stop

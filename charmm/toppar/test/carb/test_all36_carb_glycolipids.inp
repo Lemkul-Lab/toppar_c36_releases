@@ -1,0 +1,1814 @@
+* test case for glycolipids with sugars
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+ioformat exten
+
+set pdbdir pdb
+ioformat extended
+
+
+!added in 2016 from test_all36_lipid_glycolipids.inp when
+!toppar_all36_lipid_glycolipid.str deleted see below for LLO tests
+!loop over individual PIP modifications
+
+!extended in 2017 to include Im lab additions
+
+set count 1
+set double 1  ! 
+
+label loop1add
+
+if count eq 1 set pres1 I3P1
+if count eq 2 set pres1 I3P2
+if count eq 3 set pres1 I4P1
+if count eq 4 set pres1 I4P2
+if count eq 5 set pres1 I5P1
+if count eq 6 set pres1 I5P2
+
+if count eq 1 set pres2 I4P1
+if count eq 2 set pres2 I4P2
+if count eq 3 set pres2 I5P1
+if count eq 4 set pres2 I5P2
+if count eq 5 set pres2 I3P1
+if count eq 6 set pres2 I3P2
+
+read sequ card
+* seq
+*
+1
+SAPI
+
+gener PIP setup warn
+
+patch @pres1 pip 1 setup   ! create PIP
+
+if @double eq 2 then
+ patch @pres2 pip 1 setup  ! second phosphate
+endif
+
+autogen angl dihe
+
+test psf
+
+ic param
+ic print
+ic seed PIP 1 C11  PIP 1 C12  PIP 1 C13
+ic build
+define tmp sele .not. init show end
+
+hbuild sele hydrogen end
+ic fill
+
+set 4 999.0  ! cutnb
+set 5 980.0  ! ctonnb
+set 6 990.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+!Update the lists to calculate the energy
+update inbfrq 1000       ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5
+
+energy
+
+delete atom sele all end
+
+calc count = @count + 1
+if count le 6 goto loop1add
+
+set count 1
+calc double = @double + 1
+
+if double le 2 goto loop1add
+
+set pres octa
+set residues aglc
+read sequ card unit 5
+* @residues
+* @pres
+*
+1
+@residues
+gene sugar first none last none setup
+patch @pres sugar 1 setup warn
+autogenerate angle dihe
+ic seed sugar 1 o5 sugar 1 c1 sugar 1 c2
+ic build
+energy
+
+delete atom select all end 
+
+set pres octb
+set residues bglc
+read sequ card unit 5
+* @residues
+* @pres
+*
+1
+@residues
+gene sugar first none last none setup
+patch @pres sugar 1 setup warn
+autogenerate angle dihe
+ic seed sugar 1 o5 sugar 1 c1 sugar 1 c2
+ic build
+energy
+
+delete atom select all end 
+
+set pres1 14ab
+set pres2 ddmb
+set residues bglc aglc
+set segid ddm
+read sequ card unit 5
+* @residues
+* @pres1
+* @pres2
+*
+1
+@residues
+gene @segid first none last none setup
+patch @pres1 @segid 1 @segid 2 setup warn
+patch @pres2 @segid 1 setup warn
+autogenerate angle dihe
+ic seed @segid 1 o5 @segid 1 c1 @segid 1 c2
+ic build
+
+energy
+delete atom select all end
+
+!
+! GalCer (testing PRES CERB)
+!
+read sequence CER160 1 ! ceramide
+generate cer first none last none setup warn
+
+read sequence BGAL   1 ! galactose
+generate carb first none last none setup warn
+
+patch cerb  carb 1 cer 1 setup warn
+
+rename segid GLA sele segid cer end
+join   GLA carb  renumber
+
+autogenerate angle dihe
+
+open read unit 10 card name ./lipid/test_all36_lipid_crd/galcer.crd
+read coor unit 10 card 
+
+energy
+
+set refener = 201.5
+calc diff = ?ener - @refener 
+
+!write title unit 20
+!* GalCer @refener ?ener @diff
+!*
+delete atom select all end
+
+!added in 2016 from test_all36_lipid_detergent.inp when selected residues
+!moved to carb/toppar_all36_carb_glycolipid.str
+
+set maxcnt = 13
+
+set cnt = 6
+label dolist
+
+ IF CNT .EQ. 6 THEN
+    SET LIPID   = ADM
+    SET REFENER = 270.907
+ ENDIF
+ IF CNT .EQ. 7 THEN
+    SET LIPID   = ADDM
+    SET REFENER = 274.694
+ ENDIF
+ IF CNT .EQ. 8 THEN
+    SET LIPID   = BDM
+    SET REFENER = 274.162
+ ENDIF
+ IF CNT .EQ. 9 THEN
+    SET LIPID   = BDDM
+    SET REFENER = 278.078
+ ENDIF
+ IF CNT .EQ. 10 THEN
+    SET LIPID   = ADG
+    SET REFENER = 158.615
+ ENDIF
+ IF CNT .EQ. 11 THEN
+    SET LIPID   = ADDG
+    SET REFENER = 162.401
+ ENDIF
+ IF CNT .EQ. 12 THEN
+    SET LIPID   = BDG
+    SET REFENER = 163.235
+ ENDIF
+ IF CNT .EQ. 13 THEN
+    SET LIPID   = BDDG
+    SET REFENER = 167.151
+ ENDIF
+
+   read sequence @lipid 1
+   generate @lipid setup warn
+
+   open read unit 10 card name ./lipid/test_all36_lipid_crd/@lipid.crd
+   read coor unit 10 card 
+
+   energy
+
+   calc diff = ?ener - @refener 
+
+!   write title unit 90
+!   * @lipid @refener ?ener @diff
+!   *
+
+   delete atom
+
+increase cnt by 1
+if cnt .le. @maxcnt goto dolist
+
+!end added in 2016
+
+!loop over individual PIP modifications
+set count 1
+set double 1  ! 
+
+label loop1
+
+if count eq 1 set pres1 I3P1
+if count eq 2 set pres1 I3P2
+if count eq 3 set pres1 I4P1
+if count eq 4 set pres1 I4P2
+if count eq 5 set pres1 I5P1
+if count eq 6 set pres1 I5P2
+
+if count eq 1 set pres2 I4P1
+if count eq 2 set pres2 I4P2
+if count eq 3 set pres2 I5P1
+if count eq 4 set pres2 I5P2
+if count eq 5 set pres2 I3P1
+if count eq 6 set pres2 I3P2
+
+read sequ card
+* seq
+*
+1
+SAPI
+
+gener PIP setup warn
+
+patch @pres1 pip 1 setup   ! create PIP
+
+if @double eq 2 then
+ patch @pres2 pip 1 setup  ! second phosphate
+endif
+
+autogen angl dihe
+
+test psf
+
+ic param
+ic print
+ic seed PIP 1 C11  PIP 1 C12  PIP 1 C13
+ic build
+define tmp sele .not. init show end
+
+hbuild sele hydrogen end
+ic fill
+
+set 4 999.0  ! cutnb
+set 5 980.0  ! ctonnb
+set 6 990.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+!Update the lists to calculate the energy
+update inbfrq 1000       ihbfrq 0 -
+@7 @8 @9 vfswitch cutnb @4 ctofnb @6 ctonnb @5
+
+energy
+
+delete atom sele all end
+
+calc count = @count + 1
+if count le 6 goto loop1
+
+set count 1
+calc double = @double + 1
+
+if double le 2 goto loop1
+
+set pres octa
+set residues aglc
+read sequ card unit 5
+* @residues
+* @pres
+*
+1
+@residues
+gene sugar first none last none setup
+patch @pres sugar 1 setup warn
+autogenerate angle dihe
+ic seed sugar 1 o5 sugar 1 c1 sugar 1 c2
+ic build
+energy
+
+delete atom select all end 
+
+set pres octb
+set residues bglc
+read sequ card unit 5
+* @residues
+* @pres
+*
+1
+@residues
+gene sugar first none last none setup
+patch @pres sugar 1 setup warn
+autogenerate angle dihe
+ic seed sugar 1 o5 sugar 1 c1 sugar 1 c2
+ic build
+energy
+
+delete atom select all end 
+
+set pres1 14ab
+set pres2 ddmb
+set residues bglc aglc
+set segid ddm
+read sequ card unit 5
+* @residues
+* @pres1
+* @pres2
+*
+1
+@residues
+gene @segid first none last none setup
+patch @pres1 @segid 1 @segid 2 setup warn
+patch @pres2 @segid 1 setup warn
+autogenerate angle dihe
+ic seed @segid 1 o5 @segid 1 c1 @segid 1 c2
+ic build
+
+energy
+delete atom select all end
+
+
+set resi bddm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 2O5 @resi 1 2C1 @resi 1 2C2
+ic build
+energy
+!open unit 1 write form name @pdbdir/@resi.pdb
+!write coor pdb unit 1
+!* @resi 
+!*
+!mini sd   nstep 100   nprint 100
+!mini conj nstep 10000 nprint 1000 tolgrd 0.000001
+energy
+!write title unit 20
+!* @resi ?ener ?grms
+!*
+delete atom select all end
+
+
+set resi addm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic seed @resi 1 2O5 @resi 1 2C1 @resi 1 2C2
+ic build
+energy
+!open unit 1 write form name @pdbdir/@resi.pdb
+!write coor pdb unit 1
+!* @resi 
+!*
+!mini sd   nstep 100   nprint 100
+!mini conj nstep 10000 nprint 1000 tolgrd 0.000001
+energy
+!write title unit 20
+!* @resi ?ener ?grms
+!*
+delete atom select all end
+
+!LLO
+
+read sequence card
+* Oligosaccharide chain
+*
+ 15
+!     1      2      3      4      5      6      7      8      9     10
+ AGLCNA BGLCNA   BMAN   AMAN   AMAN           ! 5-sugar core
+   AMAN   AMAN                                ! right (1-6) branch 1
+   AMAN   AMAN                                ! right (1-6) branch 2
+   AMAN   AMAN   AGLC   AGLC   AGLC           ! left  (1-3) branch  
+
+generate osac first none last none setup warn
+
+patch 14bb osac  1  osac  2 setup warn    ! 14 AGLC
+patch 14bb osac  2  osac  3 setup warn    !     | (a1-2)
+!patch 16ab osac  3  osac  4 setup warn    ! 13 AGLC
+patch 16at osac  3  osac  4 setup warn    ! 13 AGLC
+                                          !     | (a1-3)
+!patch 16ab osac  4  osac  5 setup warn    ! 12 AGLC
+patch 16at osac  4  osac  5 setup warn    ! 12 AGLC
+patch 12aa osac  5  osac  6 setup warn    !     | (a1-3)
+                                          ! 11 AMAN       8 AMAN      6 AMAN 
+patch 13ab osac  4  osac  7 setup warn    !     | (a1-2)     | (a1-2)    | (a1-2)
+patch 12aa osac  7  osac  8 setup warn    ! 10 AMAN       7 AMAN      5 AMAN
+                                          !     |            |          /
+patch 13ab osac  3  osac  9 setup warn    !     | (a1-2)      \ (a1-3) / (a1-6)
+patch 12aa osac  9  osac 10 setup warn    !     |              \      /
+patch 12aa osac 10  osac 11 setup warn    !  9 AMAN             4 AMAN
+patch 13ab osac 11  osac 12 setup warn    !       \            / 
+patch 13ab osac 12  osac 13 setup warn    !        \ (a1-3)   / (a1-6)
+patch 12ab osac 13  osac 14 setup warn    !         \        /
+                                          !           3 BMAN
+autogenerate angle dihe                   !              | (b1-4)
+                                          !           2 BGLCNA
+                                          !              | (b1-4)
+                                          !           1 AGLCNA
+                                          !              | 
+read sequence card                        !              | 
+*  dol-p-p                                !         DOL-PP
+*                                         !
+ 1
+ DL19PP
+
+generate dolp first none last none setup warn
+
+patch lllo osac 1 dolp 1 setup warn
+autogenerate angle dihe
+
+rename segid llo sele segid OSAC end
+join   llo dolp renumber
+
+ic para
+ic edit
+   dihe LLO  3 O5  LLO  3 C1  LLO  2 O4  LLO  2 C4  -81.720    ! from DB charmm input
+   dihe LLO  3 C1  LLO  2 O4  LLO  2 C4  LLO  2 C3  131.780    ! 5 -> 7; 6 -> 5; 7 -> 9; 8 -> 10
+   dihe LLO  2 O5  LLO  2 C1  LLO  1 O4  LLO  1 C4  -80.530
+   dihe LLO  2 C1  LLO  1 O4  LLO  1 C4  LLO  1 C3   99.077
+   dihe LLO  5 O5  LLO  5 C1  LLO  4 O6  LLO  4 C6   64.292
+   dihe LLO  5 C1  LLO  4 O6  LLO  4 C6  LLO  4 C5 -177.657
+   dihe LLO  4 O6  LLO  4 C6  LLO  4 C5  LLO  4 C4   55.887
+   dihe LLO  4 O5  LLO  4 C1  LLO  3 O6  LLO  3 C6   65.555
+   dihe LLO  4 C1  LLO  3 O6  LLO  3 C6  LLO  3 C5 -166.077
+   dihe LLO  3 O6  LLO  3 C6  LLO  3 C5  LLO  3 C4   62.219
+   dihe LLO  7 O5  LLO  7 C1  LLO  4 O3  LLO  4 C3   87.042
+   dihe LLO  7 C1  LLO  4 O3  LLO  4 C3  LLO  4 C2  -96.428
+   dihe LLO  9 C1  LLO  3 O3  LLO  3 C3  LLO  3 C2  -89.112
+   dihe LLO  9 O5  LLO  9 C1  LLO  3 O3  LLO  3 C3   78.977
+   dihe LLO 10 C1  LLO  9 O2  LLO  9 C2  LLO  9 C1  -83.494
+   dihe LLO 10 O5  LLO 10 C1  LLO  9 O2  LLO  9 C2   84.619
+end
+ic seed 1 c1 1 c2 1 c3
+ic build
+
+energy
+
+delete atom sele all end
+
+!UND
+
+read sequence card
+* Oligosaccharide chain
+*
+ 15
+!     1      2      3      4      5      6      7      8      9     10
+   ABAC   AGALNA AGALNA AGALNA AGALNA AGALNA
+   BGLC
+
+generate osac first none last none setup warn
+
+patch 13ab osac  1  osac  2 setup warn    !     6 AGALNA
+patch 14aa osac  2  osac  3 setup warn    !       | (a1-4)
+patch 14aa osac  3  osac  4 setup warn    !     5 AGALNA      7 BGLC
+patch 14aa osac  4  osac  5 setup warn    !          \          /
+patch 14aa osac  5  osac  6 setup warn    !           \(a1-4)  / (b1-3)
+                                          !            \      / 
+patch 13bb osac  4  osac  7 setup warn    !           4 AGALNA
+                                          !              | (a1-4)
+autogenerate angle dihe                   !           3 AGALNA
+                                          !              | (a1-4)
+                                          !           2 AGALNA
+                                          !              | (a1-3)
+                                          !           1 ABAC (bacillosamine)
+read sequence card                        !              | 
+*  und-p-p                                !              |
+*                                         !         UND-PP
+ 1                                        !
+ UNDPP
+
+generate dolp first none last none setup warn
+
+patch lllo osac 1 dolp 1 setup warn
+autogenerate angle dihe
+
+rename segid llo sele segid OSAC end
+join   llo dolp renumber
+
+ic para
+ic edit
+dihe LLO 1 C1 LLO 8 O22 LLO 8 P2 LLO 8 O12 -90.00
+end
+ic seed 1 c1 1 c2 1 c3
+ic build
+coor print
+
+energy
+
+delete atom select all end
+
+! imlab additions
+
+set resi tx114
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c12deg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bom
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bog
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aog
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aom
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdmhm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi acy6m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi tx100
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c12eg7
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi adtm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c12eg8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c12eg9
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdmng
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 2c1 @resi 1 2c2 @resi 1 2c3
+ic build
+energy
+delete atom select all end
+
+set resi b2udm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bnm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bcy7m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bng
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi budtm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi blmng
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 2c1 @resi 1 2c2 @resi 1 2c3
+ic build
+energy
+delete atom select all end
+
+set resi acy7m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bddtm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi dmg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 1c1 @resi 1 1c2 @resi 1 1c3
+ic build
+energy
+delete atom select all end
+
+set resi admhm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bbcyg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 2c1 @resi 1 2c2 @resi 1 2c3
+ic build
+energy
+delete atom select all end
+
+set resi acy4m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi addtm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bdtm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aotg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aotm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi audtm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ahtg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c10eg6
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi ang
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi anm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bcy5m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi acy5m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi btm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bppm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bcy4m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi smdd
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi atm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi tx405
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi audm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bmhcg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 n1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c5mng
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 2c1 @resi 1 2c2 @resi 1 2c3
+ic build
+energy
+delete atom select all end
+
+set resi appm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bhtg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c7eg4
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi budm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c13eg8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bcy3g
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bbphg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 2c1 @resi 1 2c2 @resi 1 2c3
+ic build
+energy
+delete atom select all end
+
+set resi c6mng
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 2c1 @resi 1 2c2 @resi 1 2c3
+ic build
+energy
+delete atom select all end
+
+set resi bcy3m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi acy3m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi acy3g
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi nmg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 1c1 @resi 1 1c2 @resi 1 1c3
+ic build
+energy
+delete atom select all end
+
+set resi c8eg6
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c8eg4
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c8eg5
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bogng
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 2c1 @resi 1 2c2 @resi 1 2c3
+ic build
+energy
+delete atom select all end
+
+set resi bcy6m
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi botm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi nidp40
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bntm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi botg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi tx305
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c6eg3
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c6eg4
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c6eg5
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi antm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c10eg5
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi dheg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 1c1 @resi 1 1c2 @resi 1 1c3
+ic build
+energy
+delete atom select all end
+
+set resi c7eg5
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi c10eg9
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi nheg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 1c1 @resi 1 1c2 @resi 1 1c3
+ic build
+energy
+delete atom select all end
+
+set resi amhcg
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 n1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi a2udm
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+
+set resi aglc
+set patchname 1ac8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bc8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 2ac8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 2bc8
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1ac10
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bc10
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi aglc
+set patchname 1ac12
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi bglc
+set patchname 1bc12
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi dlpa
+set patchname dpins
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1 @resi 1 c2 @resi 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi cer160
+set patchname cpins
+read sequ card unit 5
+* @resi
+*
+1
+@resi
+gene @resi first none last none setup
+patch @patchname @resi 1 setup warn
+ic param
+ic seed @resi 1 c1f @resi 1 c2f @resi 1 c3f
+ic build
+energy
+delete atom select all end
+
+set resi1 agal
+set resi2 dlpa
+set patchname daga
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic param
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi1 bgal
+set resi2 dlpa
+set patchname dagb
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch @patchname cara 1 cara 2 setup warn
+ic param
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi1 dlpa
+set resi2 aglc
+set patchname ins2a
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch dpins cara 1 setup warn
+patch @patchname cara 2 cara 1 setup warn
+ic param
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi1 dlpa
+set resi2 bglc
+set patchname ins2b
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch dpins cara 1 setup warn
+patch @patchname cara 2 cara 1 setup warn
+ic param
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi1 dlpa
+set resi2 aglc
+set patchname ins6a
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch dpins cara 1 setup warn
+patch @patchname cara 2 cara 1 setup warn
+ic param
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+set resi1 dlpa
+set resi2 bglc
+set patchname ins6b
+read sequ card unit 5
+* glycan chain cara: pdb chain
+*
+2
+@resi1 @resi2
+gene cara first none last none setup
+patch dpins cara 1 setup warn
+patch @patchname cara 2 cara 1 setup warn
+ic param
+ic seed cara 1 c1 cara 1 c2 cara 1 c3
+ic build
+energy
+delete atom select all end
+
+stop

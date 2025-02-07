@@ -1,0 +1,300 @@
+ Parameter: A <- "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/TOP_OPLS_AA.INP"
+ Parameter: B <- "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/PAR_OPLS_AA.INP"
+1
+                 Chemistry at HARvard Macromolecular Mechanics
+           (CHARMM) - Developmental Version 49a2   February 15, 2024            
+                                Revision unknown                                
+       Copyright(c) 1984-2023  President and Fellows of Harvard College
+                              All Rights Reserved
+         Current operating system: Linux-4.9.0-9-amd64(x86_64)@ocracoke         
+                 Created on  7/26/24 at 16:25:53 by user: alex        
+
+            Maximum number of ATOMS:    360720, and RESidues:      120240
+ RDTITL> * TEST OPLS PROTEIN AND NUCLEIC ACID PARAMETERS
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    !set a ../non_charmm/top_opls_aa.inp
+ CHARMM>    !set b ../non_charmm/par_opls_aa.inp
+ CHARMM>     
+  
+ CHARMM>    ! read the topology
+ CHARMM>    open unit 9 read form name @a
+ Parameter: A -> "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/TOP_OPLS_AA.INP"
+ VOPEN> Attempting to open::/raid/alex/param/toppar_jul24/non_charmm/top_opls_aa.inp::
+ OPNLGU> Unit  9 opened for READONLY access to /raid/alex/param/toppar_jul24/non_charmm/top_opls_aa.inp
+  
+ CHARMM>    read rtf card unit 9
+ MAINIO> Residue topology file being read from unit   9.
+ TITLE> *>>>>>>>>>>>  OPLS ALL-ATOM TOPLOGY FILE FOR PROTEINS  <<<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>>>>>>>>>  NOV 2000  <<<<<<<<<<<<<<<<<<<<<<<<<<<
+ TITLE> *>>>>>>  GENERATED AUTOMATICALLY FROM PEPZ DATABASE FILES  <<<<<
+ TITLE> *>>>>>>>>>>  SCRIPT IN PERL, AVAILABLE FROM D. PRICE  <<<<<<<<<<
+ TITLE> *>>>>>>>>>>>>>>>>  EMAIL: PRICED AT SCRIPPS.EDU  <<<<<<<<<<<<<<<
+ TITLE> *
+  
+ CHARMM>     
+  
+ CHARMM>    ! read the parameters
+ CHARMM>    open unit 9 read form name @b
+ Parameter: B -> "/RAID/ALEX/PARAM/TOPPAR_JUL24/NON_CHARMM/PAR_OPLS_AA.INP"
+ OPNLGU> Unit already open. The old file will be closed first.
+ VCLOSE: Closing unit    9 with status "KEEP"
+ VOPEN> Attempting to open::/raid/alex/param/toppar_jul24/non_charmm/par_opls_aa.inp::
+ OPNLGU> Unit  9 opened for READONLY access to /raid/alex/param/toppar_jul24/non_charmm/par_opls_aa.inp
+  
+ CHARMM>    read para card unit 9
+
+          PARAMETER FILE BEING READ FROM UNIT  9
+ TITLE> * PARAMETER FILE FOR OPLS FOR PROTEINS *
+ TITLE> *
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  42  C748
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  43  C752
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  44  C906
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  59  H909
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  60  H910
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  61  H911
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  72  N749
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  73  N750
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  74  N751
+ NO nonbond interactions will be computed for this atom type.
+*****  WARNING  ***** PARRDR no nonbond parameters for atom type:  75  N900
+ NO nonbond interactions will be computed for this atom type.
+ PARMIO> NONBOND, HBOND lists and IMAGE atoms cleared.
+  
+ CHARMM>     
+  
+ CHARMM>    !crambin
+ CHARMM>    read sequence cards
+ MAINIO> Sequence information being read from unit   5.
+ RDTITL> * CRAMBIN
+ RDTITL> *
+  
+ SEQRDR>    46
+  
+ SEQRDR>    THR THR CYS CYS PRO SER ILE VAL ALA ARG SER ASN PHE
+  
+ SEQRDR>    ASN VAL CYS ARG LEU PRO GLY THR PRO GLU ALA ILE CYS
+  
+ SEQRDR>    ALA THR TYR THR GLY CYS ILE ILE ILE PRO GLY ALA THR
+  
+ SEQRDR>    CYS PRO GLY ASP TYR ALA ASN
+
+          RESIDUE SEQUENCE --    46 RESIDUES
+          THR THR CYS CYS PRO SER ILE VAL ALA ARG SER ASN PHE ASN VAL CYS ARG LEU PRO GLY 
+          THR PRO GLU ALA ILE CYS ALA THR TYR THR GLY CYS ILE ILE ILE PRO GLY ALA THR CYS 
+          PRO GLY ASP TYR ALA ASN 
+ ***** Message from SEQRDR ***** THE SYSTEM CONTAINS  4 TITRATABLE GROUPS
+ THE USER MUST PREDETERMINE THE PROTONATION STATE THROUGH THE SEQUENCE AND RTF
+ HIS -  0  HSD -  0  HSE -  0  HSP -  0  ASP -  1  GLU -  1  LYS -  0  TYR -  2
+  
+ CHARMM>     
+  
+ CHARMM>    generate crm1 first nter last cter setup warn
+ THE PATCH 'NTER' WILL BE USED FOR THE FIRST RESIDUE
+ THE PATCH 'CTER' WILL BE USED FOR THE LAST  RESIDUE
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "N     " "HN    " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "HN    " "N     " "-C    " "CA    " WERE REQUESTED.
+ ** WARNING ** DONOR NOT FOUND FOR RESIDUE   1 THR   .
+ ATOMS "HN    " "N     " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "C     " "+N    " WERE REQUESTED.
+ ** WARNING ** BOND NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "C     " "O     " WERE REQUESTED.
+ ** WARNING ** IMPROPER NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "O     " "C     " "CA    " "+N    " WERE REQUESTED.
+ ** WARNING ** ACCEPTOR NOT FOUND FOR RESIDUE  46 ASN   .
+ ATOMS "O     " "C     " WERE REQUESTED.
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ GENPSF> Segment   1 has been generated. Its identifier is CRM1.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      648   Number of groups     =      191
+         Number of bonds         =      655   Number of angles     =     1183
+         Number of dihedrals     =     1744   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =        0
+         Number of HB acceptors  =       64   Number of HB donors  =       75
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    ! patch in disulfides
+ CHARMM>    patch disu crm1  3 crm1 40
+ ATOM  CRM1 3    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  CRM1 40   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      646   Number of groups     =      193
+         Number of bonds         =      654   Number of angles     =     1183
+         Number of dihedrals     =     1745   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =        9
+         Number of HB acceptors  =       64   Number of HB donors  =       73
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    patch disu crm1  4 crm1 32
+ ATOM  CRM1 4    CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  CRM1 32   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      644   Number of groups     =      195
+         Number of bonds         =      653   Number of angles     =     1183
+         Number of dihedrals     =     1746   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =       18
+         Number of HB acceptors  =       64   Number of HB donors  =       71
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>    patch disu crm1 16 crm1 26
+ ATOM  CRM1 16   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+ ATOM  CRM1 26   CYS  HG1  AND ALL REFERENCES TO IT DELETED.
+
+ Message from MAPIC: Atom numbers are changed.
+ DELTIC:         2 bonds deleted
+ DELTIC:         2 angles deleted
+ DELTIC:         6 dihedrals deleted
+ DELTIC:         2 donors deleted
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      642   Number of groups     =      197
+         Number of bonds         =      652   Number of angles     =     1183
+         Number of dihedrals     =     1747   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =       27
+         Number of HB acceptors  =       64   Number of HB donors  =       69
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    autogenerate angle dihedral
+ AUTGEN: Autogenerating specified angles and dihedrals.
+ AUTOGEN:  1183 angles are removed before regeneration for selected atoms.
+ AUTOGEN:  1747 dihedrals are removed before regeneration for selected atoms.
+ Requested angle for addition already exists:          35          38         561  Nothing done.
+ Requested angle for addition already exists:          38         561         558  Nothing done.
+ Requested angle for addition already exists:          45          48         449  Nothing done.
+ Requested angle for addition already exists:          48         449         446  Nothing done.
+ Requested angle for addition already exists:         224         227         373  Nothing done.
+ Requested angle for addition already exists:         227         373         370  Nothing done.
+ Requested dihedral for addition already exists:         561          38          35          36  Nothing done.
+ Requested dihedral for addition already exists:         561          38          35          37  Nothing done.
+ Requested dihedral for addition already exists:          38         561         558         559  Nothing done.
+ Requested dihedral for addition already exists:          38         561         558         560  Nothing done.
+ Requested dihedral for addition already exists:         561          38          35          33  Nothing done.
+ Requested dihedral for addition already exists:          38         561         558         556  Nothing done.
+ Requested dihedral for addition already exists:          35          38         561         558  Nothing done.
+ Requested dihedral for addition already exists:         449          48          45          46  Nothing done.
+ Requested dihedral for addition already exists:         449          48          45          47  Nothing done.
+ Requested dihedral for addition already exists:          48         449         446         447  Nothing done.
+ Requested dihedral for addition already exists:          48         449         446         448  Nothing done.
+ Requested dihedral for addition already exists:         449          48          45          43  Nothing done.
+ Requested dihedral for addition already exists:          48         449         446         444  Nothing done.
+ Requested dihedral for addition already exists:          45          48         449         446  Nothing done.
+ Requested dihedral for addition already exists:         373         227         224         225  Nothing done.
+ Requested dihedral for addition already exists:         373         227         224         226  Nothing done.
+ Requested dihedral for addition already exists:         227         373         370         371  Nothing done.
+ Requested dihedral for addition already exists:         227         373         370         372  Nothing done.
+ Requested dihedral for addition already exists:         373         227         224         222  Nothing done.
+ Requested dihedral for addition already exists:         227         373         370         368  Nothing done.
+ Requested dihedral for addition already exists:         224         227         373         370  Nothing done.
+ PSFSUM> PSF modified: NONBOND lists and IMAGE atoms cleared.
+ PSFSUM> Summary of the structure file counters :
+         Number of segments      =        1   Number of residues   =       46
+         Number of atoms         =      642   Number of groups     =      197
+         Number of bonds         =      652   Number of angles     =     1183
+         Number of dihedrals     =     1747   Number of impropers  =      125
+         Number of cross-terms   =        0   Number of autogens   =       27
+         Number of HB acceptors  =       64   Number of HB donors  =       69
+         Number of NB exclusions =        0   Total charge =    0.00000
+  
+ CHARMM>     
+  
+ CHARMM>    read coor card
+          SPATIAL COORDINATES BEING READ FROM UNIT  5
+ RDTITL> * CRAMBIN, XTAL ASYMMETRIC UNIT WITH WATER, FROM KURIYAN
+ RDTITL> * GENERATED AND IMAGE CENTERED
+ RDTITL> * SEGIDS RENAMED AND IMAGE CENTERED
+ RDTITL> * 200 SD STEPS SOLVENT FOLLOWED BY 200 ABNR STEPS WITH PME
+ RDTITL> * 20 PS NVT, SOLUTE HARMONICALLY CONSTRAINED
+ RDTITL> * ../TOPPAR/TOP_P22B5I_N271F.INP
+ RDTITL> * ../TOPPAR/PAR_P22B5I_N271F.INP
+ RDTITL> *  DATE:     3/21/ 2     12: 9: 1      CREATED BY USER: ALEXMAC
+ RDTITL> *
+  
+ CHARMM>     
+  
+ CHARMM>    energy
+
+ NONBOND OPTION FLAGS: 
+     ELEC     VDW      ATOMs    CDIElec  SWITch   VATOm    VSWItch 
+     BYGRoup  NOEXtnd  NOEWald 
+ CUTNB  = 14.000 CTEXNB =999.000 CTONNB = 11.500 CTOFNB = 12.000
+ CGONNB =  0.000 CGOFNB = 10.000
+ WMIN   =  1.500 WRNMXD =  0.500 E14FAC =  0.500 EPS    =  1.000
+ NBXMOD =      5
+ There are        0 atom  pairs and        0 atom  exclusions.
+ There are        0 group pairs and        0 group exclusions.
+ <MAKINB> with mode   5 found   1835 exclusions and   1713 interactions(1-4)
+ <MAKGRP> found    578 group exclusions.
+ Generating nonbond list with Exclusion mode = 5
+ == PRIMARY == SPACE FOR   184479 ATOM PAIRS AND        0 GROUP PAIRS
+
+ General atom nonbond list generation found:
+   120047 ATOM PAIRS WERE FOUND FOR ATOM LIST
+     4223 GROUP PAIRS REQUIRED ATOM SEARCHES
+
+ENER ENR:  Eval#     ENERgy      Delta-E         GRMS
+ENER INTERN:          BONDs       ANGLes       UREY-b    DIHEdrals    IMPRopers
+ENER EXTERN:        VDWaals         ELEC       HBONds          ASP         USER
+ ----------       ---------    ---------    ---------    ---------    ---------
+ENER>        0  -1067.21242      0.00000     25.62824
+ENER INTERN>      149.54131    279.00947      0.00000    123.67219      9.91487
+ENER EXTERN>      -23.21293  -1606.13733      0.00000      0.00000      0.00000
+ ----------       ---------    ---------    ---------    ---------    ---------
+  
+ CHARMM>     
+  
+ CHARMM>    stop
+ VCLOSE: Closing unit    9 with status "KEEP"
+$$$$$$  New timer profile $$$$$
+   List time                       0.00 Other:            0.00
+         Electrostatic & VDW             0.00 Other:            0.00
+      Nonbond force                   0.00 Other:            0.00
+         Bond energy                     0.00 Other:            0.00
+         Angle energy                    0.00 Other:            0.00
+         Dihedral energy                 0.00 Other:            0.00
+         Restraints energy               0.00 Other:            0.00
+      INTRNL energy                   0.00 Other:            0.00
+   Energy time                     0.00 Other:            0.00
+ Total time                      0.10 Other:            0.09
+
+                    NORMAL TERMINATION BY NORMAL STOP
+                    NO WARNINGS WERE ISSUED
+
+                    $$$$$ JOB ACCOUNTING INFORMATION $$$$$
+                     ELAPSED TIME:     0.10  SECONDS 
+                         CPU TIME:     0.08  SECONDS 

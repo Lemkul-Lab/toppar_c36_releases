@@ -1,0 +1,99 @@
+* generate, optimize and vibrational analysis of all pyridine
+* analogs
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+set 3 99.0  ! cutim
+set 4 99.0  ! cutnb
+set 5 97.0  ! ctonnb
+set 6 98.0  ! ctofnb
+set 7 switch
+set 8 atom
+set 9 vatom
+
+read sequence card
+* pyridine
+*
+1
+pyre
+
+generate pyr first none last none setup warn 
+
+ic param
+ic seed 1 cg 1 cd1 1 ce1
+ic build
+
+coor print
+
+update inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+energy
+!mini abnr nstep 20 nprint 10
+!mini nraph nstep 20 nprint 10 tolgrd 0.000001
+!vibran
+!diag
+!end
+
+delete atom sele all end
+
+!loop over all substituted pyridines
+
+set count 1
+
+label loop
+
+if count eq 1 set resn 4AP2
+if count eq 2 set resn 3AP2
+if count eq 3 set resn 34AP
+if count eq 4 set resn 3APY
+if count eq 5 set resn 3CPY
+if count eq 6 set resn 3CB
+if count eq 7 set resn 3FLP
+if count eq 8 set resn 3ALP
+if count eq 9 set resn 3MEP
+if count eq 10 set resn 3HOP
+if count eq 11 set resn 3ETP
+if count eq 12 set resn 3BPY
+if count eq 13 set resn 3CYP
+if count eq 14 set resn 3ACP
+if count eq 15 set resn 3NAP
+if count eq 16 set resn 3CAP
+if count eq 17 set resn 3PHP
+if count eq 18 set resn 3BNP
+
+read sequence card
+* @resn
+*
+1
+@resn
+
+generate pyr first none last none setup warn
+
+bomlev -2
+ic param
+ic seed 1 cg 1 cd1 1 ce1
+ic build
+bomlev 0
+
+coor print
+
+update inbfrq 1000 -
+@7 @8 vswitch @9 cutnb @4 ctonnb @5 ctofnb @6
+
+energy
+!mini abnr nstep 20 nprint 10
+!mini nraph nstep 20 nprint 10 tolgrd 0.000001
+!vibran
+!diag
+!end
+
+delete atom sele all end
+
+calc count = @count + 1
+
+if count le 18 goto loop
+
+stop

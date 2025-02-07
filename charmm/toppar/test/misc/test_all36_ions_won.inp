@@ -1,0 +1,324 @@
+* testing CHARMM ions developed by Youngdo Won
+*
+
+DIMENS CHSIZE 1000000
+stream ./toppar.str
+
+!IOFOrmat EXTEnd
+wrnl 5
+prnl 5
+!boml -2
+
+
+!using counter based on original mass numbers
+
+!Default for all residues
+set GenerateOption = first none last none setup warnshow
+
+set count =  301    !skip to Cu1p
+set restotal = 382  !final residue number
+
+label Big_Loop
+
+! ions available in toppar_water_ions.str are skipped in the toppar file
+! and below as those in toppar_water_ions.str are more carefully optimized.
+
+if count eq 301 then
+goto skip_ion
+set residue Li1p
+endif
+
+prnlev 0
+
+if count eq 302 then
+goto skip_ion
+set residue Na1p
+endif
+
+if count eq 303 then
+goto skip_ion
+set residue K1p 
+endif
+
+if count eq 304 then
+goto skip_ion
+set residue Rb1p
+endif
+
+if count eq 305 then
+goto skip_ion
+set residue Cs1p
+endif
+
+if count eq 306 then
+set residue Cu1p 
+endif
+
+if count eq 307 then
+set residue Ag1p
+endif
+
+if count eq 308 then
+set residue Au1p
+endif
+
+if count eq 309 then
+set residue Ti1p
+endif
+
+if count eq 321 then
+!goto skip_ion
+set residue Be2p
+endif
+
+if count eq 322 then
+goto skip_ion
+set residue Mg2p
+endif
+
+if count eq  32 then
+goto skip_ion
+set residue3 Ca2
+endif
+
+if count eq 324 then
+set residue Sr2p
+endif
+
+if count eq 325 then
+goto skip_ion
+set residue Ba2p
+endif
+
+if count eq 326 then
+set residue Ra2p
+endif
+
+if count eq 327 then
+set residue V2p
+endif
+
+if count eq 328 then
+set residue Cr2p
+endif 
+
+if count eq 329 then
+set residue Mn2p
+endif
+
+if count eq 330 then
+set residue Fe2p
+endif
+
+if count eq 331 then
+set residue Co2p
+endif
+
+if count eq 332 then
+set residue Ni2p
+endif
+
+if count eq 333 then
+set residue Cu2p
+endif
+
+if count eq 334 then
+goto skip_ion 
+set residue Zn2p 
+endif
+
+if count eq 335 then
+set residue Pd2p
+endif
+
+if count eq 336 then
+set residue Ag2p
+endif
+
+if count eq 337 then
+goto skip_ion
+set residue Cd2p
+endif
+
+if count eq 338 then
+set residue Sn2p
+endif
+
+if count eq 339 then
+set residue Pt2p
+endif
+
+if count eq 340 then
+set residue Hg2p
+endif
+
+if count eq 341 then
+set residue Pb2p
+endif
+
+if count eq 342 then
+set residue Sm2p
+endif
+
+if count eq 343 then
+set residue Eu2p
+endif
+
+if count eq 344 then
+set residue Yb2p
+endif
+
+if count eq 351 then
+set residue Al3p
+endif
+
+if count eq 352 then
+set residue Sc3p
+endif
+
+if count eq 353 then
+set residue Y3p 
+endif
+
+if count eq 354 then
+set residue La3p
+endif
+
+if count eq 355 then
+set residue Ce3p
+endif
+
+if count eq 356 then
+set residue Pr3p
+endif
+
+if count eq 357 then
+set residue Nd3p
+endif
+
+if count eq 358 then
+set residue Pm3p
+endif
+
+if count eq 359 then
+set residue Sm3p
+endif
+
+if count eq 360 then
+set residue Eu3p
+endif
+
+if count eq 361 then
+set residue Gd3p
+endif
+
+if count eq 362 then
+set residue Tb3p
+endif
+
+if count eq 363 then
+set residue Dy3p
+endif
+
+if count eq 364 then
+set residue Ho3p
+endif
+
+if count eq 365 then
+set residue Er3p
+endif
+
+if count eq 366 then
+set residue Tm3p
+endif
+
+if count eq 367 then
+set residue Yb3p
+endif
+
+if count eq 368 then
+set residue Lu3p
+endif
+
+if count eq 369 then
+set residue U3p 
+endif
+
+if count eq 370 then
+set residue Pu3p
+endif
+
+if count eq 371 then
+set residue Ti3p
+endif
+
+if count eq 372 then
+set residue V3p 
+endif
+
+if count eq 373 then
+set residue Cr3p
+endif
+
+if count eq 374 then
+set residue Mn3p
+endif
+
+if count eq 375 then
+set residue Fe3p
+endif
+
+if count eq 376 then
+set residue Co3p
+endif
+
+if count eq 377 then
+set residue Ga3p
+endif
+
+if count eq 378 then
+set residue Rh3p
+endif
+
+if count eq 379 then
+set residue In3p
+endif
+
+if count eq 380 then
+set residue Au3p
+endif
+
+if count eq 381 then
+set residue Tl3p
+endif
+
+if count eq 382 then
+set residue Bi3p
+endif
+prnlev 1
+
+label skip_all
+
+read sequence card
+* @residue
+*
+    1
+@residue
+generate @residue @GenerateOption
+
+!define coordinates
+coor set xdir 1.0 ydir 0.0 zdir 0.0
+coor print
+
+energy
+
+delete atom sele all end
+
+label skip_ion
+
+calc count = @count + 1
+
+if count le @restotal goto Big_Loop
+
+stop
+
