@@ -1,0 +1,100 @@
+#Toppar change log
+#Update of the additive CHARMM36 force-field toppar files
+
+1) Protein
+
+*** 2025_2_25
+
+CHARMM36 topologies and parameters for additional non-standard amino acids
+
+- New molecules, patches and parameters added in toppar_all36_prot_modify_res.str
+- New residues:
+    RESI CSSS 0.000 ! S-mercaptocysteine (SSS), gy
+    RESI CS4  0.000 ! S-mercaptocysteine (SSSS), gy
+    RESI MAL  0.000 ! N-methyl-L-alanine, jihyeon
+    Note: MAL is identical to MAA, but with C36 protein atom types only.
+- New patches:
+    PRES TRSU -0.18 ! Patch for S-trisulfidation of Cys (Cys--S--S-H) (SSS), gy
+    PRES TESU -0.18 ! Patch for S-tetrasulfidation of Cys (Cys--S--S--S-H) (SSSS), gy
+- New CMAP for methylated N backbone:
+    C N CT1 C N CT1 C NH1
+
+- Test extended to include new residues and ptaches
+    test script: test_all36_prot_modify_res.inp
+    added lines can be found with !2025_2_jl_gy
+
+*** 2025_6_19
+
+- Missing C termini and proline related parameters identified by Stefan Boresch added and 
+  d-amino acid test case extended to included C-terminal Valine
+
+
+2) Carbohydrate
+Added new monosaccharide residues to toppar_all36_carb_imlab.str
+Aarion Romany, Jana Shen and Alex MacKerell
+
+*** 2025_3_13
+
+RESI 2AGLC0         0.000  ! 2-amino-2-deoxy-D-gluco-hexopyranose: neutral, Chitosan, 2025_3
+RESI 2AGLC1         1.000  ! 2-amino-2-deoxy-D-gluco-hexopyranose: charged, Chitosan, 2025_3
+
+Residues added to test case carb/test_all36_carb_imlab.inp
+
+!new parameters
+
+!Chitosan, 2025_3
+CC3161  NG321   320.00      1.4300 ! NC2D1 CC3161 320.00      1.4300 ! par22 NH1 CT1
+
+!Chitosan, 2025_3
+CC3162  CC3161   NG321  70.00    113.50                  ! CC3162  CC3161  NC2D1    70.00   113.50  ! par22 NH1  CT1  CT1
+HCA1    CC3161   NG321  48.00    108.00                  ! NC2D1   CC3161  HCA1     48.00   108.00  ! par22 NH1  CT1  HB
+NG321   CC3161   CC3161 70.00    113.50                  ! CC3161  CC3161  NC2D1    70.00   113.50  ! par22 NH1  CT1  CT1
+CC3161  NG321    HGPAM2 41.00    112.10                  ! CG3C51  NG321   HGPAM2   41.00   112.10  ! AMINE aliphatic amines
+
+!Chitosan, 2025_3
+CC3162  CC3161  NG321   HGPAM2    0.2000   3     0.0   ! AR_2025
+CC3161  CC3161  NG321   HGPAM2    0.5000   3     0.0   ! AR_2025
+HCA1    CC3161  NG321   HGPAM2    0.0100   3   180.0   ! AR_2025
+HCA1    CC3162  CC3161  NG321     0.2000   3     0.0   ! HCA1   CC3162 CC3161 NC2D1    0.20  3     0.0  ! par27 X CTL1 CTL1 X
+OC311   CC3162  CC3161  NG321     0.2000   3     0.0   ! OC311  CC3162 CC3161 NC2D1    0.20  3     0.0  ! par27 X CTL1 CTL1 X
+OC301   CC3162  CC3161  NG321     0.2000   3     0.0   ! OC311  CC3162 CC3161 NC2D1    0.20  3     0.0  ! par27 X CTL1 CTL1 X
+OC3C61  CC3162  CC3161  NG321     0.2000   3     0.0   ! OC3C61 CC3162 CC3161 NC2D1    0.20  3     0.0  ! par27 X CTL1 CTL1 X
+HCA1    CC3161  CC3161  NG321     0.2000   3     0.0   ! HCA1   CC3161 CC3161 NC2D1    0.20  3     0.0  ! par27 X CTL1 CTL1 X
+OC311   CC3161  CC3161  NG321     0.2000   3     0.0   ! OC311  CC3161 CC3161 NC2D1    0.20  3     0.0  ! par27 X CTL1 CTL1 X
+CC3161  CC3161  CC3161  NG321     0.2000   3     0.0   ! NC2D1  CC3161 CC3161 CC3261   0.20  3     0.0  ! par27 X CTL1 CTL1 X
+!
+
+!The improper was giving an error and it doesn't seem that its needed.!
+
+!Chitosan, 2025_3
+!|NG2S1   C       CG321   HGP1     20.00   0    0.00  ! par22 NH1  X    X    H
+
+
+3) Charmm_modifications
+
+*** 2025_3_14
+
+Explict protein topology and parameter files for CHARMM36m-NSBF 
+from Chris Chipot added March 2025.
+
+The new NBSF files represent drop-in replacements for the standard CHARMM36m protein files.
+
+top_all36_prot_NSBF.rtf can be used to replace the standard top_all36_prot.rtf file, 
+and top_all36_cgenff_NSBF.rtf used to to replace top_all36_cgenff.rtf.  
+Then, CHARMM36m_NSBF.prm needs to be included after par_all36m_prot.prm and par_all36_cgenff.prm.
+
+4) Water and ions
+
+*** 2025_11_19
+
+Hydronium and new atom type (OH3) added to toppar_water_ions.str
+Rmin and epsilon values for hydronium and hydroxide were added and updated
+
+!H3O, hydronium
+MASS  -1  OH3       15.99940 O ! ionized oxygen, H3O (hydronium)
+HC    OH3   530.0       0.9517  ! H3O, jlee 11/19/25 
+HC   OH3  HC     40.0      110.40   ! H3O, jlee 11/19/25 
+OH3      0.0       -0.100     1.8000    ! H3O, jlee 11/19/25 
+
+!OH, hydroxide
+OX     0.000000  -0.960000     1.800000 ! OH, jlee updated, 11/19/25

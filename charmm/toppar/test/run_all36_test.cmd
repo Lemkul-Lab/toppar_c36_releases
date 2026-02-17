@@ -1,19 +1,14 @@
 #!/bin/csh -f
 # run charmm test cases
 
-#ocracoke
-#setenv charmm /opt/mackerell/apps/charmm/serial/charmm-c47b2-serial
-setenv charmm /opt/mackerell/apps/charmm/serial/charmm-c49a2-serial-ljpme
-#setenv charmm /raid/alex/charmm/code/charmm_git/stable-release/bin/charmm_c46b1
-#setenv charmm /raid/alex/charmm/code/charmm_git/stable-release/build/cmake/charmm
+#charmm executable
+setenv charmm /opt/mackerell/apps/charmm/serial/charmm-serial
 
-setenv outdir ./out_2024_7_c49a2-serial-ljpme_toppar
+setenv outdir ./out_2026_2_toppar_c36_githum
 
 mkdir -p $outdir
 
-setenv toppar /raid/alex/param/toppar_jul24/toppar
-
-#setenv toppar /raid/alex/param/toppar_jul24
+setenv toppar /raid/alex/param/toppar_feb26
 
 ##most toppar file definitions are set in toppar.str or
 ##toppar_ljpme.str, not below, but check the individual inputs if
@@ -25,6 +20,8 @@ setenv topprot22         $toppar/top_all22_prot.rtf
 setenv parprot22         $toppar/par_all22_prot.prm
 setenv topether          $toppar/top_all35_ethers.rtf
 setenv parether          $toppar/par_all35_ethers.prm
+setenv topcgenff46       $toppar/top_all36_cgenff_v4.6.rtf
+setenv parcgenff46       $toppar/par_all36_cgenff_v4.6.prm
 setenv topcgenff         $toppar/top_all36_cgenff.rtf
 setenv parcgenff         $toppar/par_all36_cgenff.prm
 
@@ -53,6 +50,9 @@ $charmm a:$topprot22 b:$parprot22 < prot/test_all22_prot.inp > $outdir/test_all2
 $charmm a:$topether b:$parether < misc/test_all35_ethers.inp > $outdir/test_all35_ethers.out
 
 #cgenff: test against cgenff toppar files only to avoid competing residue names in the charmm36 toppar files
+$charmm a:$topcgenff46 b:$parcgenff46 < cgenff/test_cgenff_v4.6.inp > $outdir/test_cgenff_v4.6.out
+
+#version 5.0 is the default
 $charmm a:$topcgenff b:$parcgenff < cgenff/test_cgenff.inp > $outdir/test_cgenff.out
 
 #protein

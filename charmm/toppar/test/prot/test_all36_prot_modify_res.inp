@@ -1056,8 +1056,12 @@ set patch_11 = CR12
 set patch_12 = CR21
 set patch_13 = DIBM
 set patch_14 = DIBP
+!2025_2_jl_yg
+set patch_15 = TRSU
+set patch_16 = TESU
 
-set npatches = 14
+set npatches = 16
+!set npatches = 14
 
 !
 ! USER SETTINGS
@@ -1103,7 +1107,17 @@ label do_test
     else
         set restype = ALA
     endif
+
+    ! TRSU / TESU require cysteine, others require alanine
+    set typetest = @patchname
+    if typetest .eq. TRSU then
+        set restype = CYS
+    endif
     
+    if typetest .eq. TESU then
+        set restype = CYS
+    endif
+
     read sequence card
     * dummy peptide sequence
     *
@@ -1115,7 +1129,7 @@ label do_test
     
     patch @patchname PROA @resi1 PROA @resi2 setup warn
     autogen angles dihedrals
-
+    
     !ic generate
     ic param
     ic seed PROA 1 N PROA 1 CA PROA 1 C
@@ -1160,7 +1174,7 @@ label skip_staple_dihe
 !residues 2021
 
 set i 1
-set nres 36
+set nres 39
 label loop_resi2021a
 
 !model compounds from non-standard amino acids that contain
@@ -1202,6 +1216,10 @@ set resi33 SM231
 set resi34 SM232
 set resi35 SM235
 set resi36 SM236
+! 2025_2_jl_yg
+set resi37 MAL
+set resi38 CS4
+set resi39 CSSS
 
 !assign ic seed atoms
 set seed1 HETA 1 CL HETA 1 CLP HETA 1 OL
@@ -1240,18 +1258,26 @@ set seed33 HETA 1 N HETA 1 CA HETA 1 CB
 set seed34 HETA 1 N HETA 1 CA HETA 1 CB
 set seed35 HETA 1 N HETA 1 CA HETA 1 CB
 set seed36 HETA 1 N HETA 1 CA HETA 1 CB
+! 2025_2_jl_yg
+set seed37 HETA 1 N HETA 1 CA HETA 1 C
+set seed38 HETA 1 N HETA 1 CA HETA 1 C
+set seed39 HETA 1 N HETA 1 CA HETA 1 C
 
 label loop
 
   read sequence @resi@@i 1
-  generate  setup HETA first none last none
+if @i gt 36 then
+generate  setup HETA first ACED  last CT3 
+elseif 
+generate  setup HETA first none last none
+endif
 
+ic para 
 ic seed @seed@@i
 !ic print
-ic para 
 !ic print
 ic build
-!coor print
+coor print
 
   define xxx sele chem LPH end
   if ?nsel .gt. 0 then
@@ -1363,14 +1389,14 @@ read sequence card
   ALA   NMM   ALA   OCS   ALA   OSE   ALA   PHD   ALA  PHDP 
   ALA   PM3   ALA   PR3   ALA   PRK   ALA   SBG   ALA   SCH 
   ALA   SCS   ALA   SMC   ALA   SVV   ALA  TPQP   ALA  GGBP
-  ALA   ALA   4FB   ALA    ALA   8LJ   ALA    ALA   B2H   ALA    ALA   B3A   ALA    ALA   B3E 
-  ALA   ALA   B3K   ALA    ALA   B3S   ALA    ALA   B3X   ALA    ALA   B3Y   ALA    ALA   CH6 
-  ALA   ALA   CR2   ALA    ALA  CR8D   ALA    ALA   CRF   ALA    ALA   CRO   ALA    ALA   CRQ 
-  ALA   ALA   DYA   ALA    ALA   DYG   ALA    ALA   FGL   ALA    ALA   FP9   ALA    ALA   GL3 
-  ALA   ALA   GYS   ALA    ALA   HMR   ALA    ALA   HT7   ALA    ALA   HZP   ALA    ALA   I4G 
-  ALA   ALA   MAA   ALA    ALA   MDO   ALA    ALA   MP8   ALA    ALA   NRQ   ALA    ALA   PIA 
-  ALA   ALA   PRS   ALA    ALA   PXU   ALA    ALA   SUI   ALA    ALA   SWG   ALA    ALA   XYG 
-  ALA
+  ALA   ALA   4FB   ALA   ALA   8LJ   ALA    ALA   B2H   ALA    ALA   B3A   ALA    ALA   B3E 
+  ALA   ALA   B3K   ALA   ALA   B3S   ALA    ALA   B3X   ALA    ALA   B3Y   ALA    ALA   CH6 
+  ALA   ALA   CR2   ALA   ALA  CR8D   ALA    ALA   CRF   ALA    ALA   CRO   ALA    ALA   CRQ 
+  ALA   ALA   DYA   ALA   ALA   DYG   ALA    ALA   FGL   ALA    ALA   FP9   ALA    ALA   GL3 
+  ALA   ALA   GYS   ALA   ALA   HMR   ALA    ALA   HT7   ALA    ALA   HZP   ALA    ALA   I4G 
+  ALA   ALA   MAA   ALA   ALA   MDO   ALA    ALA   MP8   ALA    ALA   NRQ   ALA    ALA   PIA 
+  ALA   ALA   PRS   ALA   ALA   PXU   ALA    ALA   SUI   ALA    ALA   SWG   ALA    ALA   XYG 
+  ALA  
 
 generate HETA first ACED last CT3 setup 
 !generate HETA first none last none setup 
