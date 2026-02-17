@@ -8,8 +8,10 @@ This repository contains the force field files for the additive CHARMM36 force f
 Current Version
 ---------------
 
-The current version is dated July, 2024. This repository was made publicly available
-on February 7, 2025.
+The current version is dated February, 2026. 
+
+This repository was initially made publicly available on February 7, 2025
+and was last updated on February 16, 2026.
 
 Maintainers and Developers
 --------------------------
