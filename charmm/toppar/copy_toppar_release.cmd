@@ -27,6 +27,8 @@ cp ./par_all22_prot.prm toppar/.
 cp ./par_all35_ethers.prm toppar/.
 cp ./par_all36_carb.prm toppar/.
 cp ./par_all36_cgenff.prm toppar/.
+cp ./par_all36_cgenff_v4.6.prm toppar/.
+cp ./par_all36_cgenff_increments.prm toppar/.
 cp ./par_all36_lipid.prm toppar/.
 cp ./par_all36_lipid_ljpme.prm toppar/.
 cp ./par_all36_na.prm toppar/.
@@ -48,6 +50,7 @@ cp ./top_all22_prot.rtf toppar/.
 cp ./top_all35_ethers.rtf toppar/.
 cp ./top_all36_carb.rtf toppar/.
 cp ./top_all36_cgenff.rtf toppar/.
+cp ./top_all36_cgenff_v4.6.rtf toppar/.
 cp ./top_all36_lipid.rtf toppar/.
 cp ./top_all36_lipid_ljpme.rtf toppar/.
 cp ./top_all36_na.rtf toppar/.
